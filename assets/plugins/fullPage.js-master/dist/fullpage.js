@@ -995,7 +995,8 @@
       licenseKey: '',
       credits: {
         "enabled": true,
-        "label": 'Made with fullPage.js',
+        // "label": 'Made with fullPage.js',
+        "label": '',
         "position": 'right'
       },
       //scrolling

@@ -1,0 +1,123 @@
+#situation {
+    .accordition {
+        $max-tabs: 8;
+        $tab-width: 40px;
+
+        $clr-bg: #1c1f2b;
+        $clr-bg-light: lighten($clr-bg, 10%);
+        $clr-bg-lighter: lighten($clr-bg, 15%);
+        $clr-bg-dark: darken($clr-bg, 2.5%);
+        $clr-bg-darker: darken($clr-bg, 5%);
+        $clr-text: white;
+        $clr-text-hint: rgba($clr-text, 0.6);
+        $clr-primary: blue;
+        /* LIST */
+        list-style: none;
+        background: #ccc;
+
+        /* FORM */
+        // Hide the input
+        input {
+            position: absolute;
+            top: -9999px;
+            left: -9999px;
+        }
+
+        // Make the label a vertical bar
+        label {
+            display: block;
+            float: left;
+            height: 40vh;
+            width: $tab-width;
+            writing-mode: vertical-lr;
+            overflow: hidden;
+
+            background: $clr-bg-light;
+            color: #fff;
+            text-align: center;
+            font-size: 14px;
+            line-height: $tab-width + 10;
+
+            transition: background 0.3s ease;
+
+            &:hover {
+                transition-duration: 0s;
+            }
+        }
+
+        li:nth-child(even) > input + label {
+            background: $clr-bg-lighter;
+        }
+
+        label:hover,
+        li:nth-child(even) > input + label:hover {
+            background: $clr-primary;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        input[type="radio"]:checked ~ label {
+            background: $clr-primary;
+            cursor: default !important;
+        }
+
+        /* SLIDES */
+        .accslide {
+            display: block;
+            height: 100%;
+            width: 0px;
+            padding: 10px 0;
+            float: left;
+            overflow-x: hidden;
+
+            font-size: 12px;
+            line-height: 1.5;
+
+            // Prevents text "squishing", but will cut off text if it is too long
+            white-space: nowrap;
+
+            transition: all 700ms ease;
+
+            * {
+                padding-left: 10px;
+            }
+            img {
+                margin-top: 10px;
+            }
+        }
+
+        input[type="radio"]:not(:checked) ~ label > * {
+            font-size: 1.2em;
+            white-space: nowrap;
+        }
+
+        @for $i from 2 through $max-tabs {
+            @for $j from 1 through $i {
+                li:nth-child(#{$j}):nth-last-child(#{$i - $j + 1}) input[type="radio"]:checked ~ .accslide {
+                    width: calc(100% - #{$i * $tab-width});
+                }
+            }
+        }
+
+        .odometer {
+            font-size: 60px;
+            margin: 200px 0;
+            text-align: center;
+            width: 100%;
+            animation-duration: 3s;
+        }
+    }
+    .chart-area {
+        position: relative;
+        height: 346px;
+        flex: 0 0 346px;
+        margin: auto;
+        overflow: hidden;
+        #situationChart {
+            // width: 100% !important;
+            height: 100% !important;
+            // width: 800px !important;
+            // height: 346px !important;
+        }
+    }
+}

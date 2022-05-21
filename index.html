@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="./assets/plugins/fullPage.js-master/dist/fullpage.min.css">
     <link rel="stylesheet" href="./assets/plugins/swiper/swiper-bundle.min.css">
     <link rel="stylesheet" href="./assets/plugins/Fancybox4/fancybox.css">
-    
+
     <!-- self -->
     <link rel="stylesheet" href="./assets/styles/css/style.css">
 </head>
@@ -24,71 +24,194 @@
 
 
         <!-- navbar -->
-        <nav></nav>
+        <header>
+            <nav class="navbar navbar-expand-lg bg-light sticky-bottom">
+                <div class="container">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                        <a class="navbar-brand" href="#">Hidden brand</a>
+                        <ul class="navbar-nav mb-2 mb-lg-0 ms-0 ms-lg-auto me-auto me-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Link</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link disabled">Disabled</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
 
 
         <!-- main -->
         <div id="fullpage">
 
             <!-- Banner -->
-            <div class="section">
-                
+            <div class="section" id="banner">
+                <!-- Slider main container -->
+                <div class="swiper">
+                    <!-- Additional required wrapper -->
+                    <div class="swiper-wrapper">
+                        <!-- Slides -->
+                        <div class="swiper-slide" data-swiper-type="image"
+                            style="background: url(https://picsum.photos/id/600/1920/1024) 50% 50% / cover no-repeat;">
+                            <article>
+                                <div class="title" data-swiper-parallax="-100" data-swiper-parallax-duration="400">Slide 1</div>
+                                <div class="subtitle" data-swiper-parallax="-200" data-swiper-parallax-duration="400">
+                                    2019年末，始於中國武漢的第一起未知病毒感染檢測報告被曝光，而後被WHO命名為Covid-19的病毒席捲向全球人類社會......</div>
+                            </article>
+                        </div>
+                        <div class="swiper-slide" data-swiper-type="image"
+                            style="background: url(https://picsum.photos/id/650/1920/1024) 50% 50% / cover no-repeat;">
+                            <article>
+                                <div class="title" data-swiper-parallax="-100">Slide 2</div>
+                                <div class="subtitle" data-swiper-parallax="-200">
+                                    面對疫情<br>
+                                    最大的敵人不是病毒，<br>
+                                    而是我們自己內心的恐懼
+                                </div>
+                            </article>
+                        </div>
+                        <div class="swiper-slide" data-swiper-type="image"
+                            style="background: url(https://picsum.photos/id/700/1920/1024) 50% 50% / cover no-repeat;">
+                            <article>
+                                <div class="title" data-swiper-parallax="-100">Slide 3</div>
+                                <div class="subtitle" data-swiper-parallax="-200">
+                                    對於未知的事物<br>
+                                    人類往往抱著恐懼的眼光看待<br>
+                                    而我們想讓你知道你無需害怕
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                    <!-- If we need pagination -->
+                    <div class="swiper-pagination"></div>
+
+                    <!-- If we need navigation buttons -->
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                </div>
             </div>
 
             <!-- 確診情形 / 疫苗施打情形 -->
-            <div class="section">
-                
+            <div class="section" id="situation">
+                <div class="d-flex flex-column h-100">
+                    <ul class="col-auto accordition">
+                        <li>
+                            <!-- Using radio inputs means only one can be selected at a time-->
+                            <!-- The ID must be unique so the label will point to the input-->
+                            <input id="rad1" type="radio" name="rad" checked="checked" />
+                            <label for="rad1">
+                                <div>台灣確診情形</div>
+                            </label>
+                            <div class="accslide">
+                                <div class="row">
+                                    <div class="col-4">
+                                        <div class="content">
+                                            <h1>確診人數</h1>
+                                            <div class="counterEffect">
+                                                <div class="counter">830,257</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="content">
+                                            <h1>死亡人數</h1>
+                                            <div class="counterEffect">
+                                                <div class="counter">1,097</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="content">
+                                            <h1>死亡率</h1>
+                                            <div class="counterEffect">
+                                                <div class="counter">0.13%</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <!-- Using radio inputs means only one can be selected at a time-->
+                            <!-- The ID must be unique so the label will point to the input-->
+                            <input id="rad2" type="radio" name="rad" />
+                            <label for="rad2">
+                                <div>全球確診情形</div>
+                            </label>
+                            <div class="accslide">
+                                <div class="content">
+                                    <h1>Second panel</h1>
+                                    <p>Lorem ipsum...</p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <div class="col chart-area">
+                        <canvas id="situationChart"></canvas>
+                    </div>
+                </div>
             </div>
 
             <!-- 病毒結構 / 病毒增值 -->
             <div class="section">
-                
+
             </div>
 
             <!-- Covid-19 變異株起源 -->
-            <div class="section">
-                
+            <div class="section fp-auto-height">
+
             </div>
 
             <!-- 目前Covid-19感染症狀 -->
-            <div class="section">
-                
+            <div class="section fp-auto-height">
+
             </div>
 
 
             <!-- 傳統疫苗 / 新型疫苗 -->
-            <div class="section">
-                
+            <div class="section fp-auto-height">
+
             </div>
 
 
             <!-- 新冠疫苗開發歷程 -->
-            <div class="section">
-                
+            <div class="section fp-auto-height">
+
             </div>
 
 
             <!-- 目前台灣施打新冠疫苗種類 -->
-            <div class="section">
-                
+            <div class="section fp-auto-height">
+
             </div>
 
 
             <!-- 後疫情 -->
-            <div class="section">
-                
+            <div class="section fp-auto-height">
+
             </div>
 
 
             <!-- 關於 -->
-            <div class="section">
-                
+            <div class="section fp-auto-height">
+
             </div>
 
 
             <!-- 參考 -->
-            <div class="section">
-                
+            <div class="section fp-auto-height">
+
             </div>
 
 
@@ -106,6 +229,7 @@
     <script src="./assets/plugins/swiper/swiper-bundle.min.js"></script>
     <script src="./assets/plugins/Fancybox4/fancybox.umd.js"></script>
     <script src="./assets/plugins/Chart.js-3.7.1/chart.min.js"></script>
+    <script src="./assets/plugins/splitting/splitting.js"></script>
 
     <!-- self -->
     <script src="./assets/js/main.js"></script>

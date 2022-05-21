@@ -1,0 +1,34 @@
+#fullpage {
+}
+#fp-nav {
+    padding: 0 10px;
+    transition: all 0.3s ease-in-out;
+    &.fp-right {
+        right: -30px;
+        &:hover {
+            right: 0;
+            ul {
+                li {
+                    .fp-tooltip {
+                        width: auto;
+                        opacity: .5;
+                        transform: scale(.75);
+                    }
+                    .active ~ .fp-tooltip {
+                        opacity: 1;
+                        transform: scale(1);
+                    }
+                }
+            }
+        }
+    }
+    ul {
+        li {
+            a {
+                span {
+                    border: solid 1px rgba(255, 255, 255, 0.6);
+                }
+            }
+        }
+    }
+}
