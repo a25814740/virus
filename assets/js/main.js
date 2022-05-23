@@ -1,16 +1,15 @@
+
 const App = {
     data() {
         return {
 
         }
     },
-    beforeCreate() {
-    },
+    beforeCreate() {},
     created() {
         window.addEventListener("scroll", this.handleScroll);
     },
-    beforeMount() {
-    },
+    beforeMount() {},
     mounted() {
         this.$nextTick(function () {
             // 仅在整个视图都被渲染之后才会运行的代码
@@ -48,27 +47,16 @@ const App = {
                 sectionSelector: '.section',
                 slideSelector: '.slide',
                 // Events
-                beforeLeave: function (origin, destination, direction, trigger) { },
-                onLeave: function (origin, destination, direction, trigger) {
-                    console.log(destination);
-                    let navbar = document.querySelector('.navbar');
-                    //after leaving section 0
-                    // if (destination.index !== 0) {
-                    //     navbar.classList.remove('fixed-bottom');
-                    //     navbar.classList.add('fixed-top');
-                    // } else {
-                    //     navbar.classList.add('fixed-bottom');
-                    //     navbar.classList.remove('fixed-top');
-                    // }
-                },
-                afterLoad: function (origin, destination, direction, trigger) { },
-                afterRender: function () { },
-                afterResize: function (width, height) { },
-                afterReBuild: function () { },
-                afterResponsive: function (isResponsive) { },
-                afterSlideLoad: function (section, origin, destination, direction, trigger) { },
-                onSlideLeave: function (section, origin, destination, direction, trigger) { },
-                onScrollOverflow: function (section, slide, position, direction) { },
+                beforeLeave: function (origin, destination, direction, trigger) {},
+                onLeave: function (origin, destination, direction, trigger) {},
+                afterLoad: function (origin, destination, direction, trigger) {},
+                afterRender: function () {},
+                afterResize: function (width, height) {},
+                afterReBuild: function () {},
+                afterResponsive: function (isResponsive) {},
+                afterSlideLoad: function (section, origin, destination, direction, trigger) {},
+                onSlideLeave: function (section, origin, destination, direction, trigger) {},
+                onScrollOverflow: function (section, slide, position, direction) {},
             });
         },
         bannerSwiper() {
@@ -80,11 +68,11 @@ const App = {
                     crossFade: true
                 },
                 navigation: {
-                    nextEl: '.swiper-button-next',
-                    prevEl: '.swiper-button-prev',
+                    nextEl: '#banner .swiper-button-next',
+                    prevEl: '#banner .swiper-button-prev',
                 },
                 pagination: {
-                    el: '.swiper-pagination',
+                    el: '#banner .swiper-pagination',
                     type: 'bullets',
                 },
             });
@@ -152,7 +140,9 @@ const App = {
                 Math.floor(Math.random() * 16) + 5
 
             // Initiate the spinners
-            Splitting({ target: counterSelector })
+            Splitting({
+                target: counterSelector
+            })
 
             document.querySelectorAll(counterSelector).forEach(counter => {
 
