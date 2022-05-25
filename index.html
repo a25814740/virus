@@ -15,7 +15,7 @@
 
     <!-- self -->
     <link rel="stylesheet" href="./assets/styles/css/style.css">
-    
+
 </head>
 
 <body>
@@ -56,7 +56,7 @@
         <div id="fullpage">
 
             <!-- Banner -->
-            <!-- <div class="section" id="banner">
+            <div class="section" id="banner">
                 <div class="swiper">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide" data-swiper-type="image"
@@ -97,10 +97,10 @@
                     <div class="swiper-button-prev"></div>
                     <div class="swiper-button-next"></div>
                 </div>
-            </div> -->
+            </div>
 
             <!-- 確診情形 / 疫苗施打情形 -->
-            <!-- <div class="section" id="situation">
+            <div class="section" id="situation">
                 <div class="d-flex flex-column h-100">
                     <ul class="col-auto accordition">
                         <li>
@@ -155,45 +155,45 @@
                         <canvas id="situationChart"></canvas>
                     </div>
                 </div>
-            </div> -->
+            </div>
 
             <!-- 病毒結構 / 病毒增值 -->
-            <!-- <div class="section">
+            <div class="section">
 
-            </div> -->
+            </div>
 
             <!-- Covid-19 變異株起源 -->
-            <!-- <div class="section fp-auto-height">
+            <div class="section fp-auto-height">
 
-            </div> -->
+            </div>
 
             <!-- 目前Covid-19感染症狀 -->
-            <!-- <div class="section fp-auto-height">
+            <div class="section fp-auto-height">
 
-            </div> -->
+            </div>
 
 
             <!-- 傳統疫苗 / 新型疫苗 -->
-            <!-- <div class="section fp-auto-height">
+            <div class="section fp-auto-height">
 
-            </div> -->
+            </div>
 
 
             <!-- 新冠疫苗開發歷程 -->
-            <!-- <div class="section fp-auto-height">
+            <div class="section fp-auto-height">
 
-            </div> -->
+            </div>
 
 
             <!-- 目前台灣施打新冠疫苗種類 -->
-            <!-- <div class="section fp-auto-height">
+            <div class="section fp-auto-height">
                 
-            </div> -->
+            </div>
 
 
             <!-- 後疫情 -->
             <div class="section" id="Post-pandemic">
-                
+
                 <div class="post-pandemic-section h-100">
                     <div class="bg">
                         <video autoplay loop muted>
@@ -201,17 +201,19 @@
                         </video>
                     </div>
                     <!-- <div class="mask"></div> -->
-                   
 
-                    <div class="position-relative container-fluid h-100 d-flex align-items-center justify-content-center"> 
-                        <div class="w-100 fancybox-trigger" >
+
+                    <div
+                        class="position-relative container-fluid h-100 d-flex align-items-center justify-content-center">
+                        <a class="w-100 h-100 d-flex align-items-center justify-content-center" data-fancybox="gallery-popup-Post-pandemic"
+                            data-src="#popup-Post-pandemic-content">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1276.48 930.82">
                                 <defs>
                                     <style>
                                         .cls-1 {
                                             fill: #fff;
                                         }
-    
+
                                         .cls-2 {
                                             opacity: 0.6;
                                         }
@@ -462,331 +464,421 @@
                                     </g>
                                 </g>
                             </svg>
-                        </div>
+                        </a>
                     </div>
-                    
-                    
                 </div>
 
-                <div class="swiper d-none" id="popup-swiper">
-                    <div class="swiper-wrapper">
-                        <!-- 工作 -->
-                        <div class="swiper-slide">
-                            <div class="container justify-items-center">
-                                <div class="row justify-content-center">
-                                    <ul class="d-inline-flex text-light align-items-end justify-content-around">
-                                        <li class="active">工作</li>
-                                        <li>學習</li>
-                                        <li>社交</li>
-                                        <li>娛樂</li>
-                                        <li>飲食</li>
-                                    </ul>
+                <div class="popup-content" id="popup-Post-pandemic-content" style="display: none;">
+                    <div class="swiper" id="popup-swiper">
+                        <div class="swiper-wrapper">
+                            <!-- 工作 -->
+                            <div class="swiper-slide">
+                                <div class="container justify-items-center">
+                                    <div class="row justify-content-center">
+                                        <ul class="d-inline-flex text-light align-items-end justify-content-around">
+                                            <li class="active">工作</li>
+                                            <li>學習</li>
+                                            <li>社交</li>
+                                            <li>娛樂</li>
+                                            <li>飲食</li>
+                                        </ul>
 
-                                </div>
+                                    </div>
 
-                                <div class="row p-0 bottom-content">
-                                    <div class="col-8 text-container">
-                                        <div class="text-light right">
-                                            <p>
-                                                隨著破壞式創新的科技與商業模式出現，也為後疫情時代帶來新的能量。
-                                            </p>
-                                            <p class="pt-4">
-                                                商用視訊會議軟體、雲端團隊協作平台 使得會議、工作未必需要身在辦公室才能完成，<br>
-                                                而業主也能因此省下辦公場域的租金以及員工通勤的部分開銷。
-                                            </p>
+                                    <div class="row p-0 bottom-content">
+                                        <div class="col-8 text-container">
+                                            <div class="text-light right" data-swiper-parallax="-100"
+                                                data-swiper-parallax-duration="400">
+                                                <p>
+                                                    隨著破壞式創新的科技與商業模式出現，也為後疫情時代帶來新的能量。
+                                                </p>
+                                                <p class="pt-4">
+                                                    商用視訊會議軟體、雲端團隊協作平台 使得會議、工作未必需要身在辦公室才能完成，<br>
+                                                    而業主也能因此省下辦公場域的租金以及員工通勤的部分開銷。
+                                                </p>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-4 img-container justify-content-center">
-                                        <img class=" " src="./assets/styles/images/img-post_pandemic/work.png" alt="">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- 學習 -->
-                        <div class="swiper-slide">
-                            <div class="container justify-items-center">
-                                <div class="row justify-content-center">
-                                    <ul class="d-inline-flex text-light align-items-end justify-content-around">
-                                        <li>工作</li>
-                                        <li class="active">學習</li>
-                                        <li>社交</li>
-                                        <li>娛樂</li>
-                                        <li>飲食</li>
-                                    </ul>
-
-                                </div>
-
-                                <div class="row p-0 bottom-content">
-                                    <div class="col-4 img-container justify-content-center">
-                                        <img class=" " src="./assets/styles/images/img-post_pandemic/learn.png" alt="">
-                                    </div>
-                                    <div class="col-8 text-container">
-                                        <div class="text-light left">
-                                            </p> 因為防疫亦或是隔離，各地學校開始了遠距教學模式，與此同時為大家打開了線上學習的新型態。
-                                            <p>
-                                            <p class="pt-4">
-                                                藉著次疫情遠距學習的機會，人們也開始反思......
-                                                開放式的線上學習系統是否有可以取代傳統的學校教育的機會，當然這又是另外一個話題了。
-                                            </p>
+                                        <div class="col-4 img-container justify-content-center"
+                                            data-swiper-parallax="100" data-swiper-parallax-duration="400">
+                                            <img class=" " src="./assets/styles/images/img-post_pandemic/work.png"
+                                                alt="">
                                         </div>
                                     </div>
                                 </div>
-
-
                             </div>
-                        </div>
 
-                        <!-- 社交 -->
-                        <div class="swiper-slide">
-                            <div class="container justify-items-center">
-                                <div class="row justify-content-center">
-                                    <ul class="d-inline-flex text-light align-items-end justify-content-around">
-                                        <li>工作</li>
-                                        <li>學習</li>
-                                        <li class="active">社交</li>
-                                        <li>娛樂</li>
-                                        <li>飲食</li>
-                                    </ul>
+                            <!-- 學習 -->
+                            <div class="swiper-slide">
+                                <div class="container justify-items-center">
+                                    <div class="row justify-content-center">
+                                        <ul class="d-inline-flex text-light align-items-end justify-content-around">
+                                            <li>工作</li>
+                                            <li class="active">學習</li>
+                                            <li>社交</li>
+                                            <li>娛樂</li>
+                                            <li>飲食</li>
+                                        </ul>
 
-                                </div>
+                                    </div>
 
-                                <div class="row p-0  bottom-content">
-                                    <div class="col-8 text-container">
-                                        <div class="text-light right">
-                                            <p>當人們都儘量待在家裡不出家門的時候，與親朋好友聯繫感情也不必只依靠電話交流。</p>
-                                            <p class="pt-4">現代科技發達，使文字訊息都能即時傳遞，網路視訊也讓你不論與對方距離多遙遠都能及時面對著對方與人交流。</p>
-                                            <p class="pt-4">
-                                                社群媒體也是年輕人花許多時間使用的社交型態，不管身在甚麼國家，都能在平台上相互認識、交流，與身邊的朋友也不用擔心因為疫情而難以見面了。
-                                            </p>
+                                    <div class="row p-0 bottom-content">
+                                        <div class="col-4 img-container justify-content-center"
+                                            data-swiper-parallax="100" data-swiper-parallax-duration="400">
+                                            <img class=" " src="./assets/styles/images/img-post_pandemic/learn.png"
+                                                alt="">
+                                        </div>
+                                        <div class="col-8 text-container">
+                                            <div class="text-light left" data-swiper-parallax="-100"
+                                                data-swiper-parallax-duration="400">
+                                                </p> 因為防疫亦或是隔離，各地學校開始了遠距教學模式，與此同時為大家打開了線上學習的新型態。
+                                                <p>
+                                                <p class="pt-4">
+                                                    藉著次疫情遠距學習的機會，人們也開始反思......
+                                                    開放式的線上學習系統是否有可以取代傳統的學校教育的機會，當然這又是另外一個話題了。
+                                                </p>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="col-4 img-container justify-content-center">
-                                        <img class=" " src="./assets/styles/images/img-post_pandemic/social.png" alt="">
-                                    </div>
+
+
                                 </div>
                             </div>
-                        </div>
 
-                        <!-- 娛樂 -->
-                        <div class="swiper-slide">
-                            <div class="container justify-items-center">
-                                <div class="row justify-content-center">
-                                    <ul class="d-inline-flex text-light align-items-end justify-content-around">
-                                        <li>工作</li>
-                                        <li>學習</li>
-                                        <li>社交</li>
-                                        <li class="active">娛樂</li>
-                                        <li>飲食</li>
-                                    </ul>
+                            <!-- 社交 -->
+                            <div class="swiper-slide">
+                                <div class="container justify-items-center">
+                                    <div class="row justify-content-center">
+                                        <ul class="d-inline-flex text-light align-items-end justify-content-around">
+                                            <li>工作</li>
+                                            <li>學習</li>
+                                            <li class="active">社交</li>
+                                            <li>娛樂</li>
+                                            <li>飲食</li>
+                                        </ul>
 
-                                </div>
-
-                                <div class="row p-0 bottom-content">
-                                    <div class="col-4 img-container justify-content-center">
-                                        <img class=" " src="./assets/styles/images/img-post_pandemic/entertainment.png"
-                                            alt="">
                                     </div>
-                                    <div class="col-8 text-container">
-                                        <div class="text-light left">
-                                            <p>
-                                                疫情期間的娛樂也剛好能乘著近年開始的串流影音平台服務，各式電影、韓劇、陸劇、歐美劇也都能在各家串流平台上被找到。
-                                            </p>
-                                            <p class="pt-4">除此之外，居家休閒娛樂也能與朋友在遊戲裡進行網路連線，亦或是藉網路視訊跟著健身教練一起在家裡運動。
-                                            </p>
 
-
+                                    <div class="row p-0  bottom-content">
+                                        <div class="col-8 text-container">
+                                            <div class="text-light right" data-swiper-parallax="-100"
+                                                data-swiper-parallax-duration="400">
+                                                <p>當人們都儘量待在家裡不出家門的時候，與親朋好友聯繫感情也不必只依靠電話交流。</p>
+                                                <p class="pt-4">現代科技發達，使文字訊息都能即時傳遞，網路視訊也讓你不論與對方距離多遙遠都能及時面對著對方與人交流。</p>
+                                                <p class="pt-4">
+                                                    社群媒體也是年輕人花許多時間使用的社交型態，不管身在甚麼國家，都能在平台上相互認識、交流，與身邊的朋友也不用擔心因為疫情而難以見面了。
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-4 img-container justify-content-center"
+                                            data-swiper-parallax="100" data-swiper-parallax-duration="400">
+                                            <img class=" " src="./assets/styles/images/img-post_pandemic/social.png"
+                                                alt="">
                                         </div>
                                     </div>
                                 </div>
-
-
                             </div>
-                        </div>
 
-                        <!-- 飲食 -->
-                        <div class="swiper-slide">
-                            <div class="container justify-items-center">
-                                <div class="row justify-content-center">
-                                    <ul class="d-inline-flex text-light align-items-end justify-content-around">
-                                        <li>工作</li>
-                                        <li>學習</li>
-                                        <li>社交</li>
-                                        <li>娛樂</li>
-                                        <li class="active">飲食</li>
-                                    </ul>
+                            <!-- 娛樂 -->
+                            <div class="swiper-slide">
+                                <div class="container justify-items-center">
+                                    <div class="row justify-content-center">
+                                        <ul class="d-inline-flex text-light align-items-end justify-content-around">
+                                            <li>工作</li>
+                                            <li>學習</li>
+                                            <li>社交</li>
+                                            <li class="active">娛樂</li>
+                                            <li>飲食</li>
+                                        </ul>
 
-                                </div>
+                                    </div>
 
-                                <div class="row p-0 bottom-content">
-                                    <div class="col-8 text-container">
-                                        <div class="text-light right">
-                                            <p>不方便出門採買，卻又想吃到熱騰騰的熟食?<br>
-                                                亦或是在家裡想要自己下廚大展廚藝卻發現家中冰箱已經高唱空城計?</p>
-                                            <p class="pt-4">現在其實也不需要那麼煩惱，只需要點開網頁或行動裝置上的外送app想吃甚麼樣的食物都能任選，<br>
-                                                而想要自己下廚的人也能透過外送服務採買生鮮蔬果，<br>
-                                                甚至生活所需的日常消耗品，都能不用出家門就可以買得到了。</p>
+                                    <div class="row p-0 bottom-content">
+                                        <div class="col-4 img-container justify-content-center"
+                                            data-swiper-parallax="100" data-swiper-parallax-duration="400">
+                                            <img class=" "
+                                                src="./assets/styles/images/img-post_pandemic/entertainment.png" alt="">
+                                        </div>
+                                        <div class="col-8 text-container">
+                                            <div class="text-light left" data-swiper-parallax="-100"
+                                                data-swiper-parallax-duration="400">
+                                                <p>
+                                                    疫情期間的娛樂也剛好能乘著近年開始的串流影音平台服務，各式電影、韓劇、陸劇、歐美劇也都能在各家串流平台上被找到。
+                                                </p>
+                                                <p class="pt-4">除此之外，居家休閒娛樂也能與朋友在遊戲裡進行網路連線，亦或是藉網路視訊跟著健身教練一起在家裡運動。
+                                                </p>
+
+
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="col-4 img-container justify-content-center">
-                                        <img class=" " src="./assets/styles/images/img-post_pandemic/food.png" alt="">
+
+
+                                </div>
+                            </div>
+
+                            <!-- 飲食 -->
+                            <div class="swiper-slide">
+                                <div class="container justify-items-center">
+                                    <div class="row justify-content-center">
+                                        <ul class="d-inline-flex text-light align-items-end justify-content-around">
+                                            <li>工作</li>
+                                            <li>學習</li>
+                                            <li>社交</li>
+                                            <li>娛樂</li>
+                                            <li class="active">飲食</li>
+                                        </ul>
+
+                                    </div>
+
+                                    <div class="row p-0 bottom-content">
+                                        <div class="col-8 text-container">
+                                            <div class="text-light right" data-swiper-parallax="-100"
+                                                data-swiper-parallax-duration="400">
+                                                <p>不方便出門採買，卻又想吃到熱騰騰的熟食?<br>
+                                                    亦或是在家裡想要自己下廚大展廚藝卻發現家中冰箱已經高唱空城計?</p>
+                                                <p class="pt-4">現在其實也不需要那麼煩惱，只需要點開網頁或行動裝置上的外送app想吃甚麼樣的食物都能任選，<br>
+                                                    而想要自己下廚的人也能透過外送服務採買生鮮蔬果，<br>
+                                                    甚至生活所需的日常消耗品，都能不用出家門就可以買得到了。</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-4 img-container justify-content-center"
+                                            data-swiper-parallax="100" data-swiper-parallax-duration="400">
+                                            <img class=" " src="./assets/styles/images/img-post_pandemic/food.png"
+                                                alt="">
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
 
+                        </div>
+                        <div class="swiper-pagination"></div>
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div>
                     </div>
-                    <div class="swiper-pagination"></div>
-                    <div class="swiper-button-prev"></div>
-                    <div class="swiper-button-next"></div>
                 </div>
             </div>
 
             <!-- 關於 -->
             <div class="section " id="about-us">
-                
-                <div class="swiper bigSwiper">
-                    <div class="swiper-wrapper">
-                        <!-- 組長 -->
-                        <div class="swiper-slide">
-                            <div class="container h-100 d-flex align-items-center ">
-                                <div class="row d-flex justify-content-center">
-                                    <div class="text-container col-6 align-items-center">
-                                        <div class="text-top ">
-                                            <span>CEO//</span>
-                                            <p class="text-light pt-2">羅仕林</p>
-                                        </div>
-                                        <div class="text-bottom text-light">
-                                            <p>爆肝CEO，隨時開血輪眼</p>
-                                            <p class="pt-3">負責網頁整體所有事物，神一般隊友，技術支援，全組支柱</p>
-                                        </div>
-                                    </div>
-                                    <div class="img-container col-5">
-                                        <img src="../virus/assets/styles/images/img-about_us/about_01.PNG" alt="">
-                                    </div>
-
+                <div class="container-fluid">
+                    <div class="text-light text-container">
+                        <div class="top">
+                            <div class="d-flex justify-content-center">
+                                <h1>關於</h1>
+                                <div class="d-flex flex-column justify-content-around">
+                                    <p>我</p>
+                                    <p>們</p>
                                 </div>
-
                             </div>
-
                         </div>
-                        <!-- 視覺 -->
-                        <div class="swiper-slide">
-                            <div class="container h-100 d-flex align-items-center ">
-                                <div class="row d-flex justify-content-center">
-                                    <div class="text-container col-6 align-items-center">
-                                        <div class="text-top ">
-                                            <span>打雜//</span>
-                                            <p class="text-light pt-2">蕭嘉毓</p>
-                                        </div>
-                                        <div class="text-bottom text-light">
-                                            <p>爆肝打雜生物，隨時入土</p>
-                                            <p class="pt-3">負責網頁視覺設計，專門畫大餅給隊友挑戰不可能的任務</p>
-                                        </div>
-                                    </div>
-                                    <div class="img-container col-5">
-                                        <img src="../virus/assets/styles/images/img-about_us/about_02.PNG" alt="">
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-                        </div>
-                        <!-- 企劃 -->
-                        <div class="swiper-slide">
-                            <div class="container h-100 d-flex align-items-center ">
-                                <div class="row d-flex justify-content-center">
-                                    <div class="text-container col-6 align-items-center">
-                                        <div class="text-top ">
-                                            <span>遞水仔//</span>
-                                            <p class="text-light pt-2">張鴻檄</p>
-                                        </div>
-                                        <div class="text-bottom text-light">
-                                            <p>生物型Google助理</p>
-                                            <p class="pt-3">負責網頁企劃、文字資訊，只幫CEO遞水</p>
-                                        </div>
-                                    </div>
-                                    <div class="img-container col-5">
-                                        <img src="../virus/assets/styles/images/img-about_us/about_03.PNG" alt="">
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-                        </div>
-                        <!-- 切版 -->
-                        <div class="swiper-slide">
-                            <div class="container h-100 d-flex align-items-center ">
-                                <div class="row d-flex justify-content-center">
-                                    <div class="text-container col-6 align-items-center">
-                                        <div class="text-top ">
-                                            <span>搖滾區//</span>
-                                            <p class="text-light pt-2">蔡閔婷</p>
-                                        </div>
-                                        <div class="text-bottom text-light">
-                                            <p>後排搖滾區亦觀察員</p>
-                                            <p class="pt-3">？？？？？？？</p>
-                                            <p class="pt-3">總之是個很重要的測試者</p>
-                                        </div>
-                                    </div>
-                                    <div class="img-container col-5">
-                                        <img src="../virus/assets/styles/images/img-about_us/about_04.PNG" alt="">
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-                        </div>
-
-                        <!-- 特效 -->
-                        <div class="swiper-slide">
-                            <div class="container h-100 d-flex align-items-center ">
-                                <div class="row d-flex justify-content-center">
-                                    <div class="text-container col-6 align-items-center">
-                                        <div class="text-top ">
-                                            <span>軍師//</span>
-                                            <p class="text-light pt-2">林廷一</p>
-                                        </div>
-                                        <div class="text-bottom text-light">
-                                            <p>超狂特效組，但常常焦頭爛額</p>
-                                            <p class="pt-3">對網頁特效有不懈研究精神，把獨特見解玩到精粹，因此日常用腦過度</p>
-                                        </div>
-                                    </div>
-                                    <div class="img-container col-5">
-                                        <img src="../virus/assets/styles/images/img-about_us/about_01.PNG" alt="">
-                                    </div>
-
-                                </div>
-
-                            </div>
-
+                        <div class="bottom text-center">
+                            <p>
+                                <span>我們是一群</span>
+                                學習網頁前端程式的學生，藉著這次機會希望將所學到的技術用在推廣這些平常不太接觸到<br>
+                                但卻又貼近我們生活的科普資訊
+                            </p>
                         </div>
                     </div>
 
-                    <div class="swiper-button-prev"></div>
-                    <div class="swiper-button-next"></div>
+                    <div class="img-container d-flex justify-content-around">
+                        <div class="person1" data-fancybox="gallery-aboutUs1" data-src="#popup-aboutUs-content">
+                            <div class="rounded-circle">
+                                <img src="../virus/assets/styles/images/img-about_us/about_anime_01.GIF" alt="">
+                            </div>
+                            <div class="text-light text-center img-title">
+                                <span>CEO</span>
+                                <p class="pt-4">羅仕林</p>
+                            </div>
+                        </div>
+
+                        <div class="person2" data-fancybox="gallery-aboutUs2" data-src="#popup-aboutUs-content">
+                            <div class="rounded-circle">
+                                <img src="../virus/assets/styles/images/img-about_us/about_anime_02.GIF" alt="">
+                            </div>
+                            <div class="text-light text-center img-title">
+                                <span>打雜</span>
+                                <p class="pt-4">蕭嘉毓</p>
+                            </div>
+                        </div>
+
+                        <div class="person3" data-fancybox="gallery-aboutUs3" data-src="#popup-aboutUs-content">
+                            <div class="rounded-circle">
+                                <img src="../virus/assets/styles/images/img-about_us/about_anime_03.GIF" alt="">
+                            </div>
+                            <div class="text-light text-center img-title">
+                                <span>遞水仔</span>
+                                <p class="pt-4">張鴻檄</p>
+                            </div>
+                        </div>
+
+                        <div class="person4" data-fancybox="gallery-aboutUs4" data-src="#popup-aboutUs-content">
+                            <div class="rounded-circle">
+                                <img src="../virus/assets/styles/images/img-about_us/about_anime_04.GIF" alt="">
+                            </div>
+                            <div class="text-light text-center img-title">
+                                <span>搖滾區</span>
+                                <p class="pt-4">蔡閔婷</p>
+                            </div>
+                        </div>
+
+                        <div class="person5" data-fancybox="gallery-aboutUs5" data-src="#popup-aboutUs-content">
+                            <div class="rounded-circle">
+                                <img src="../virus/assets/styles/images/img-about_us/about_anime_05.GIF" alt="">
+                            </div>
+                            <div class="text-light text-center img-title">
+                                <span>軍師</span>
+                                <p class="pt-4">林廷一</p>
+                            </div>
+                        </div>
+
+
+                    </div>
 
                 </div>
 
-                <div thumbsSlider="" class="textSwiper">
-                    <div class="swiper-wrapper text-light">
-                        <div class="swiper-slide">
-                            <p class="text-center">程式/組長</p>
+                <div class="popup-content" id="popup-aboutUs-content" style="display: none;">
+                    <div class="swiper bigSwiper">
+                        <div class="swiper-wrapper">
+                            <!-- 組長 -->
+                            <div class="swiper-slide">
+                                <div class="container-fluid h-100">
+                                    <div class="row h-100 d-flex justify-content-center ">
+                                        <div class="text-container col-6 align-self-center">
+                                            <div class="text-top ">
+                                                <span>CEO//</span>
+                                                <p class="text-light pt-2">羅仕林</p>
+                                            </div>
+                                            <div class="text-bottom text-light">
+                                                <p>爆肝CEO，隨時開血輪眼</p>
+                                                <p class="pt-3">負責網頁整體所有事物，神一般隊友，技術支援，全組支柱</p>
+                                            </div>
+                                        </div>
+                                        <div class="img-container col-5 align-self-end">
+                                            <img src="../virus/assets/styles/images/img-about_us/about_01.PNG" alt="">
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <!-- 視覺 -->
+                            <div class="swiper-slide">
+                                <div class="container-fluid h-100">
+                                    <div class="row h-100 d-flex justify-content-center ">
+                                        <div class="text-container col-6 align-self-center">
+                                            <div class="text-top ">
+                                                <span>打雜//</span>
+                                                <p class="text-light pt-2">蕭嘉毓</p>
+                                            </div>
+                                            <div class="text-bottom text-light">
+                                                <p>爆肝打雜生物，隨時入土</p>
+                                                <p class="pt-3">負責網頁視覺設計，專門畫大餅給隊友挑戰不可能的任務</p>
+                                            </div>
+                                        </div>
+                                        <div class="img-container col-5 align-self-end">
+                                            <img src="../virus/assets/styles/images/img-about_us/about_02.PNG" alt="">
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <!-- 企劃 -->
+                            <div class="swiper-slide">
+                                <div class="container-fluid h-100">
+                                    <div class="row h-100 d-flex justify-content-center ">
+                                        <div class="text-container col-6 align-self-center">
+                                            <div class="text-top ">
+                                                <span>遞水仔//</span>
+                                                <p class="text-light pt-2">張鴻檄</p>
+                                            </div>
+                                            <div class="text-bottom text-light">
+                                                <p>生物型Google助理</p>
+                                                <p class="pt-3">負責網頁企劃、文字資訊，只幫CEO遞水</p>
+                                            </div>
+                                        </div>
+                                        <div class="img-container col-5 align-self-end">
+                                            <img src="../virus/assets/styles/images/img-about_us/about_03.PNG" alt="">
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <!-- 切版 -->
+                            <div class="swiper-slide">
+                                <div class="container-fluid h-100">
+                                    <div class="row h-100 d-flex justify-content-center ">
+                                        <div class="text-container col-6 align-self-center">
+                                            <div class="text-top ">
+                                                <span>搖滾區//</span>
+                                                <p class="text-light pt-2">蔡閔婷</p>
+                                            </div>
+                                            <div class="text-bottom text-light">
+                                                <p>後排搖滾區亦觀察員</p>
+                                                <p class="pt-3">？？？？？？？</p>
+                                                <p class="pt-3">總之是個很重要的測試者</p>
+                                            </div>
+                                        </div>
+                                        <div class="img-container col-5 align-self-end">
+                                            <img src="../virus/assets/styles/images/img-about_us/about_04.PNG" alt="">
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <!-- 特效 -->
+                            <div class="swiper-slide">
+                                <div class="container-fluid h-100">
+                                    <div class="row h-100 d-flex justify-content-center ">
+                                        <div class="text-container col-6 align-self-center">
+                                            <div class="text-top ">
+                                                <span>軍師//</span>
+                                                <p class="text-light pt-2">林廷一</p>
+                                            </div>
+                                            <div class="text-bottom text-light">
+                                                <p>超狂特效組，但常常焦頭爛額</p>
+                                                <p class="pt-3">對網頁特效有不懈研究精神，把獨特見解玩到精粹，因此日常用腦過度</p>
+                                            </div>
+                                        </div>
+                                        <div class="img-container col-5 align-self-end">
+                                            <img src="../virus/assets/styles/images/img-about_us/about_01.PNG" alt="">
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
                         </div>
-                        <div class="swiper-slide">
-                            <p class="text-center">視覺設計</p>
-                        </div>
-                        <div class="swiper-slide">
-                            <p class="text-center">企劃/資料</p>
-                        </div>
-                        <div class="swiper-slide">
-                            <p class="text-center">切版/測試</p>
-                        </div>
-                        <div class="swiper-slide">
-                            <p class="text-center">程式/特效</p>
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div>
+
+                    </div>
+                
+                    <div thumbsSlider="" class="swiper textSwiper">
+                        <div class="swiper-wrapper text-light">
+                            <div class="swiper-slide">
+                                <p class="text-center">程式/組長</p>
+                            </div>
+                            <div class="swiper-slide">
+                                <p class="text-center">視覺設計</p>
+                            </div>
+                            <div class="swiper-slide">
+                                <p class="text-center">企劃/資料</p>
+                            </div>
+                            <div class="swiper-slide">
+                                <p class="text-center">切版/測試</p>
+                            </div>
+                            <div class="swiper-slide">
+                                <p class="text-center">程式/特效</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -802,6 +894,9 @@
 
             <!-- footer -->
             <footer>
+                <div class="container-fluid">
+
+                </div>
 
             </footer>
         </div>
@@ -818,9 +913,6 @@
     <script src="./assets/plugins/Fancybox4/fancybox.umd.js"></script>
     <script src="./assets/plugins/Chart.js-3.7.1/chart.min.js"></script>
     <script src="./assets/plugins/splitting/splitting.js"></script>
-
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
-    <script type="text/javascript" src="/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
 
     <!-- self -->
     <script src="./assets/js/main.js"></script>
