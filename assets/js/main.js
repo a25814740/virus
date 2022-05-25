@@ -17,7 +17,7 @@ const App = {
             this.myFullpage();
             this.bannerSwiper();
             this.situationChart();
-            this.situationNumEffect();
+            // this.situationNumEffect();
                 // this.introScene();
                 // this.introWheel();
             this.vaccineScene();
