@@ -22,9 +22,9 @@ const App = {
                 // this.introWheel();
             this.vaccineScene();
 
-            this.situationNumEffect();
             this.post_pandemicSwiper();
             this.about_usSwiper();
+            
         })
     },
     beforeUpdate() {
@@ -35,15 +35,16 @@ const App = {
     },
     methods: {
         myFullpage() {
+            let _this = this;
             new fullpage('#fullpage', {
                 // Navigation
                 menu: '#menu',
                 lockAnchors: false,
                 anchors: ['firstPage', 'secondPage'],
-                navigation: true,
+                navigation: false,
                 navigationPosition: 'right',
                 navigationTooltips: ['slide 1', 'slide 2', 'slide 3', 'slide 4', 'slide 5', 'slide 6', 'slide 7', 'slide 8', 'slide 9', 'slide 10', 'slide 11'],
-                showActiveTooltip: true,
+                showActiveTooltip: false,
                 slidesNavigation: false,
                 slidesNavPosition: 'bottom',
                 //options here
@@ -54,16 +55,18 @@ const App = {
                 sectionSelector: '.section',
                 slideSelector: '.slide',
                 // Events
-                beforeLeave: function (origin, destination, direction, trigger) { },
-                onLeave: function (origin, destination, direction, trigger) { },
-                afterLoad: function (origin, destination, direction, trigger) { },
-                afterRender: function () { },
-                afterResize: function (width, height) { },
-                afterReBuild: function () { },
-                afterResponsive: function (isResponsive) { },
-                afterSlideLoad: function (section, origin, destination, direction, trigger) { },
-                onSlideLeave: function (section, origin, destination, direction, trigger) { },
-                onScrollOverflow: function (section, slide, position, direction) { },
+                beforeLeave: function (origin, destination, direction, trigger) {},
+                onLeave: function (origin, destination, direction, trigger) {},
+                afterLoad: function (origin, destination, direction, trigger) {
+                    // _this.situationNumEffect();
+                },
+                afterRender: function () {},
+                afterResize: function (width, height) {},
+                afterReBuild: function () {},
+                afterResponsive: function (isResponsive) {},
+                afterSlideLoad: function (section, origin, destination, direction, trigger) {},
+                onSlideLeave: function (section, origin, destination, direction, trigger) {},
+                onScrollOverflow: function (section, slide, position, direction) {},
             });
         },
         bannerSwiper() {
