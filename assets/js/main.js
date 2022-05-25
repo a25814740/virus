@@ -16,8 +16,7 @@ const App = {
             this.myFullpage();
             this.bannerSwiper();
             this.situationChart();
-            this.situationNumEffect();
-            this.situationNumEffect();
+            
         })
     },
     beforeUpdate() {
@@ -28,15 +27,16 @@ const App = {
     },
     methods: {
         myFullpage() {
+            let _this = this;
             new fullpage('#fullpage', {
                 // Navigation
                 menu: '#menu',
                 lockAnchors: false,
                 anchors: ['firstPage', 'secondPage'],
-                navigation: true,
+                navigation: false,
                 navigationPosition: 'right',
                 navigationTooltips: ['slide 1', 'slide 2', 'slide 3', 'slide 4', 'slide 5', 'slide 6', 'slide 7', 'slide 8', 'slide 9', 'slide 10', 'slide 11'],
-                showActiveTooltip: true,
+                showActiveTooltip: false,
                 slidesNavigation: false,
                 slidesNavPosition: 'bottom',
                 //options here
@@ -49,7 +49,9 @@ const App = {
                 // Events
                 beforeLeave: function (origin, destination, direction, trigger) {},
                 onLeave: function (origin, destination, direction, trigger) {},
-                afterLoad: function (origin, destination, direction, trigger) {},
+                afterLoad: function (origin, destination, direction, trigger) {
+                    _this.situationNumEffect();
+                },
                 afterRender: function () {},
                 afterResize: function (width, height) {},
                 afterReBuild: function () {},

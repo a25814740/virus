@@ -61,17 +61,19 @@
                         <div class="swiper-slide" data-swiper-type="image"
                             style="background: url(https://picsum.photos/id/600/1920/1024) 50% 50% / cover no-repeat;">
                             <article>
-                                <div class="title" data-swiper-parallax="-100" data-swiper-parallax-duration="400">Slide
+                                <div class="title" data-swiper-parallax="-100" data-swiper-parallax-duration="1000">
+                                    Slide
                                     1</div>
-                                <div class="subtitle" data-swiper-parallax="-200" data-swiper-parallax-duration="400">
+                                <div class="subtitle" data-swiper-parallax="-200" data-swiper-parallax-duration="1000">
                                     2019年末，始於中國武漢的第一起未知病毒感染檢測報告被曝光，而後被WHO命名為Covid-19的病毒席捲向全球人類社會......</div>
                             </article>
                         </div>
                         <div class="swiper-slide" data-swiper-type="image"
                             style="background: url(https://picsum.photos/id/650/1920/1024) 50% 50% / cover no-repeat;">
                             <article>
-                                <div class="title" data-swiper-parallax="-100">Slide 2</div>
-                                <div class="subtitle" data-swiper-parallax="-200">
+                                <div class="title" data-swiper-parallax="-100" data-swiper-parallax-duration="1000">
+                                    Slide 2</div>
+                                <div class="subtitle" data-swiper-parallax="-200" data-swiper-parallax-duration="1000">
                                     面對疫情<br>
                                     最大的敵人不是病毒，<br>
                                     而是我們自己內心的恐懼
@@ -81,8 +83,9 @@
                         <div class="swiper-slide" data-swiper-type="image"
                             style="background: url(https://picsum.photos/id/700/1920/1024) 50% 50% / cover no-repeat;">
                             <article>
-                                <div class="title" data-swiper-parallax="-100">Slide 3</div>
-                                <div class="subtitle" data-swiper-parallax="-200">
+                                <div class="title" data-swiper-parallax="-100" data-swiper-parallax-duration="1000">
+                                    Slide 3</div>
+                                <div class="subtitle" data-swiper-parallax="-200" data-swiper-parallax-duration="1000">
                                     對於未知的事物<br>
                                     人類往往抱著恐懼的眼光看待<br>
                                     而我們想讓你知道你無需害怕
@@ -99,56 +102,80 @@
             </div>
 
             <!-- 確診情形 / 疫苗施打情形 -->
-            <div class="section" id="situation">
+            <div class="section" id="situation_world">
                 <div class="d-flex flex-column h-100">
-                    <ul class="col-auto accordition">
-                        <li>
-                            <input id="rad1" type="radio" name="rad" checked="checked" />
-                            <label for="rad1">
-                                <div>台灣確診情形</div>
-                            </label>
-                            <div class="accslide">
-                                <div class="row">
-                                    <div class="col-4">
-                                        <div class="content">
-                                            <h1>確診人數</h1>
-                                            <div class="counterEffect">
-                                                <div class="counter">830,257</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-4">
-                                        <div class="content">
-                                            <h1>死亡人數</h1>
-                                            <div class="counterEffect">
-                                                <div class="counter">1,097</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-4">
-                                        <div class="content">
-                                            <h1>死亡率</h1>
-                                            <div class="counterEffect">
-                                                <div class="counter">0.13%</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <input id="rad2" type="radio" name="rad" />
-                            <label for="rad2">
-                                <div>全球確診情形</div>
-                            </label>
-                            <div class="accslide">
+                    <input id="rad1" type="radio" name="rad" checked="checked" />
+                    <label for="rad1">
+                        <div>台灣確診情形</div>
+                    </label>
+                    <div class="accslide">
+                        <div class="row">
+                            <div class="col-4">
                                 <div class="content">
-                                    <h1>Second panel</h1>
-                                    <p>Lorem ipsum...</p>
+                                    <h1>確診人數</h1>
+                                    <div class="counter-container">
+                                        <div class="counter">830,257</div>
+                                    </div>
                                 </div>
                             </div>
-                        </li>
-                    </ul>
+                            <div class="col-4">
+                                <div class="content">
+                                    <h1>死亡人數</h1>
+                                    <div class="counter-container">
+                                        <div class="counter">1,097</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="content">
+                                    <h1>死亡率</h1>
+                                    <div class="counter-container">
+                                        <div class="counter">0.13%</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="section" id="situation_taiwan">
+                <div class="d-flex flex-column h-100">
+                    <input id="rad2" type="radio" name="rad" />
+                    <label for="rad2">
+                        <div>全球確診情形</div>
+                    </label>
+                    <div class="accslide">
+                        <div class="row">
+                            <div class="col-4">
+                                <div class="content">
+                                    <h1>確診人數</h1>
+                                    <div class="counter-container">
+                                        <div class="counter">830,257</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="content">
+                                    <h1>死亡人數</h1>
+                                    <div class="counter-container">
+                                        <div class="counter">1,097</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="content">
+                                    <h1>死亡率</h1>
+                                    <div class="counter-container">
+                                        <div class="counter">0.13%</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="section" id="situation_taiwan">
+                <div class="d-flex flex-column h-100">
 
                     <div class="col chart-area">
                         <canvas id="situationChart"></canvas>
