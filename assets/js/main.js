@@ -2,21 +2,26 @@
 const App = {
     data() {
         return {
-
+            s3_l_active: false,
+            s3_r_active: false,
         }
     },
-    beforeCreate() {},
+    beforeCreate() { },
     created() {
         window.addEventListener("scroll", this.handleScroll);
     },
-    beforeMount() {},
+    beforeMount() { },
     mounted() {
         this.$nextTick(function () {
             // 仅在整个视图都被渲染之后才会运行的代码
             this.myFullpage();
             this.bannerSwiper();
             this.situationChart();
-            
+            this.situationNumEffect();
+                // this.introScene();
+                // this.introWheel();
+            this.vaccineScene();
+
         })
     },
     beforeUpdate() {
@@ -27,16 +32,15 @@ const App = {
     },
     methods: {
         myFullpage() {
-            let _this = this;
             new fullpage('#fullpage', {
                 // Navigation
                 menu: '#menu',
                 lockAnchors: false,
                 anchors: ['firstPage', 'secondPage'],
-                navigation: false,
+                navigation: true,
                 navigationPosition: 'right',
                 navigationTooltips: ['slide 1', 'slide 2', 'slide 3', 'slide 4', 'slide 5', 'slide 6', 'slide 7', 'slide 8', 'slide 9', 'slide 10', 'slide 11'],
-                showActiveTooltip: false,
+                showActiveTooltip: true,
                 slidesNavigation: false,
                 slidesNavPosition: 'bottom',
                 //options here
@@ -47,18 +51,16 @@ const App = {
                 sectionSelector: '.section',
                 slideSelector: '.slide',
                 // Events
-                beforeLeave: function (origin, destination, direction, trigger) {},
-                onLeave: function (origin, destination, direction, trigger) {},
-                afterLoad: function (origin, destination, direction, trigger) {
-                    // _this.situationNumEffect();
-                },
-                afterRender: function () {},
-                afterResize: function (width, height) {},
-                afterReBuild: function () {},
-                afterResponsive: function (isResponsive) {},
-                afterSlideLoad: function (section, origin, destination, direction, trigger) {},
-                onSlideLeave: function (section, origin, destination, direction, trigger) {},
-                onScrollOverflow: function (section, slide, position, direction) {},
+                beforeLeave: function (origin, destination, direction, trigger) { },
+                onLeave: function (origin, destination, direction, trigger) { },
+                afterLoad: function (origin, destination, direction, trigger) { },
+                afterRender: function () { },
+                afterResize: function (width, height) { },
+                afterReBuild: function () { },
+                afterResponsive: function (isResponsive) { },
+                afterSlideLoad: function (section, origin, destination, direction, trigger) { },
+                onSlideLeave: function (section, origin, destination, direction, trigger) { },
+                onScrollOverflow: function (section, slide, position, direction) { },
             });
         },
         bannerSwiper() {
@@ -189,7 +191,94 @@ const App = {
             })
 
         },
+        introClick(p) {
+            if (p == 'l') {
+                if (this.s3_l_active == false) {
+                    this.s3_l_active = true;
+                } else {
+                    this.s3_l_active = false;
+                }
+            } else if (p == 'r') {
+                if (this.s3_r_active == false) {
+                    this.s3_r_active = true;
+                } else {
+                    this.s3_r_active = false;
+                }
+            };
+        },
+        introScene() {
+            let scene1 = document.getElementById('scene1');
+            let parallax1 = new Parallax(scene1);
+
+            let scene2 = document.getElementById('scene2');
+            let parallax2 = new Parallax(scene2);
+
+            let scene3 = document.getElementById('scene3');
+            let parallax3 = new Parallax(scene3);
+
+            let scene4 = document.getElementById('scene4');
+            let parallax4 = new Parallax(scene4);
+        },
+        introWheel() {
+            let outer = document.querySelector('.s3r_outer');
+            let picture = document.querySelector('.bg');
+            let p_left = [ 0, 0, 35, 70, 100];
+            let p_top = [ 25, 100, 70, 85, 20];
+            let n = 0;
+            let counter = 0;
+            function s3r_wheel(w) {
+                counter++;
+          
+                if(counter == 2) {
+                    if(w.wheelDelta < 0) {
+                        if(n < 5){
+                            n++;
+                        }
+                        console.log(n);
+                        console.log(w.wheelDelta);
+                    }else if(w.wheelDelta > 0) {
+                        if(n > 0){
+                            n--;
+                        }
+                        console.log(w.wheelDelta);
+                        console.log(n);
+                    }
+                    picture.style.backgroundPosition = `${p_left[n]}% ${p_top[n]}%`;
+                    counter = 0;
+                }
+            }
+            // function debounce(w, delay=1000) {
+            //     let timer = null;
+            //    console.log(44);
+            //     return () => {
+            //       let context = this;
+            //       let args = arguments;
+               
+            //       clearTimeout(timer);
+            //       timer = setTimeout(() => {
+            //         s3r_wheel.apply(context, args);
+            //       }, delay)
+            //     }
+            //   }
+         
+
+            outer.addEventListener('mousewheel', s3r_wheel);
+        },
+        vaccineScene() {
+              let s7_scene1 = document.getElementById('s7_scene1');
+              let parallax_7_1 = new Parallax(s7_scene1);
+  
+              let s7_scene2 = document.getElementById('s7_scene2');
+              let parallax_7_2 = new Parallax(s7_scene2);
+  
+              let s7_scene3 = document.getElementById('s7_scene3');
+              let parallax_7_3 = new Parallax(s7_scene3);
+  
+              let s7_scene4 = document.getElementById('s7_scene4');
+              let parallax_7_4 = new Parallax(s7_scene4);
+        },
     }
 }
+
 
 Vue.createApp(App).mount('#app');
