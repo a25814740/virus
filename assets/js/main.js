@@ -14,9 +14,9 @@ const App = {
     mounted() {
         this.$nextTick(function () {
             // 仅在整个视图都被渲染之后才会运行的代码
-            // this.myFullpage();
+            this.myFullpage();
             this.bannerSwiper();
-            // this.situationChart();
+            this.situationChart();
             this.situationNumEffect();
                 // this.introScene();
                 // this.introWheel();
@@ -49,7 +49,7 @@ const App = {
                 //options here
                 autoScrolling: true,
                 scrollHorizontally: true,
-                sectionsColor: ['#f2f2f2', '#4BBFC3', '#7BAABE', 'whitesmoke', '#000'],
+                // sectionsColor: ['#f2f2f2', '#4BBFC3', '#7BAABE', 'whitesmoke', '#000'],
                 // Custom selectors
                 sectionSelector: '.section',
                 slideSelector: '.slide',
@@ -297,72 +297,28 @@ const App = {
                     el: '#Post-pandemic .swiper-pagination',
                     type: 'bullets',
                 },
-                // pagination: {
-                //     el: '.swiper-pagination',
-                //     observer: true,
-                //     observeParents: true,
-                // },
             })
-            let fancyboxTrigger = document.querySelector('.fancybox-trigger');
-            // fancyboxTrigger.addEventListener('click', (e) => {
-            $('.fancybox-trigger').click(function(e){
-                e.preventDefault();
-                $.fancybox.open({
-                    src: "#popup-swiper",
-                    type: 'inline',
-                    opts: {
-                        toolbar: false,
-                        defaultType: 'inline',
-                        autoFocus: true,
-                        touch: false,
-                        afterLoad: function () {
-                            mySwiper.init();
-                            mySwiper.slideTo(thisTarget - 1)
-
-                        }
+            Fancybox.bind("[data-fancybox='gallery-popup-Post-pandemic']", {
+                on: {
+                    ready: (fancybox) => {
+                        post_pandemicSwiper.init();
                     }
-                })
+                }
             })
-
-
-
-            // const post_pandemicSwiper = new Swiper('#Post-pandemic .swiper', {
-            //     loop: true,
-            //     effect: 'fade',
-            //     parallax: true,
-            //     fadeEffect: {
-            //         crossFade: true
-            //     },
-            //     navigation: {
-            //         nextEl: '#Post-pandemic .swiper-button-next',
-            //         prevEl: '#Post-pandemic .swiper-button-prev',
-            //     },
-            //     pagination: {
-            //         el: '#Post-pandemic .swiper-pagination',
-            //         type: 'bullets',
-            //     },
-            // });
         },
 
         about_usSwiper() {
             var about_usTextSwiper = new Swiper('#about-us .textSwiper', {
                 loop: false,
-                // spaceBetween: 10,
                 slidesPerView: 5,
                 freeMode: true,
                 watchSlidesProgress: true,
-                // thumbs: {
-                //     swiper: about_usSwiper,
-                // }
+            
             });
 
             var about_usSwiper = new Swiper('#about-us .bigSwiper', {
                 loop: false,
                 effect: 'fade',
-                // parallax: true,
-                // fadeEffect: {
-                //     crossFade: true
-                // },
                 navigation: {
                     nextEl: '#about-us .swiper-button-next',
                     prevEl: '#about-us .swiper-button-prev',
@@ -372,6 +328,17 @@ const App = {
                 }
 
             });
+
+            Fancybox.bind("[$.data-fancybox='$.gallery-aboutUs']", {
+                on: {
+                    ready: (fancybox) => {
+                        about_usTextSwiper.init();
+                        about_usSwiper.init();
+                    }
+                }
+            }
+            )
+            
 
         },
     }
