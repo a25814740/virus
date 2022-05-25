@@ -2,26 +2,25 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>COVID-19</title>
 
     <!-- plugins -->
-    <link rel="stylesheet" href="./assets/plugins/bootstrap-5.2.0-beta1/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./assets/plugins/fullPage.js-master/dist/fullpage.min.css">
-    <link rel="stylesheet" href="./assets/plugins/swiper/swiper-bundle.min.css">
-    <link rel="stylesheet" href="./assets/plugins/Fancybox4/fancybox.css">
+    <link rel="stylesheet" href="./assets/plugins/bootstrap-5.2.0-beta1/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./assets/plugins/fullPage.js-master/dist/fullpage.min.css" />
+    <link rel="stylesheet" href="./assets/plugins/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./assets/plugins/Fancybox4/fancybox.css" />
 
     <!-- self -->
-    <link rel="stylesheet" href="./assets/styles/css/style.css">
+    <link rel="stylesheet" href="./assets/styles/css/style.css" />
 </head>
 
 <body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
     <div id="app">
-
         <!-- loader -->
-
 
         <!-- navbar -->
         <!-- <header>
@@ -50,12 +49,10 @@
             </nav>
         </header> -->
 
-
         <!-- main -->
         <div id="fullpage">
-
             <!-- Banner -->
-            <div class="section" id="banner">
+            <!-- <div class="section" id="banner">
                 <div class="swiper">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide" data-swiper-type="image"
@@ -96,10 +93,10 @@
                     <div class="swiper-button-prev"></div>
                     <div class="swiper-button-next"></div>
                 </div>
-            </div>
+            </div> -->
 
             <!-- 確診情形 / 疫苗施打情形 -->
-            <div class="section" id="situation">
+            <!-- <div class="section" id="situation">
                 <div class="d-flex flex-column h-100">
                     <ul class="col-auto accordition">
                         <li>
@@ -154,64 +151,176 @@
                         <canvas id="situationChart"></canvas>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
             <!-- 病毒結構 / 病毒增值 -->
-            <div class="section">
-
-            </div>
+            <!-- <div class="section" id="virus_introduction">
+                <div class="s3_left " :class="{'s3l_active': s3_l_active == true}">
+                    <div class="l_content container-fluid">
+                        <div class="row row1">
+                            <div class="col-6 h1" @click="introClick('l')">病毒結構</div>
+                        </div>
+                        <div class="row row2">
+                            <div class="col-6 image">
+                                <img src="./assets/styles/images/virus_introduction/m4L_virus.png" alt=""
+                                    data-depth="-0.8" />
+                            </div>
+                            <div class="col-6 text">
+                                <article>
+                                    <p>
+                                        病毒是一種由雙層磷脂膜包覆住遺傳因子的結構，
+                                        而磷脂膜表面遍布像皇冠的棘蛋白，膜內的遺傳因子包含核殼蛋白及核酸(此處為RNA)。
+                                    </p>
+                                    <p>
+                                        Covid-19的RNA基因組會轉譯出四種主要結構蛋白：刺突蛋白
+                                        (S)、包膜蛋白 (E)、膜蛋白 (M) 和核殼蛋白
+                                        (N)，這些蛋白共同組成病毒顆粒結構。
+                                    </p>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="l_bg"></div>
+                </div>
+                <div class="s3_right" :class="{'s3r_active': s3_r_active == true}">
+                    <div class="r_content">
+                        <div id="scene1">
+                            <div data-depth="1.8">
+                                <img src="./assets/styles/images/virus_introduction/virus_1.png" alt="">
+                            </div>
+                        </div>
+                        <div id="scene2">
+                            <div data-depth="2">
+                                <img src="./assets/styles/images/virus_introduction/virus_2.png" alt="">
+                            </div>
+                        </div>
+                        <div id="scene3">
+                            <div data-depth="2.2">
+                                <img src="./assets/styles/images/virus_introduction/virus_3.png" alt="">
+                            </div>
+                        </div>
+                        <div id="scene4">
+                            <div data-depth="2">
+                                <img src="./assets/styles/images/virus_introduction/virus_4.png" alt="">
+                            </div>
+                        </div>
+                        <div class="h1" @click="introClick('r')">病毒增殖</div>
+                    </div>
+                    <div class="s3r_outer row gap-5" @mouseover="s3_wheel">
+                        <article class="col-md-5 col-12 ms-auto">
+                            <p>
+                                病毒經包吞作用進入細胞後，首先會移除外殼蛋白，將病毒RNA釋放到細胞質中(2)，
+                                而後病毒RNA被轉錄為一段信使RNA(mRNA)，以此轉譯出複製病毒RNA所需要的合成酶蛋白質半成品(3)，
+                                蛋白質半成品經過水解、修飾後成為RNA合成酶(4)。
+                            </p>
+                        </article>
+                        <div class="p col-md-5 col-12 me-auto">
+                            <div class="bg-wrapper">
+                                <div class="bg"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="r_bg"></div>
+                </div>
+            </div> -->
 
             <!-- Covid-19 變異株起源 -->
-            <div class="section fp-auto-height">
-
-            </div>
+            <!-- <div class="section fp-auto-height"></div> -->
 
             <!-- 目前Covid-19感染症狀 -->
-            <div class="section fp-auto-height">
-
-            </div>
-
+            <!-- <div class="section fp-auto-height"></div> -->
 
             <!-- 傳統疫苗 / 新型疫苗 -->
-            <div class="section fp-auto-height">
+            <div class="section" id="vaccineTop">
+                <div class="s7_topContainer">
+                    <div class="textBlock">
+                        <h1>這次的疫苗 不同以往</h1>
+                        <p>疫苗的研發過程其實千難萬難，但為因應快速傳染的新冠病毒而有了新型疫苗-mRNA疫苗的出現 此處將分別介紹傳統與新型疫苗之差異性。</p>
+                    </div>
+                    <div class="bottomBlock">
+                        <a data-fancybox data-src="#popup-vaccineL" href="javascript:;">
+                            <div class="s7_left">
+                                <h2>傳統疫苗</h2>
+                            </div>
+                        </a>
+                        <a data-fancybox data-src="#popup-vaccineR" href="javascript:;">
+                            <div class="s7_right">
+                                <h2>新型疫苗</h2>
+                            </div>
+                        </a>
+                    </div>
 
+                </div>
             </div>
+            <div class="section" id="vaccineBottom">
+                <div class="s7_bottomContainer">
+                    <img src="./assets/styles/images/vaccine/bV.png" alt="" class="bV">
+                    <div class="s7_b_textBlock">
+                        <p>我們所知的傳統的疫苗起源於天花的牛痘疫苗<br>而後發展出多種類型的疫苗<br>其中包含：</p>
+                    </div>
+                    <div class="s7_b_imgBlock">
+                        <div id="s7_scene1">
+                            <div class="imgBox" data-depth="1.8">
+                                <img src="./assets/styles/images/vaccine/v1.png" alt="">
+                            </div>
+                            <div class="textBox" data-depth="1.6">
+                                <span>病毒載體疫苗</span>
+                            </div>
+                        </div>
+                        <div id="s7_scene2">
+                            <div class="imgBox" data-depth="1.6">
+                                <img src="./assets/styles/images/vaccine/v2.png" alt="">
+                            </div>
+                            <div class="textBox" data-depth="1.4">
+                                <span>死菌疫苗</span>
+                            </div>
+                        </div>
+                        <div id="s7_scene3">
+                            <div class="imgBox" data-depth="2">
+                                <img src="./assets/styles/images/vaccine/v3.png" alt="">
+                            </div>
+                            <div class="textBox" data-depth="1.8">
+                                <span>滅毒疫苗</span>
+                            </div>
+                        </div>
+                        <div id="s7_scene4">
+                            <div class="imgBox" data-depth="1.4">
+                                <img src="./assets/styles/images/vaccine/v4.png" alt="">
+                            </div>
+                            <div class="textBox" data-depth="1.2">
+                                <span>重組蛋白質疫苗</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
+                <!-- ///////S7彈窗/////// -->
+                <div style="display: none;" class="popup-content" id="popup-vaccineL">
+                    <img src="./assets/styles/images/vaccine/popup_LT.png" alt="">
+                </div>
+
+                <div style="display: none;" class="popup-content" id="popup-vaccineR">
+                    <img src="./assets/styles/images/vaccine/popup_RT.png" alt="">
+                </div>
+            </div>
 
             <!-- 新冠疫苗開發歷程 -->
-            <div class="section fp-auto-height">
-
-            </div>
-
+            <div class="section fp-auto-height"></div>
 
             <!-- 目前台灣施打新冠疫苗種類 -->
-            <div class="section fp-auto-height">
-
-            </div>
-
+            <div class="section fp-auto-height"></div>
 
             <!-- 後疫情 -->
-            <div class="section fp-auto-height">
-
-            </div>
-
+            <div class="section fp-auto-height"></div>
 
             <!-- 關於 -->
-            <div class="section fp-auto-height">
-
-            </div>
-
+            <div class="section fp-auto-height"></div>
 
             <!-- 參考 -->
-            <div class="section fp-auto-height">
-
-            </div>
-
+            <div class="section fp-auto-height"></div>
 
             <!-- footer -->
-            <footer>
-
-            </footer>
+            <footer></footer>
         </div>
     </div>
 
