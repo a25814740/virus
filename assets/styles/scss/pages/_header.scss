@@ -1,0 +1,104 @@
+header {
+    top: 0;
+    left: 15px;
+    z-index: 100;
+    transform: scale(0.25);
+    transform-origin: 0 0;
+    .HBG {
+        position: relative;
+        cursor: pointer;
+    }
+
+    .COLC_1 {
+        fill: #a077ac;
+        opacity: 0.9;
+    }
+
+    #P_7 {
+        width: 200px;
+        height: 200px;
+        position: absolute;
+        top: 150px;
+        left: 150px;
+    }
+    .cls-4 {
+        fill: #fff;
+        stroke: #fff;
+        stroke-miterlimit: 10;
+        stroke-width: 5px;
+    }
+
+    .cls-1 {
+        fill: none;
+    }
+
+    .cls-1,
+    .cls-2,
+    .cls-3 {
+        stroke: #263a56;
+        stroke-miterlimit: 10;
+        stroke-width: 5px;
+    }
+
+    .cls-2 {
+        fill: #909d99;
+    }
+
+    .cls-3 {
+        fill: #253a55;
+    }
+    .cls-1 {
+        fill: none;
+    }
+
+    .cls-1,
+    .cls-2,
+    .cls-3 {
+        stroke: #263a56;
+        stroke-miterlimit: 10;
+        stroke-width: 5px;
+    }
+
+    .cls-2 {
+        fill: #909d99;
+    }
+
+    .cls-3 {
+        fill: #253a55;
+    }
+
+    @keyframes mov {
+        0% {
+            top: 200px;
+            left: 140px;
+            transform: rotate(0.2turn);
+        }
+        25% {
+            top: 150px;
+            left: 170px;
+        }
+        50% {
+            top: 120px;
+            left: 200px;
+            transform: rotate(-0.5turn);
+        }
+        75% {
+            top: 170px;
+            left: 200px;
+        }
+        100% {
+            top: 200px;
+            left: 140px;
+            transform: rotate(0.2turn);
+        }
+    }
+
+    #P_8 {
+        width: 180px;
+        height: 180px;
+        position: absolute;
+        top: 180px;
+        left: 170px;
+        animation: infinite linear mov 20s;
+    }
+}

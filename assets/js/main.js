@@ -50,7 +50,7 @@ const App = {
                 beforeLeave: function (origin, destination, direction, trigger) {},
                 onLeave: function (origin, destination, direction, trigger) {},
                 afterLoad: function (origin, destination, direction, trigger) {
-                    _this.situationNumEffect();
+                    // _this.situationNumEffect();
                 },
                 afterRender: function () {},
                 afterResize: function (width, height) {},

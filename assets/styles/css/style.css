@@ -206,6 +206,149 @@ table {
   border: solid 1px rgba(255, 255, 255, 0.6);
 }
 
+header {
+  top: 0;
+  left: 15px;
+  z-index: 100;
+  -webkit-transform: scale(0.25);
+          transform: scale(0.25);
+  -webkit-transform-origin: 0 0;
+          transform-origin: 0 0;
+}
+
+header .HBG {
+  position: relative;
+  cursor: pointer;
+}
+
+header .COLC_1 {
+  fill: #a077ac;
+  opacity: 0.9;
+}
+
+header #P_7 {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  top: 150px;
+  left: 150px;
+}
+
+header .cls-4 {
+  fill: #fff;
+  stroke: #fff;
+  stroke-miterlimit: 10;
+  stroke-width: 5px;
+}
+
+header .cls-1 {
+  fill: none;
+}
+
+header .cls-1,
+header .cls-2,
+header .cls-3 {
+  stroke: #263a56;
+  stroke-miterlimit: 10;
+  stroke-width: 5px;
+}
+
+header .cls-2 {
+  fill: #909d99;
+}
+
+header .cls-3 {
+  fill: #253a55;
+}
+
+header .cls-1 {
+  fill: none;
+}
+
+header .cls-1,
+header .cls-2,
+header .cls-3 {
+  stroke: #263a56;
+  stroke-miterlimit: 10;
+  stroke-width: 5px;
+}
+
+header .cls-2 {
+  fill: #909d99;
+}
+
+header .cls-3 {
+  fill: #253a55;
+}
+
+@-webkit-keyframes mov {
+  0% {
+    top: 200px;
+    left: 140px;
+    -webkit-transform: rotate(0.2turn);
+            transform: rotate(0.2turn);
+  }
+  25% {
+    top: 150px;
+    left: 170px;
+  }
+  50% {
+    top: 120px;
+    left: 200px;
+    -webkit-transform: rotate(-0.5turn);
+            transform: rotate(-0.5turn);
+  }
+  75% {
+    top: 170px;
+    left: 200px;
+  }
+  100% {
+    top: 200px;
+    left: 140px;
+    -webkit-transform: rotate(0.2turn);
+            transform: rotate(0.2turn);
+  }
+}
+
+@keyframes mov {
+  0% {
+    top: 200px;
+    left: 140px;
+    -webkit-transform: rotate(0.2turn);
+            transform: rotate(0.2turn);
+  }
+  25% {
+    top: 150px;
+    left: 170px;
+  }
+  50% {
+    top: 120px;
+    left: 200px;
+    -webkit-transform: rotate(-0.5turn);
+            transform: rotate(-0.5turn);
+  }
+  75% {
+    top: 170px;
+    left: 200px;
+  }
+  100% {
+    top: 200px;
+    left: 140px;
+    -webkit-transform: rotate(0.2turn);
+            transform: rotate(0.2turn);
+  }
+}
+
+header #P_8 {
+  width: 180px;
+  height: 180px;
+  position: absolute;
+  top: 180px;
+  left: 170px;
+  -webkit-animation: infinite linear mov 20s;
+          animation: infinite linear mov 20s;
+}
+
 #banner .swiper {
   position: relative;
   width: 100%;
