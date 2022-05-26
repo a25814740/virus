@@ -5,14 +5,15 @@
     .container-fluid {
         height: 100%;
         width: 80%;
-        padding-top: 113px;
+        padding-top: 110px;
 
         .text-container {
             .top {
 
                 h1 {
                     font-size: 96px;
-                    line-height: 144px;
+                    margin-right: 1rem; 
+                      // line-height: 140px;
                 }
 
                 p {
@@ -37,7 +38,7 @@
         }
 
         .img-container {
-            padding-top: 113px;
+            padding-top: 110px;
 
             .img-title {
                 padding-top: 40px;

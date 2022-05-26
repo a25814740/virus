@@ -675,12 +675,12 @@ table {
 #about-us .container-fluid {
   height: 100%;
   width: 80%;
-  padding-top: 113px;
+  padding-top: 110px;
 }
 
 #about-us .container-fluid .text-container .top h1 {
   font-size: 96px;
-  line-height: 144px;
+  margin-right: 1rem;
 }
 
 #about-us .container-fluid .text-container .top p {
@@ -703,7 +703,7 @@ table {
 }
 
 #about-us .container-fluid .img-container {
-  padding-top: 113px;
+  padding-top: 110px;
 }
 
 #about-us .container-fluid .img-container .img-title {
@@ -825,8 +825,45 @@ table {
   padding: 0;
 }
 
-footer {
+#footer {
   height: 183px;
-  background-color: #E5E5E5;
+  background-color: #5C5C5C;
+}
+
+#footer .info {
+  height: 134px;
+}
+
+#footer .info p {
+  font-size: 24px;
+  line-height: 30px;
+  font-weight: 300;
+  letter-spacing: 5px;
+}
+
+#footer .info .p-left {
+  padding-left: 17px;
+}
+
+#footer .info .p-right {
+  padding-right: 17px;
+}
+
+#footer .info .rounded-circle {
+  width: 65px;
+  height: 65px;
+  background: #C4C4C4;
+}
+
+#footer .info .rounded-circle img {
+  max-width: 100%;
+}
+
+#footer .copyright {
+  height: 49px;
+}
+
+#footer .copyright p {
+  font-size: 14px;
 }
 /*# sourceMappingURL=style.css.map */
