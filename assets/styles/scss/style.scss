@@ -1,5 +1,7 @@
 @import 'reset';
 
+@import 'keyframes';
+@import 'common';
 @import 'numAnimation';
 @import 'myfullpage';
 @import 'myFancybox';
@@ -10,7 +12,8 @@
 @import './pages/virus_introduction';
 @import './pages/vaccine';
 
-@import './pages/post_pandemic';
-@import './pages/about-us';
-@import './pages/footer';
+@import './pages/map';
 
+@import './pages/post_pandemic';
+@import './pages/about_us';
+@import './pages/footer';

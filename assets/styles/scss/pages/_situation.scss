@@ -1,4 +1,11 @@
 [id*="situation"] {
+    background-color: #000;
+
+
+    h2 {
+        margin-bottom: 10vh;
+    }
+
     .accordition {
         $max-tabs: 8;
         $tab-width: 40px;
@@ -15,6 +22,8 @@
         list-style: none;
         background: #ccc;
 
+
+        padding-bottom: 5vh;
         /* FORM */
         // Hide the input
         input {

@@ -9,16 +9,37 @@
 
     <!-- plugins -->
     <link rel="stylesheet" href="./assets/plugins/bootstrap-5.2.0-beta1/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+
+
     <link rel="stylesheet" href="./assets/plugins/fullPage.js-master/dist/fullpage.min.css" />
     <link rel="stylesheet" href="./assets/plugins/swiper/swiper-bundle.min.css" />
     <link rel="stylesheet" href="./assets/plugins/Fancybox4/fancybox.css" />
 
     <!-- self -->
     <link rel="stylesheet" href="./assets/styles/css/style.css" />
+
+
 </head>
 
 <body>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+    <!-- 全站bg影片 -->
+
+    <div class="page-bg">
+        <video autoplay loop muted>
+            <source src="./assets/styles/videos/post_pandemic/後疫情背景.mp4" type="video/mp4">
+        </video>
+        <!-- <div class="mask"></div> -->
+    </div>
+
+
+
+
+
+
+
+
+
     <div id="app">
         <!-- loader -->
 
@@ -35,28 +56,28 @@
             <div class="HBG">
                 <svg width="600" height="600" viewBox="0 0 600 600" id="mySvg">
                     <path class="COLC_1">
-                        <animate attributeName="d" dur="4s" repeatCount="indefinite"
+                        <animate attributeName="d" dur="10s" repeatCount="indefinite"
                             values="
-                      M346.5,60.5c-44-1.11-67.55,11.81-81,24-31.31,28.37-17,61.15-52,105-18.13,22.69-38.71,34.88-71,54-50.8,30.08-62.32,22.54-82,42-35.14,34.75-49,108.9-14,146,35.69,37.77,104.89,18.89,108,18,57.59-16.52,63.55-61.63,105-62s49.37,44.79,94,48c46.18,3.32,103-40.34,107-85,4.89-55.12-73.75-78.07-68-133,5.32-50.81,76.34-66.71,72-100C462.39,101.32,442.22,79,346.5,60.5Z;
+                    M346.5,60.5c-44-1.11-67.55,11.81-81,24-31.31,28.37-17,61.15-52,105-18.13,22.69-38.71,34.88-71,54-50.8,30.08-62.32,22.54-82,42-35.14,34.75-49,108.9-14,146,35.69,37.77,104.89,18.89,108,18,57.59-16.52,63.55-61.63,105-62s49.37,44.79,94,48c46.18,3.32,103-40.34,107-85,4.89-55.12-73.75-78.07-68-133,5.32-50.81,76.34-66.71,72-100C462.39,101.32,442.22,79,346.5,60.5Z;
                 
                 
-                      M308,76c-44-1.11-50.55,15.81-64,28-31.31,28.37-54-54.85-89-11-18.13,22.69-18.71,57.88-51,77-50.8,30.08-40.32,25.54-60,45C8.86,249.75-9,365.9,26,403c35.69,37.77,82.89,24.89,86,24,57.59-16.52,38.55-30.63,80-31s72.37,40.79,117,44c46.18,3.32,93-35.34,97-80,4.89-55.12-76.75-18.07-71-73,5.32-50.81,82.34-110.71,78-144C410.89,126.82,403.72,94.47,308,76Z;
+                    M308,76c-44-1.11-50.55,15.81-64,28-31.31,28.37-54-54.85-89-11-18.13,22.69-18.71,57.88-51,77-50.8,30.08-40.32,25.54-60,45C8.86,249.75-9,365.9,26,403c35.69,37.77,82.89,24.89,86,24,57.59-16.52,38.55-30.63,80-31s72.37,40.79,117,44c46.18,3.32,93-35.34,97-80,4.89-55.12-76.75-18.07-71-73,5.32-50.81,82.34-110.71,78-144C410.89,126.82,403.72,94.47,308,76Z;
                 
-                      M418,76c-44-1.11-99.55,52.81-113,65-31.31,28.37-115-91.85-150-48-18.13,22.69,32.29,114.88,0,134-50.8,30.08,4.68,79.54-15,99C104.86,360.75,0,392.9,35,430c35.69,37.77,79.89,9.89,83,9,57.59-16.52,68.55-26.63,110-27s63.37,55.79,108,59c46.18,3.32,94-10.34,98-55,4.89-55.12-80.75-34.07-75-89,5.32-50.81,76.34-72.71,72-106C428.89,204.82,513.72,94.47,418,76Z;
+                    M418,76c-44-1.11-99.55,52.81-113,65-31.31,28.37-115-91.85-150-48-18.13,22.69,32.29,114.88,0,134-50.8,30.08,4.68,79.54-15,99C104.86,360.75,0,392.9,35,430c35.69,37.77,79.89,9.89,83,9,57.59-16.52,68.55-26.63,110-27s63.37,55.79,108,59c46.18,3.32,94-10.34,98-55,4.89-55.12-80.75-34.07-75-89,5.32-50.81,76.34-72.71,72-106C428.89,204.82,513.72,94.47,418,76Z;
                 
-                      M308,76c-44-1.11-50.55,15.81-64,28-31.31,28.37-54-54.85-89-11-18.13,22.69-18.71,57.88-51,77-50.8,30.08-40.32,25.54-60,45C8.86,249.75-9,365.9,26,403c35.69,37.77,82.89,24.89,86,24,57.59-16.52,38.55-30.63,80-31s72.37,40.79,117,44c46.18,3.32,93-35.34,97-80,4.89-55.12-76.75-18.07-71-73,5.32-50.81,82.34-110.71,78-144C410.89,126.82,403.72,94.47,308,76Z;
+                    M308,76c-44-1.11-50.55,15.81-64,28-31.31,28.37-54-54.85-89-11-18.13,22.69-18.71,57.88-51,77-50.8,30.08-40.32,25.54-60,45C8.86,249.75-9,365.9,26,403c35.69,37.77,82.89,24.89,86,24,57.59-16.52,38.55-30.63,80-31s72.37,40.79,117,44c46.18,3.32,93-35.34,97-80,4.89-55.12-76.75-18.07-71-73,5.32-50.81,82.34-110.71,78-144C410.89,126.82,403.72,94.47,308,76Z;
                 
-                      M346.5,60.5c-44-1.11-67.55,11.81-81,24-31.31,28.37-17,61.15-52,105-18.13,22.69-38.71,34.88-71,54-50.8,30.08-62.32,22.54-82,42-35.14,34.75-49,108.9-14,146,35.69,37.77,104.89,18.89,108,18,57.59-16.52,63.55-61.63,105-62s49.37,44.79,94,48c46.18,3.32,103-40.34,107-85,4.89-55.12-73.75-78.07-68-133,5.32-50.81,76.34-66.71,72-100C462.39,101.32,442.22,79,346.5,60.5Z;">
+                    M346.5,60.5c-44-1.11-67.55,11.81-81,24-31.31,28.37-17,61.15-52,105-18.13,22.69-38.71,34.88-71,54-50.8,30.08-62.32,22.54-82,42-35.14,34.75-49,108.9-14,146,35.69,37.77,104.89,18.89,108,18,57.59-16.52,63.55-61.63,105-62s49.37,44.79,94,48c46.18,3.32,103-40.34,107-85,4.89-55.12-73.75-78.07-68-133,5.32-50.81,76.34-66.71,72-100C462.39,101.32,442.22,79,346.5,60.5Z;">
                         </animate>
                     </path>
 
                     <path class="COLC_1">
-                        <animate attributeName="d" dur="4s" repeatCount="indefinite" values=";"></animate>
+                        <animate attributeName="d" dur="4s" repeatCount="indefinite" values=""></animate>
                     </path>
                 </svg>
 
                 <svg id="P_8" data-name="圖層 8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 169.12 176.39">
-                    
+
                     <circle class="cls-4" cx="81.53" cy="88.33" r="67.63" />
                     <line class="cls-4" x1="23.76" y1="35.76" x2="42.99" y2="53.05" />
                     <line class="cls-4" x1="5.78" y1="78.61" x2="31.44" y2="81.74" />
@@ -126,31 +147,16 @@
 
             </div>
         </header>
-        <!-- <header>
-            <nav class="navbar navbar-expand bg-light sticky-bottom">
-                <div class="container">
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false"
-                        aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-                        <a class="navbar-brand" href="#">Hidden brand</a>
-                        <ul class="navbar-nav mb-2 mb-lg-0 ms-0 ms-lg-auto me-auto me-lg-0">
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Link</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link disabled">Disabled</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-        </header> -->
+
+
+
+
+
+
+
+
+
+
 
         <!-- main -->
         <div id="fullpage">
@@ -158,80 +164,59 @@
             <div class="section" id="banner">
                 <div class="swiper">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide" data-swiper-type="image"
-                            style="background: url(https://picsum.photos/id/600/1920/1024) 50% 50% / cover no-repeat;">
+
+                        <div class="swiper-slide" data-swiper-type="image" v-for="(item, index) in banner">
+                            <div class="bg position-absolute w-100 h-100"
+                                :style="'background: url( '+item.imgUrl+' ) 50% 50% / cover no-repeat;'"></div>
                             <article>
                                 <div class="title" data-swiper-parallax="-100" data-swiper-parallax-duration="1000">
-                                    Slide
-                                    1</div>
-                                <div class="subtitle" data-swiper-parallax="-200" data-swiper-parallax-duration="1000">
-                                    2019年末，始於中國武漢的第一起未知病毒感染檢測報告被曝光，而後被WHO命名為Covid-19的病毒席捲向全球人類社會......</div>
-                            </article>
-                        </div>
-                        <div class="swiper-slide" data-swiper-type="image"
-                            style="background: url(https://picsum.photos/id/650/1920/1024) 50% 50% / cover no-repeat;">
-                            <article>
-                                <div class="title" data-swiper-parallax="-100" data-swiper-parallax-duration="1000">
-                                    Slide 2</div>
-                                <div class="subtitle" data-swiper-parallax="-200" data-swiper-parallax-duration="1000">
-                                    面對疫情<br>
-                                    最大的敵人不是病毒，<br>
-                                    而是我們自己內心的恐懼
-                                </div>
-                            </article>
-                        </div>
-                        <div class="swiper-slide" data-swiper-type="image"
-                            style="background: url(https://picsum.photos/id/700/1920/1024) 50% 50% / cover no-repeat;">
-                            <article>
-                                <div class="title" data-swiper-parallax="-100" data-swiper-parallax-duration="1000">
-                                    Slide 3</div>
-                                <div class="subtitle" data-swiper-parallax="-200" data-swiper-parallax-duration="1000">
-                                    對於未知的事物<br>
-                                    人類往往抱著恐懼的眼光看待<br>
-                                    而我們想讓你知道你無需害怕
-                                </div>
+                                    {{ item.title }}</div>
+                                <div class="subtitle" data-swiper-parallax="-200" data-swiper-parallax-duration="1000"
+                                    v-html="item.description"></div>
                             </article>
                         </div>
                     </div>
 
                     <div class="swiper-pagination"></div>
 
-                    <div class="swiper-button-prev"></div>
-                    <div class="swiper-button-next"></div>
+                    <!-- <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div> -->
                 </div>
             </div>
 
             <!-- 確診情形 / 疫苗施打情形 -->
             <div class="section" id="situation_world">
-                <div class="d-flex flex-column h-100">
-                    <input id="rad1" type="radio" name="rad" checked="checked" />
-                    <label for="rad1">
-                        <div>台灣確診情形</div>
-                    </label>
-                    <div class="accslide">
+                <div class="d-flex flex-column justify-content-center align-items-center h-100">
+                    <h2 class="h2">全球確診情形</h2>
+                    <div class="accslide container">
                         <div class="row">
                             <div class="col-4">
-                                <div class="content">
-                                    <h1>確診人數</h1>
+                                <div class="content text-center d-flex flex-column-reverse">
+                                    <h3 class="h6">確診人數</h3>
                                     <div class="counter-container">
-                                        <div class="counter">830,257</div>
+                                        <div class="counter h1">830,257</div>
                                     </div>
+                                    <i class="bi bi-heart-pulse h1"></i>
                                 </div>
                             </div>
                             <div class="col-4">
-                                <div class="content">
-                                    <h1>死亡人數</h1>
+                                <div class="content text-center d-flex flex-column-reverse">
+                                    <h3 class="h6">死亡人數</h3>
                                     <div class="counter-container">
-                                        <div class="counter">1,097</div>
+                                        <div class="counter h1">1,097</div>
                                     </div>
+                                    <i class="bi bi-heartbreak h1"></i>
+
                                 </div>
                             </div>
                             <div class="col-4">
-                                <div class="content">
-                                    <h1>死亡率</h1>
+                                <div class="content text-center d-flex flex-column-reverse">
+                                    <h3 class="h6">死亡率</h3>
                                     <div class="counter-container">
-                                        <div class="counter">0.13%</div>
+                                        <div class="counter h1">0.13%</div>
                                     </div>
+                                    <i class="bi bi-percent h1"></i>
+
                                 </div>
                             </div>
                         </div>
@@ -239,34 +224,31 @@
                 </div>
             </div>
             <div class="section" id="situation_taiwan">
-                <div class="d-flex flex-column h-100">
-                    <input id="rad2" type="radio" name="rad" />
-                    <label for="rad2">
-                        <div>全球確診情形</div>
-                    </label>
-                    <div class="accslide">
+                <div class="d-flex flex-column justify-content-center align-items-center h-100">
+                    <h2 class="h2">台灣確診情形</h2>
+                    <div class="accslide container">
                         <div class="row">
                             <div class="col-4">
-                                <div class="content">
-                                    <h1>確診人數</h1>
+                                <div class="content text-center d-flex flex-column-reverse">
+                                    <h3 class="h6">確診人數</h3>
                                     <div class="counter-container">
-                                        <div class="counter">830,257</div>
+                                        <div class="counter h1">830,257</div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-4">
-                                <div class="content">
-                                    <h1>死亡人數</h1>
+                                <div class="content text-center d-flex flex-column-reverse">
+                                    <h3 class="h6">死亡人數</h3>
                                     <div class="counter-container">
-                                        <div class="counter">1,097</div>
+                                        <div class="counter h1">1,097</div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-4">
-                                <div class="content">
-                                    <h1>死亡率</h1>
+                                <div class="content text-center d-flex flex-column-reverse">
+                                    <h3 class="h6">死亡率</h3>
                                     <div class="counter-container">
-                                        <div class="counter">0.13%</div>
+                                        <div class="counter h1">0.13%</div>
                                     </div>
                                 </div>
                             </div>
@@ -275,16 +257,48 @@
                 </div>
             </div>
             <div class="section" id="situation_taiwan_chart">
-                <div class="d-flex flex-column h-100">
+                <div class="d-flex flex-column justify-content-center align-items-center">
 
-                    <div class="col chart-area">
+                    <div class="col-auto title text-center">
+                        <h3 class="h1">台灣疫苗施打情形</h3>
+                        <h4 class="h5">人口涵蓋率</h4>
+                    </div>
+                    <div class="col chart-area pt-0 pb-5">
                         <canvas id="situationChart"></canvas>
+                    </div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-4">
+                                <div class="content text-center d-flex flex-column-reverse">
+                                    <h3 class="h6">確診人數</h3>
+                                    <div class="counter-container">
+                                        <div class="counter h1">830,257</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="content text-center d-flex flex-column-reverse">
+                                    <h3 class="h6">死亡人數</h3>
+                                    <div class="counter-container">
+                                        <div class="counter h1">1,097</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="content text-center d-flex flex-column-reverse">
+                                    <h3 class="h6">死亡率</h3>
+                                    <div class="counter-container">
+                                        <div class="counter h1">0.13%</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <!-- 病毒結構 / 病毒增值 -->
-            <!-- <div class="section" id="virus_introduction">
+            <div class="section" id="virus_introduction">
                 <div class="s3_left " :class="{'s3l_active': s3_l_active == true}">
                     <div class="l_content container-fluid">
                         <div class="row row1">
@@ -352,10 +366,13 @@
                     </div>
                     <div class="r_bg"></div>
                 </div>
-            </div> -->
+            </div>
 
             <!-- Covid-19 變異株起源 -->
-            <!-- <div class="section fp-auto-height"></div> -->
+            <div class="section" id="map-area">
+                <h2 class="h2 title text-center">COVID-19 變異株起源</h2>
+                <div id="map"></div>
+            </div>
 
             <!-- 目前Covid-19感染症狀 -->
             <!-- <div class="section fp-auto-height"></div> -->
@@ -425,55 +442,38 @@
                 </div>
 
                 <!-- ///////S7彈窗/////// -->
-                <div style="display: none;" class="popup-content" id="popup-vaccineL">
-                    <img src="./assets/styles/images/vaccine/popup_LT.png" alt="">
+                <div style="display: none;" class="popup-content has-container" id="popup-vaccineL">
+                    <div class="container py-5">
+                        <img src="./assets/styles/images/vaccine/popup_LT.png" alt="">
+                    </div>
                 </div>
 
-                <div style="display: none;" class="popup-content" id="popup-vaccineR">
-                    <img src="./assets/styles/images/vaccine/popup_RT.png" alt="">
+                <div style="display: none;" class="popup-content has-container" id="popup-vaccineR">
+                    <div class="container py-5">
+                        <img src="./assets/styles/images/vaccine/popup_RT.png" alt="">
+                    </div>
                 </div>
             </div>
 
             <!-- 新冠疫苗開發歷程 -->
-            <div class="section fp-auto-height">
-
-            </div>
+            <div class="section fp-auto-height"></div>
 
 
             <!-- 目前台灣施打新冠疫苗種類 -->
-            <div class="section fp-auto-height">
-                
-            </div>
+            <div class="section fp-auto-height"></div>
 
 
             <!-- 後疫情 -->
             <div class="section" id="Post-pandemic">
 
                 <div class="post-pandemic-section h-100">
-                    <div class="bg">
-                        <video autoplay loop muted>
-                            <source src="./assets/styles/videos/post_pandemic/後疫情背景.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                    <!-- <div class="mask"></div> -->
 
 
                     <div
                         class="position-relative container-fluid h-100 d-flex align-items-center justify-content-center">
-                        <a class="w-100 h-100 d-flex align-items-center justify-content-center" data-fancybox="gallery-popup-Post-pandemic"
-                            data-src="#popup-Post-pandemic-content">
+                        <a class="w-100 h-100 d-flex align-items-center justify-content-center"
+                            data-fancybox="gallery-popup-Post-pandemic" data-src="#popup-Post-pandemic-content">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1276.48 930.82">
-                                <defs>
-                                    <style>
-                                        .cls-1 {
-                                            fill: #fff;
-                                        }
-
-                                        .cls-2 {
-                                            opacity: 0.6;
-                                        }
-                                    </style>
-                                </defs>
                                 <g id="social">
                                     <path class="cls-1"
                                         d="M958.07,431.05q7.41,9,16.71,22.73l-17.65,9.47h26.09v19.12a221.52,221.52,0,0,1-16.54,30v7.41l9.48-8.36q10,9,21.87,21.36l-17,13.95q-8-10.42-14.3-17.74V601.2H943.26V542.3q-7.32,7.83-15.5,15.16-3.62-16.55-6.89-28.08,22.9-20,35.14-43.4H923.29V463.25h29.19q-8.19-13.17-14.73-22Zm21.7,142.08h45.81V502.69H991.14V480.3h34.44V433.63h24.8V480.3h35.48v22.39h-35.48v70.44h41.68v22.39H979.77Z"
@@ -938,7 +938,7 @@
                     <div class="img-container d-flex justify-content-around">
                         <div class="person1" data-fancybox="gallery-aboutUs1" data-src="#popup-aboutUs-content">
                             <div class="rounded-circle">
-                                <img src="../virus/assets/styles/images/img-about_us/about_anime_01.GIF" alt="">
+                                <img src="./assets/styles/images/img-about_us/about_anime_01.GIF" alt="">
                             </div>
                             <div class="text-light text-center img-title">
                                 <span>CEO</span>
@@ -948,7 +948,7 @@
 
                         <div class="person2" data-fancybox="gallery-aboutUs2" data-src="#popup-aboutUs-content">
                             <div class="rounded-circle">
-                                <img src="../virus/assets/styles/images/img-about_us/about_anime_02.GIF" alt="">
+                                <img src="./assets/styles/images/img-about_us/about_anime_02.GIF" alt="">
                             </div>
                             <div class="text-light text-center img-title">
                                 <span>打雜</span>
@@ -958,7 +958,7 @@
 
                         <div class="person3" data-fancybox="gallery-aboutUs3" data-src="#popup-aboutUs-content">
                             <div class="rounded-circle">
-                                <img src="../virus/assets/styles/images/img-about_us/about_anime_03.GIF" alt="">
+                                <img src="./assets/styles/images/img-about_us/about_anime_03.GIF" alt="">
                             </div>
                             <div class="text-light text-center img-title">
                                 <span>遞水仔</span>
@@ -968,7 +968,7 @@
 
                         <div class="person4" data-fancybox="gallery-aboutUs4" data-src="#popup-aboutUs-content">
                             <div class="rounded-circle">
-                                <img src="../virus/assets/styles/images/img-about_us/about_anime_04.GIF" alt="">
+                                <img src="./assets/styles/images/img-about_us/about_anime_04.GIF" alt="">
                             </div>
                             <div class="text-light text-center img-title">
                                 <span>搖滾區</span>
@@ -978,7 +978,7 @@
 
                         <div class="person5" data-fancybox="gallery-aboutUs5" data-src="#popup-aboutUs-content">
                             <div class="rounded-circle">
-                                <img src="../virus/assets/styles/images/img-about_us/about_anime_05.GIF" alt="">
+                                <img src="./assets/styles/images/img-about_us/about_anime_05.GIF" alt="">
                             </div>
                             <div class="text-light text-center img-title">
                                 <span>軍師</span>
@@ -1009,7 +1009,7 @@
                                             </div>
                                         </div>
                                         <div class="img-container col-5 align-self-end">
-                                            <img src="../virus/assets/styles/images/img-about_us/about_01.PNG" alt="">
+                                            <img src="./assets/styles/images/img-about_us/about_01.PNG" alt="">
                                         </div>
 
                                     </div>
@@ -1032,7 +1032,7 @@
                                             </div>
                                         </div>
                                         <div class="img-container col-5 align-self-end">
-                                            <img src="../virus/assets/styles/images/img-about_us/about_02.PNG" alt="">
+                                            <img src="./assets/styles/images/img-about_us/about_02.PNG" alt="">
                                         </div>
 
                                     </div>
@@ -1055,7 +1055,7 @@
                                             </div>
                                         </div>
                                         <div class="img-container col-5 align-self-end">
-                                            <img src="../virus/assets/styles/images/img-about_us/about_03.PNG" alt="">
+                                            <img src="./assets/styles/images/img-about_us/about_03.PNG" alt="">
                                         </div>
 
                                     </div>
@@ -1079,7 +1079,7 @@
                                             </div>
                                         </div>
                                         <div class="img-container col-5 align-self-end">
-                                            <img src="../virus/assets/styles/images/img-about_us/about_04.PNG" alt="">
+                                            <img src="./assets/styles/images/img-about_us/about_04.PNG" alt="">
                                         </div>
 
                                     </div>
@@ -1103,7 +1103,7 @@
                                             </div>
                                         </div>
                                         <div class="img-container col-5 align-self-end">
-                                            <img src="../virus/assets/styles/images/img-about_us/about_01.PNG" alt="">
+                                            <img src="./assets/styles/images/img-about_us/about_01.PNG" alt="">
                                         </div>
 
                                     </div>
@@ -1116,7 +1116,7 @@
                         <div class="swiper-button-next"></div>
 
                     </div>
-                
+
                     <div thumbsSlider="" class="swiper textSwiper">
                         <div class="swiper-wrapper text-light">
                             <div class="swiper-slide">
@@ -1142,7 +1142,7 @@
 
 
             <!-- 參考 -->
-            <div class="section fp-auto-height"></div>
+            <!-- <div class="section fp-auto-height"></div> -->
 
             <!-- footer -->
             <footer>
@@ -1166,13 +1166,16 @@
     <script src="./assets/plugins/Chart.js-3.7.1/chart.min.js"></script>
     <script src="./assets/plugins/splitting/splitting.js"></script>
 
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@fawmi/vue-google-maps"></script> -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAP6b9E3f8iGdD5Cg8IywcndXHuMH5mT38&callback=initMap"
+        async defer></script>
     <!-- self -->
     <script src="./assets/js/main.js"></script>
 
 
-    <script>
-
-    </script>
 </body>
 
 </html>

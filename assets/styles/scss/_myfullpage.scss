@@ -1,4 +1,18 @@
 #fullpage {
+    color: inherit;
+    .section {
+        color: inherit;
+    }
+    [rel*="nofollow"] {
+        display: none;
+    }
+
+    @media (max-height: 950px) {
+        .section {
+            height: auto;
+            height: 950px;
+        }
+    }
 }
 #fp-nav {
     padding: 0 10px;
@@ -11,8 +25,8 @@
                 li {
                     .fp-tooltip {
                         width: auto;
-                        opacity: .5;
-                        transform: scale(.75);
+                        opacity: 0.5;
+                        transform: scale(0.75);
                     }
                     .active ~ .fp-tooltip {
                         opacity: 1;

@@ -9,6 +9,10 @@
             }
         }
 
+        .bg {
+            animation: kenburns-bottom 10s ease-in infinite both;
+        }
+
         article {
             position: absolute;
             width: 430px;
@@ -17,7 +21,7 @@
             left: 20%;
             top: 40%;
             transform: translate(0%, -50%);
-            color: #FFF;
+            color: #fff;
             .title {
                 font-size: 64px;
             }
@@ -28,6 +32,23 @@
             }
             .title + .subtitle {
                 margin-top: 50px;
+            }
+        }
+
+        // effect
+        article {
+            .title,
+            .subtitle {
+                opacity: 0;
+                transition-delay: 1s;
+            }
+        }
+        .swiper-slide-active {
+            article {
+                .title,
+                .subtitle {
+                    opacity: 1;
+                }
             }
         }
     }
