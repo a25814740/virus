@@ -293,14 +293,12 @@ const App = {
             //     return () => {
             //       let context = this;
             //       let args = arguments;
-
             //       clearTimeout(timer);
             //       timer = setTimeout(() => {
             //         s3r_wheel.apply(context, args);
             //       }, delay)
             //     }
             //   }
-
 
             outer.addEventListener('mousewheel', s3r_wheel);
         },
