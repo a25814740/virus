@@ -33,13 +33,14 @@ const App = {
             this.myFullpage();
             this.bannerSwiper();
             this.situationChart();
-            // this.situationNumEffect();
+            this.situationNumEffect();
             this.introScene();
             this.introWheel();
             this.vaccineScene();
 
             this.post_pandemicSwiper();
             this.about_usSwiper();
+           
 
         })
     },
@@ -381,6 +382,7 @@ const App = {
 
 
         },
+
     }
 }
 
