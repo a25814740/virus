@@ -1,9 +1,25 @@
 [id*="situation"] {
     background-color: #000;
 
+    &.active {
+        .counter-container {
+            .counter {
+                opacity: 1;
+                transition: opacity 1s ease 1.5s;
+            }
+        }
+    }
+
 
     h2 {
         margin-bottom: 10vh;
+    }
+
+    .counter-container {
+        .counter {
+            opacity: 0;
+            transition: opacity .5s ease;
+        }
     }
 
     .accordition {

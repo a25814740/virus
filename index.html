@@ -16,9 +16,20 @@
     <link rel="stylesheet" href="./assets/plugins/swiper/swiper-bundle.min.css" />
     <link rel="stylesheet" href="./assets/plugins/Fancybox4/fancybox.css" />
 
+
+
     <!-- self -->
     <link rel="stylesheet" href="./assets/styles/css/style.css" />
 
+    <style>
+        [v-cloak] {
+            display: none;
+        }
+    </style>
+
+
+    <script type="text/javascript"
+        src="https://res.cloudinary.com/veseylab/raw/upload/v1636192990/magicmouse/magic_mouse-1.2.1.cdn.min.js"></script>
 
 </head>
 
@@ -52,7 +63,7 @@
 
 
         <!-- navbar -->
-        <header class="position-fixed">
+        <header class="position-fixed" v-cloak>
             <div class="HBG">
                 <svg width="600" height="600" viewBox="0 0 600 600" id="mySvg">
                     <path class="COLC_1">
@@ -158,9 +169,9 @@
 
 
         <!-- main -->
-        <div id="fullpage">
+        <div id="fullpage" v-cloak>
             <!-- Banner -->
-            <div class="section" id="banner">
+            <div class="section fp-auto-height-responsive" id="banner">
                 <div class="swiper">
                     <div class="swiper-wrapper">
 
@@ -184,37 +195,34 @@
             </div>
 
             <!-- 確診情形 / 疫苗施打情形 -->
-            <div class="section" id="situation_world">
+            <div class="section fp-auto-height-responsive" id="situation_world">
                 <div class="d-flex flex-column justify-content-center align-items-center h-100">
-                    <h2 class="h2">全球確診情形</h2>
-                    <div class="accslide container">
+                    <h2 class="h1 pb-5 slide-in-bottom">全球確診情形</h2>
+                    <div class="accslide container pt-5">
                         <div class="row">
                             <div class="col-4">
                                 <div class="content text-center d-flex flex-column-reverse">
-                                    <h3 class="h6">確診人數</h3>
+                                    <h3 class="h3 mt-3 slide-in-bottom">確診人數</h3>
                                     <div class="counter-container">
                                         <div class="counter h1">830,257</div>
                                     </div>
-                                    <i class="bi bi-heart-pulse h1"></i>
                                 </div>
                             </div>
                             <div class="col-4">
                                 <div class="content text-center d-flex flex-column-reverse">
-                                    <h3 class="h6">死亡人數</h3>
+                                    <h3 class="h3 mt-3 slide-in-bottom">死亡人數</h3>
                                     <div class="counter-container">
                                         <div class="counter h1">1,097</div>
                                     </div>
-                                    <i class="bi bi-heartbreak h1"></i>
 
                                 </div>
                             </div>
                             <div class="col-4">
                                 <div class="content text-center d-flex flex-column-reverse">
-                                    <h3 class="h6">死亡率</h3>
+                                    <h3 class="h3 mt-3 slide-in-bottom">死亡率</h3>
                                     <div class="counter-container">
                                         <div class="counter h1">0.13%</div>
                                     </div>
-                                    <i class="bi bi-percent h1"></i>
 
                                 </div>
                             </div>
@@ -222,14 +230,14 @@
                     </div>
                 </div>
             </div>
-            <div class="section" id="situation_taiwan">
+            <div class="section fp-auto-height-responsive" id="situation_taiwan">
                 <div class="d-flex flex-column justify-content-center align-items-center h-100">
-                    <h2 class="h2">台灣確診情形</h2>
-                    <div class="accslide container">
+                    <h2 class="h1 slide-in-bottom pb-5">台灣確診情形</h2>
+                    <div class="accslide container pt-5">
                         <div class="row">
                             <div class="col-4">
                                 <div class="content text-center d-flex flex-column-reverse">
-                                    <h3 class="h6">確診人數</h3>
+                                    <h3 class="h3 mt-3 slide-in-bottom">確診人數</h3>
                                     <div class="counter-container">
                                         <div class="counter h1">830,257</div>
                                     </div>
@@ -237,7 +245,7 @@
                             </div>
                             <div class="col-4">
                                 <div class="content text-center d-flex flex-column-reverse">
-                                    <h3 class="h6">死亡人數</h3>
+                                    <h3 class="h3 mt-3 slide-in-bottom">死亡人數</h3>
                                     <div class="counter-container">
                                         <div class="counter h1">1,097</div>
                                     </div>
@@ -245,7 +253,7 @@
                             </div>
                             <div class="col-4">
                                 <div class="content text-center d-flex flex-column-reverse">
-                                    <h3 class="h6">死亡率</h3>
+                                    <h3 class="h3 mt-3 slide-in-bottom">死亡率</h3>
                                     <div class="counter-container">
                                         <div class="counter h1">0.13%</div>
                                     </div>
@@ -255,21 +263,21 @@
                     </div>
                 </div>
             </div>
-            <div class="section" id="situation_taiwan_chart">
+            <div class="section fp-auto-height-responsive" id="situation_taiwan_chart">
                 <div class="d-flex flex-column justify-content-center align-items-center">
 
                     <div class="col-auto title text-center">
-                        <h3 class="h1">台灣疫苗施打情形</h3>
-                        <h4 class="h5">人口涵蓋率</h4>
+                        <h3 class="h1 slide-in-bottom">台灣疫苗施打情形</h3>
+                        <h4 class="h5 slide-in-bottom">人口涵蓋率</h4>
                     </div>
-                    <div class="col chart-area pt-0 pb-5">
+                    <div class="col chart-area pt-0 pb-5 slide-in-bottom">
                         <canvas id="situationChart"></canvas>
                     </div>
                     <div class="container">
                         <div class="row">
                             <div class="col-4">
                                 <div class="content text-center d-flex flex-column-reverse">
-                                    <h3 class="h6">確診人數</h3>
+                                    <h3 class="h3 slide-in-bottom">確診人數</h3>
                                     <div class="counter-container">
                                         <div class="counter h1">830,257</div>
                                     </div>
@@ -277,7 +285,7 @@
                             </div>
                             <div class="col-4">
                                 <div class="content text-center d-flex flex-column-reverse">
-                                    <h3 class="h6">死亡人數</h3>
+                                    <h3 class="h3 slide-in-bottom">死亡人數</h3>
                                     <div class="counter-container">
                                         <div class="counter h1">1,097</div>
                                     </div>
@@ -285,7 +293,7 @@
                             </div>
                             <div class="col-4">
                                 <div class="content text-center d-flex flex-column-reverse">
-                                    <h3 class="h6">死亡率</h3>
+                                    <h3 class="h3 slide-in-bottom">死亡率</h3>
                                     <div class="counter-container">
                                         <div class="counter h1">0.13%</div>
                                     </div>
@@ -297,11 +305,13 @@
             </div>
 
             <!-- 病毒結構 / 病毒增值 -->
-            <div class="section" id="virus_introduction">
+            <div class="section fp-auto-height-responsive" id="virus_introduction">
                 <div class="s3_left " :class="{'s3l_active': s3_l_active == true}">
                     <div class="l_content container-fluid">
                         <div class="row row1">
-                            <div class="col-6 h1" @click="introClick('l')">病毒結構</div>
+                            <div class="col-6 h1" @click="introClick('l')">
+                                <span class="magic-hover magic-hover__square">病毒結構</span>
+                            </div>
                         </div>
                         <div class="row row2">
                             <div class="col-6 image">
@@ -347,7 +357,7 @@
                                 <img src="./assets/styles/images/virus_introduction/virus_4.png" alt="">
                             </div>
                         </div>
-                        <div class="h1" @click="introClick('r')">病毒增殖</div>
+                        <div class="h1 magic-hover magic-hover__square" @click="introClick('r')">病毒增殖</div>
                     </div>
                     <div class="s3r_outer row gap-5" @mouseover="s3_wheel">
                         <article class="col-md-5 col-12 ms-auto">
@@ -368,16 +378,16 @@
             </div>
 
             <!-- Covid-19 變異株起源 -->
-            <div class="section" id="map-area">
+            <div class="section fp-auto-height-responsive" id="map-area">
                 <h2 class="h2 title text-center">COVID-19 變異株起源</h2>
                 <div id="map"></div>
             </div>
 
             <!-- 目前Covid-19感染症狀 -->
-            <!-- <div class="section fp-auto-height"></div> -->
+            <!-- <div class="section fp-auto-height-responsive fp-auto-height"></div> -->
 
             <!-- 傳統疫苗 / 新型疫苗 -->
-            <div class="section" id="vaccineTop">
+            <div class="section fp-auto-height-responsive" id="vaccineTop">
                 <div class="s7_topContainer">
                     <div class="textBlock">
                         <h1>這次的疫苗 不同以往</h1>
@@ -398,7 +408,7 @@
 
                 </div>
             </div>
-            <div class="section" id="vaccineBottom">
+            <div class="section fp-auto-height-responsive" id="vaccineBottom">
                 <div class="s7_bottomContainer">
                     <img src="./assets/styles/images/vaccine/bV.png" alt="" class="bV">
                     <div class="s7_b_textBlock">
@@ -407,7 +417,8 @@
                     <div class="s7_b_imgBlock">
                         <div id="s7_scene1">
                             <div class="imgBox" data-depth="1.8">
-                                <img src="./assets/styles/images/vaccine/v1.png" alt="">
+                                <img class=" magic-hover magic-hover__square"
+                                    src="./assets/styles/images/vaccine/v1.png" alt="">
                             </div>
                             <div class="textBox" data-depth="1.6">
                                 <span>病毒載體疫苗</span>
@@ -455,15 +466,193 @@
             </div>
 
             <!-- 新冠疫苗開發歷程 -->
-            <div class="section fp-auto-height"></div>
+            <div class="section fp-auto-height-responsive fp-auto-height">
+                <div id="timeline">
+                    <div class="timeline-title">
+                        <h2>Responsive Vertical Timeline</h2>
+                    </div>
+                    <div class="timeline">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="timeline-container">
+                                        <div class="timeline-end">
+                                            <p>Now</p>
+                                        </div>
+                                        <div class="timeline-continue">
+
+                                            <div class="row timeline-right">
+                                                <div class="col-md-6">
+                                                    <p class="timeline-date">
+                                                        01 Jun 2020
+                                                    </p>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="timeline-box">
+                                                        <div class="timeline-icon">
+                                                            <i class="fa fa-gift"></i>
+                                                        </div>
+                                                        <div class="timeline-text">
+                                                            <h3>Lorem ipsum dolor</h3>
+                                                            <p>Lorem ipsum dolor sit amet elit ornare velit non</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row timeline-left">
+                                                <div class="col-md-6 d-md-none d-block">
+                                                    <p class="timeline-date">
+                                                        01 Jan 2020
+                                                    </p>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="timeline-box">
+                                                        <div class="timeline-icon d-md-none d-block">
+                                                            <i class="fa fa-business-time"></i>
+                                                        </div>
+                                                        <div class="timeline-text">
+                                                            <h3>Lorem ipsum dolor</h3>
+                                                            <p>Lorem ipsum dolor sit amet elit ornare velit non</p>
+                                                        </div>
+                                                        <div class="timeline-icon d-md-block d-none">
+                                                            <i class="fa fa-business-time"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 d-md-block d-none">
+                                                    <p class="timeline-date">
+                                                        01 Jan 2020
+                                                    </p>
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <div class="timeline-year">
+                                                        <p>2020</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row timeline-right">
+                                                <div class="col-md-6">
+                                                    <p class="timeline-date">
+                                                        01 Dec 2019
+                                                    </p>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="timeline-box">
+                                                        <div class="timeline-icon">
+                                                            <i class="fa fa-briefcase"></i>
+                                                        </div>
+                                                        <div class="timeline-text">
+                                                            <h3>Lorem ipsum dolor</h3>
+                                                            <p>Lorem ipsum dolor sit amet elit ornare velit non</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row timeline-left">
+                                                <div class="col-md-6 d-md-none d-block">
+                                                    <p class="timeline-date">
+                                                        01 Sep 2019
+                                                    </p>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="timeline-box">
+                                                        <div class="timeline-icon d-md-none d-block">
+                                                            <i class="fa fa-cogs"></i>
+                                                        </div>
+                                                        <div class="timeline-text">
+                                                            <h3>Lorem ipsum dolor</h3>
+                                                            <p>Lorem ipsum dolor sit amet elit ornare velit non</p>
+                                                        </div>
+                                                        <div class="timeline-icon d-md-block d-none">
+                                                            <i class="fa fa-cogs"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 d-md-block d-none">
+                                                    <p class="timeline-date">
+                                                        01 Sep 2019
+                                                    </p>
+                                                </div>
+                                            </div>
+
+                                            <div class="row timeline-right">
+                                                <div class="col-md-6">
+                                                    <p class="timeline-date">
+                                                        01 Jun 2019
+                                                    </p>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="timeline-box">
+                                                        <div class="timeline-icon">
+                                                            <i class="fa fa-running"></i>
+                                                        </div>
+                                                        <div class="timeline-text">
+                                                            <h3>Lorem ipsum dolor</h3>
+                                                            <p>Lorem ipsum dolor sit amet elit ornare velit non</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row timeline-left">
+                                                <div class="col-md-6 d-md-none d-block">
+                                                    <p class="timeline-date">
+                                                        01 Mar 2019
+                                                    </p>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="timeline-box">
+                                                        <div class="timeline-icon d-md-none d-block">
+                                                            <i class="fa fa-home"></i>
+                                                        </div>
+                                                        <div class="timeline-text">
+                                                            <h3>Lorem ipsum dolor</h3>
+                                                            <p>Lorem ipsum dolor sit amet elit ornare velit non</p>
+                                                        </div>
+                                                        <div class="timeline-icon d-md-block d-none">
+                                                            <i class="fa fa-home"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 d-md-block d-none">
+                                                    <p class="timeline-date">
+                                                        01 Mar 2019
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="timeline-start">
+                                            <p>Launch</p>
+                                        </div>
+                                        <div class="timeline-launch">
+                                            <div class="timeline-box">
+                                                <div class="timeline-text">
+                                                    <h3>Launched our company on 01 Jan 2019</h3>
+                                                    <p>Lorem ipsum dolor sit amet</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
 
             <!-- 目前台灣施打新冠疫苗種類 -->
-            <div class="section fp-auto-height"></div>
+            <div class="section fp-auto-height-responsive fp-auto-height"></div>
 
 
             <!-- 後疫情 -->
-            <div class="section" id="Post-pandemic">
+            <div class="section fp-auto-height-responsive" id="Post-pandemic">
 
                 <div class="post-pandemic-section h-100">
 
@@ -913,7 +1102,7 @@
             </div>
 
             <!-- 關於 -->
-            <div class="section " id="about-us">
+            <div class="section fp-auto-height-responsive " id="about-us">
                 <div class="container-fluid">
                     <div class="text-light text-container">
                         <div class="top">
@@ -1118,19 +1307,19 @@
                     <div thumbsSlider="" class="swiper textSwiper">
                         <div class="swiper-wrapper text-light">
                             <div class="swiper-slide">
-                                <p class="text-center">程式/組長</p>
+                                <p class="text-center magic-hover magic-hover__square">程式/組長</p>
                             </div>
                             <div class="swiper-slide">
-                                <p class="text-center">視覺設計</p>
+                                <p class="text-center magic-hover magic-hover__square">視覺設計</p>
                             </div>
                             <div class="swiper-slide">
-                                <p class="text-center">企劃/資料</p>
+                                <p class="text-center magic-hover magic-hover__square">企劃/資料</p>
                             </div>
                             <div class="swiper-slide">
-                                <p class="text-center">切版/測試</p>
+                                <p class="text-center magic-hover magic-hover__square">切版/測試</p>
                             </div>
                             <div class="swiper-slide">
-                                <p class="text-center">程式/特效</p>
+                                <p class="text-center magic-hover magic-hover__square">程式/特效</p>
                             </div>
                         </div>
                     </div>
@@ -1140,7 +1329,7 @@
 
 
             <!-- 參考 -->
-            <!-- <div class="section fp-auto-height"></div> -->
+            <!-- <div class="section fp-auto-height-responsive fp-auto-height"></div> -->
 
             <!-- footer -->
             <footer>
@@ -1157,17 +1346,18 @@
 
     <!-- Vue 3.0 -->
     <script src="https://unpkg.com/vue@next"></script>
+
     <script src="./assets/plugins/bootstrap-5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="./assets/plugins/fullPage.js-master/dist/fullpage.js"></script>
-    <script src="./assets/plugins/swiper/swiper-bundle.min.js"></script>
+
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
     <script src="./assets/plugins/Fancybox4/fancybox.umd.js"></script>
     <script src="./assets/plugins/Chart.js-3.7.1/chart.min.js"></script>
-    <script src="./assets/plugins/splitting/splitting.js"></script>
+    <script src="https://unpkg.com/splitting/dist/splitting.min.js"></script>
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
 
-    <!-- <script src="https://cdn.jsdelivr.net/npm/@fawmi/vue-google-maps"></script> -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAP6b9E3f8iGdD5Cg8IywcndXHuMH5mT38&callback=initMap"
         async defer></script>
     <!-- self -->

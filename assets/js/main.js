@@ -1,6 +1,5 @@
 
 const App = {
-    delimiters: ['{{', '}}'],
     data() {
         return {
             banner: [
@@ -18,6 +17,14 @@ const App = {
                     imgUrl: 'https://picsum.photos/id/700/1920/1024',
                 }
             ],
+            cursorOptions: {
+                "cursorOuter": "circle-basic",
+                "hoverEffect": "circle-move",
+                "hoverItemMove": false,
+                "defaultCursor": false,
+                "outerWidth": 30,
+                "outerHeight": 30
+            },
             s3_l_active: false,
             s3_r_active: false,
         }
@@ -25,10 +32,14 @@ const App = {
     beforeCreate() { },
     created() {
         window.addEventListener("scroll", this.handleScroll);
+
     },
     beforeMount() { },
     mounted() {
         this.$nextTick(function () {
+
+            magicMouse(this.cursorOptions);
+
             // 仅在整个视图都被渲染之后才会运行的代码
             this.myFullpage();
             this.bannerSwiper();
@@ -50,7 +61,11 @@ const App = {
 
     },
     methods: {
+        theFormat(number) {
+            return number.toFixed(2);
+        },
         myFullpage() {
+            let _this = this;
             new fullpage('#fullpage', {
                 // Navigation
                 menu: '#menu',
@@ -75,16 +90,44 @@ const App = {
                 //options here
                 autoScrolling: true,
                 // autoScrolling: false,
-                scrollHorizontally: true,
+                scrollHorizontally: false,
                 // sectionsColor: ['#f2f2f2', '#4BBFC3', '#7BAABE', 'whitesmoke', '#000'],
                 // Custom selectors
                 sectionSelector: '.section',
                 // slideSelector: '.slide',
                 // Events
                 beforeLeave: function (origin, destination, direction, trigger) { },
-                onLeave: function (origin, destination, direction, trigger) { },
-                afterLoad: function (origin, destination, direction, trigger) { },
-                afterRender: function () { },
+                onLeave: function (origin, destination, direction, trigger) {
+                    console.log('onLeave');
+                    // let sectionID = origin.item.id;
+                    // let counter = document.querySelectorAll('#' + sectionID + ' .counter');
+                    // if (counter) {
+                    //     counter.forEach(function (item, index) {
+                    //         let orgNumElement = item.querySelectorAll('#' + sectionID + ' .counter');
+                    //         let originNum = item.querySelector('#' + sectionID + ' .counter .word');
+                    //         if (originNum) {
+                    //             item.innerHTML = originNum.getAttribute('data-word');
+                    //             // counter.classList.remove('words chars splitting');
+                    //             console.log('onLeave item: --------------');
+                    //             console.log(item.classList);
+                    //             item.classList.remove("chars","words", "splitting")
+                    //             console.log('--------------------------');
+                    //         }
+                    //     })
+                    // }
+                },
+                afterLoad: function (origin, destination, direction, trigger) {
+                    console.log('afterLoad');
+                    console.log(destination);
+                    let sectionID = destination.item.id;
+                    let counter = document.querySelectorAll('#' + sectionID + ' .counter');
+                    if (counter) {
+                        _this.situationNumEffect();
+                    }
+                },
+                afterRender: function () {
+                    console.log('afterRender');
+                },
                 afterResize: function (width, height) { },
                 afterReBuild: function () { },
                 afterResponsive: function (isResponsive) { },
@@ -163,9 +206,11 @@ const App = {
             );
         },
         situationNumEffect() {
+
+            console.log('situationNumEffect');
             // Some settings to begin with
             const counterSelector = '.counter'
-            const delay = 1000
+            const delay = 500
 
             // Prepare a few helper functions
             const rangeToString = (first, last) =>
@@ -218,11 +263,6 @@ const App = {
 
                         char.style.setProperty('top', `-${offsetY}px`)
                         char.style.setProperty('transform', `translate3D(0, ${offsetY}px, 0)`)
-                        char.style.setProperty('color', '#afe3ff')
-
-                        setTimeout(() => {
-                            char.style.setProperty('color', '#4f6dc6')
-                        }, delay)
 
                     }, delay)
 
@@ -230,6 +270,19 @@ const App = {
 
             })
 
+        },
+        unsplitting(innerHTML) {
+            return innerHTML
+                .replace(/<span class="whitespace">(\s)<\/span>/g, "$1")
+                .replace(
+                    /<span class="char" data-char="\S+" style="--char-index:\s?\d+;">(\S+)<\/span>/g,
+                    "$1"
+                )
+                .replace(/ aria-hidden="true"/g, "")
+                .replace(
+                    /<span class="word" data-word="\S+" style="--word-index:\s?\d+;( --line-index:\s?\d+;)?">(\S+)<\/span>/g,
+                    "$2"
+                );
         },
         introClick(p) {
             if (p == 'l') {

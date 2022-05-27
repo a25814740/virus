@@ -5,6 +5,7 @@
 @import 'numAnimation';
 @import 'myfullpage';
 @import 'myFancybox';
+@import 'page_in_animation';
 
 @import './pages/header';
 @import './pages/banner';
@@ -14,6 +15,20 @@
 
 @import './pages/map';
 
+@import './pages/timeline';
+
 @import './pages/post_pandemic';
 @import './pages/about_us';
 @import './pages/footer';
+ 
+
+#banner,
+#situation_world,
+#situation_taiwan,
+#situation_taiwan_chart,
+#virus_introduction,
+#map-area,
+#vaccineTop,
+#vaccineBottom {
+    // display: none !important;
+}

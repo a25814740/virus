@@ -6,11 +6,31 @@
             .swiper-slide {
                 width: 100%;
                 height: 100vh;
+                &:nth-child(odd) {
+                    .bg {
+                        animation: kenburns-bottom 5s ease-in infinite backwards;
+                    }
+                }
+                &:nth-child(even) {
+                    .bg {
+                        animation: kenburns-bottom 5s ease-in infinite forwards;
+                    }
+                }
             }
         }
 
         .bg {
-            animation: kenburns-bottom 10s ease-in infinite both;
+            position: relative;
+            // animation: kenburns-bottom 5s ease-in infinite both;
+            &::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.5);
+            }
         }
 
         article {

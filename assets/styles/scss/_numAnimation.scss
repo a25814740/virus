@@ -1,7 +1,7 @@
 
 
 .counter {
-    $font-size: 48px;
+    $font-size: 60px;
     font: bold $font-size/$font-size 'Source Sans Pro', Helvetica, Arial, sans-serif;
     
     display: inline-block;
@@ -10,7 +10,7 @@
     .word {
         position: relative;
 
-        display: inline-block;
+        display: flex;
         width: 100%;
         height: 100%;
     }
@@ -18,9 +18,9 @@
     .char {
         position: relative;
         top: 0;
-        display: inline-block;
+        display: block;
         width: auto;
-        color: #4f6dc6;
+        color: #FFF;
         cursor: alias;
         font-size: $font-size;
         line-height: $font-size;
