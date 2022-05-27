@@ -1,0 +1,167 @@
+#symptomTop {
+    background-color: aliceblue;
+    height: 100vh;
+
+    .s9_mainTop {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        cursor: pointer;
+
+        h1 {
+            color: rgba(120, 142, 171, 1);
+            font-size: 2.5vw;
+            margin: 3.5% 0;
+            font-weight: bold;
+        }
+
+        svg {
+            width: 100%;
+            overflow: visible;
+
+            .green {
+                z-index: 15;
+            }
+
+            .blue {
+                z-index: 1;
+            }
+        }
+    }
+
+}
+
+#sympthomBottom {
+    background-color: aliceblue;
+    height: 100vh;
+
+    .s9_mainBottom {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &:hover>.s9_svg>svg {
+
+            #OOO {
+                opacity: 1;
+            }
+
+            #LINE {
+                opacity: 1;
+            }
+
+            #BIGT {
+                opacity: 1;
+                transform: translate( 0, 0);
+            }
+
+            #TEXTT {
+                opacity: 1;
+                transform: translate( 0, 0);
+            }
+        }
+
+        h1 {
+            color: rgba(120, 142, 171, 1);
+            font-size: 2.5vw;
+            margin: 3.5% 0;
+            font-weight: bold;
+        }
+
+        .s9_svg {
+            position: relative;
+            display: flex;
+            flex-grow: 2;
+            width: 100%;
+            justify-content: center;
+            overflow: hidden;
+
+
+            svg {
+                display: block;
+                cursor: pointer;
+                height: 100%;
+
+                .cls-1,
+                .cls-2,
+                .cls-4,
+                .cls-5,
+                .cls-6 {
+                    fill: none;
+                }
+
+                .cls-1 {
+                    stroke: #000;
+                    stroke-linecap: round;
+                }
+
+                .cls-1,
+                .cls-2,
+                .cls-3 {
+                    stroke-width: 3px;
+                }
+
+                .cls-2,
+                .cls-3,
+                .cls-4,
+                .cls-5,
+                .cls-6 {
+                    stroke: #253a56;
+                }
+
+                .cls-3 {
+                    fill: #919e99;
+                    fill-opacity: 0.25;
+                }
+
+                .cls-4 {
+                    stroke-width: 3px;
+                }
+
+                .cls-5 {
+                    stroke-width: 3px;
+                }
+
+                .cls-6 {
+                    stroke-width: 3px;
+                }
+
+                .cls-7 {
+                    fill: #253a56;
+                }
+
+                #OOO {
+                    opacity: 0;
+                    transition: all 1.5s linear;
+
+                    // .cls-3 {
+                    //     opacity: 0.4;
+
+                    //     &:hover {
+                    //         opacity: 1;
+                    //     }
+                    // }
+                }
+
+                #LINE {
+                     opacity: 0;
+                     transition: all 1.5s ease 0.8s;
+                }
+
+                #BIGT {
+                    opacity: 0;
+                    transform: translate( -3%, 0);
+                    transition: all 1.5s ease 0.8s;
+                }
+
+                #TEXTT {
+                     opacity: 0;
+                     transform: translate( 0, 3%);
+                     transition: all 2s ease 2s;
+                }
+
+            }
+        }
+    }
+}

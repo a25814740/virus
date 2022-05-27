@@ -20,6 +20,10 @@ const App = {
             ],
             s3_l_active: false,
             s3_r_active: false,
+            isMenuHovering: true,
+            isMenuActive: false,
+            menuAnimation_active: false,
+            menuAnimationB_active: false,
         }
     },
     beforeCreate() { },
@@ -29,17 +33,21 @@ const App = {
     beforeMount() { },
     mounted() {
         this.$nextTick(function () {
+
+            console.log(this.isMenuActive);
             // 仅在整个视图都被渲染之后才会运行的代码
             this.myFullpage();
             this.bannerSwiper();
             this.situationChart();
-            // this.situationNumEffect();
+            this.situationNumEffect();
             this.introScene();
             this.introWheel();
             this.vaccineScene();
 
             this.post_pandemicSwiper();
             this.about_usSwiper();
+
+            this.s9_sceneSymptom();
 
         })
     },
@@ -50,6 +58,20 @@ const App = {
 
     },
     methods: {
+        myMenuFilter: function () {
+            this.isMenuActive = !this.isMenuActive;
+        },
+        menuAni() {
+            this.menuAnimation_active = !this.menuAnimation_active;
+        },
+        menuAniB() {
+            if (this.menuAnimation_active == false) {
+                this.menuAnimationB_active = true;
+                setTimeout(() => {
+                    this.menuAnimationB_active = false;
+                }, 2000);
+            }
+        },
         myFullpage() {
             new fullpage('#fullpage', {
                 // Navigation
@@ -258,6 +280,9 @@ const App = {
 
             let scene4 = document.getElementById('scene4');
             let parallax4 = new Parallax(scene4);
+
+            let scene5 = document.getElementById('scene5');
+            let parallax5 = new Parallax(scene5);
         },
         introWheel() {
             let outer = document.querySelector('.s3r_outer');
@@ -268,7 +293,7 @@ const App = {
             let counter = 0;
             function s3r_wheel(w) {
                 counter++;
-
+                console.log(555);
                 if (counter == 2) {
                     if (w.wheelDelta < 0) {
                         if (n < 5) {
@@ -314,6 +339,10 @@ const App = {
 
             let s7_scene4 = document.getElementById('s7_scene4');
             let parallax_7_4 = new Parallax(s7_scene4);
+        },
+        s9_sceneSymptom() {
+            let sceneSymptom = document.getElementById('sceneSymptom');
+            let parallax_9 = new Parallax(sceneSymptom);
         },
 
 

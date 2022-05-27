@@ -160,15 +160,6 @@
                 .imgBox {
                     img {
                         max-width: 100%;
-                        animation: s7_b_virus_rotate 10s infinite linear;
-                    }
-                }
-
-                @keyframes s7_b_virus_rotate {
-                    0% {}
-
-                    100% {
-                        transform: rotate(360deg);
                     }
                 }
 
@@ -186,6 +177,30 @@
                         text-align: center;
                         width: 100%;
                     }
+                }
+            }
+
+            [id*=s7_scene]:nth-child(1) .imgBox {
+                img {
+                    animation: s7_b_virus_rotate_A 26s linear infinite;
+                }
+            }
+
+            [id*=s7_scene]:nth-child(2) .imgBox {
+                  img {
+                    animation: s7_b_virus_rotate_B 20s linear infinite;
+                }
+            }
+
+            [id*=s7_scene]:nth-child(3) .imgBox {
+                img {
+                    animation: s7_b_virus_rotate_C 22s linear infinite;
+                }
+            }
+
+            [id*=s7_scene]:nth-child(4) .imgBox {
+                img {
+                    animation: s7_b_virus_rotate_D 35s linear infinite;
                 }
             }
 
@@ -214,13 +229,46 @@
     }
 }
 
+
+@keyframes s7_b_virus_rotate_A {
+    0% {}
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes s7_b_virus_rotate_B {
+    0% {}
+
+    100% {
+        transform: rotate(-360deg);
+    }
+}
+
+@keyframes s7_b_virus_rotate_C {
+    0% {}
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes s7_b_virus_rotate_D {
+    0% {}
+
+    100% {
+        transform: rotate(-360deg);
+    }
+}
+
 .popup-content {
     background-size: cover;
     
     img {
         max-width: 100%;
     }
-}
+}   
 
 #popup-vaccineL {
     background-image: url(../images/vaccine/popup_LB.png);

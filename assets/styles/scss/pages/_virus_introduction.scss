@@ -1,4 +1,5 @@
 #virus_introduction {
+    // overflow: hidden;
 
     .row1 {
         pointer-events: auto;
@@ -140,8 +141,8 @@
 
             #scene1 {
                 position: absolute;
-                left: 54%;
-                top: 25%;
+                left: 60%;
+                top: 15%;
 
                 img {
                     animation: s3r2 34s infinite;
@@ -165,7 +166,7 @@
             #scene3 {
                 position: absolute;
                 left: 6%;
-                top: 75%;
+                top: 70%;
 
                 img {
                     animation: s3r2 28s infinite;
@@ -175,11 +176,22 @@
 
             #scene4 {
                 position: absolute;
-                right: 45%;
-                top: 55%;
+                right: 40%;
+                top: 45%;
 
                 img {
                     animation: s3r1 26s infinite;
+                    transition: all 3s ease;
+                }
+            }
+
+            #scene5 {
+                position: absolute;
+                right: 10%;
+                top: 80%;
+
+                img {
+                    animation: s3r2 20s infinite;
                     transition: all 3s ease;
                 }
             }
