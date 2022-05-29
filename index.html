@@ -218,17 +218,16 @@
                 </div>
                 <div class="menuFooter">
                     <div class="footer_left">
+                        <span>REFERENCES</span>
                         <span>
-                            <p>CONTACT US</p>
+                            CONTACT&nbsp;&nbsp;US
                         </span>
-                        <img class="img1" src="./assets/styles/images/menu/book.png" alt="">
-                        <div class="line"></div>
-                        <img class="img2" src="./assets/styles/images/menu/messenger.png" alt="">
                     </div>
-                    <div class="footer_right">
+                    <div class="footer_middle">
                         <span>Copyright © 2022 Covid-19</span>
                         <p>僅用課程學習用途，素材如有侵權，請來信告知</p>
                     </div>
+                    <img src="./assets/styles/images/menu/messenger.png" alt="">
                 </div>
             </div>
         </div>
@@ -385,20 +384,20 @@
                 <div class="s3_left " :class="{'s3l_active': s3_l_active == true}">
                     <div class="l_content container-fluid">
                         <div class="row row1">
-                            <div class="col-6 h1" @click="introClick('l')">病毒結構</div>
+                            <div class="col-md-6 h1 col-12" @click="introClick('l')">病毒結構</div>
                         </div>
-                        <div class="row row2">
-                            <div class="col-6 image">
+                        <div class="row row2 gy-md-0 gy-4">
+                            <div class="col-md-6 col-12 image mx-auto">
                                 <img src="./assets/styles/images/virus_introduction/m4L_virus.png" alt=""
                                     data-depth="-0.8" />
                             </div>
-                            <div class="col-6 text">
+                            <div class="col-md-6 col-12 text">
                                 <article>
                                     <p>
                                         病毒是一種由雙層磷脂膜包覆住遺傳因子的結構，
                                         而磷脂膜表面遍布像皇冠的棘蛋白，膜內的遺傳因子包含核殼蛋白及核酸(此處為RNA)。
                                     </p>
-                                    <p>
+                                    <p class="mt-md-0 mt-3">
                                         Covid-19的RNA基因組會轉譯出四種主要結構蛋白：刺突蛋白
                                         (S)、包膜蛋白 (E)、膜蛋白 (M) 和核殼蛋白
                                         (N)，這些蛋白共同組成病毒顆粒結構。
@@ -438,8 +437,8 @@
                         </div>
                         <div class="h1" @click="introClick('r')">病毒增殖</div>
                     </div>
-                    <div class="s3r_outer row gap-5" @mouseover="s3_wheel">
-                        <article class="col-md-5 col-12 ms-auto">
+                    <div class="s3r_outer row gap-md-5 gap-3 mx-auto" @mouseover="s3_wheel">
+                        <article class=" col-12 ms-auto">
                             <p>
                                 病毒經包吞作用進入細胞後，首先會移除外殼蛋白，將病毒RNA釋放到細胞質中(2)，
                                 而後病毒RNA被轉錄為一段信使RNA(mRNA)，以此轉譯出複製病毒RNA所需要的合成酶蛋白質半成品(3)，
@@ -537,6 +536,8 @@
                                 fill="white" />
                         </g>
                     </svg>
+                    <img class="imgL" src="./assets/styles/images/symptom/L.png" alt="">
+                    <img class="imgR" src="./assets/styles/images/symptom/R.png" alt="">
                 </div>
 
 
