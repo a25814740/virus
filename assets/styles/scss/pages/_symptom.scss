@@ -1,0 +1,246 @@
+// #banner,#situation_world,#situation_taiwan,#situation_taiwan_chart,#virus_introduction,#map-area {
+//     display: none;
+// }
+
+#symptomTop {
+    background-color: aliceblue;
+    height: 100vh;
+
+    .s9_mainTop {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        cursor: pointer;
+
+        h1 {
+            color: rgba(120, 142, 171, 1);
+            font-size: 4rem;
+            margin-top: 5.5%;
+            font-weight: bold;
+        }
+
+        svg {
+            width: 100%;
+            overflow: visible;
+
+            .green {
+                z-index: 15;
+            }
+
+            .blue {
+                z-index: 1;
+            }
+        }
+
+        img {
+            display: none;
+        }
+
+        .imgL {
+            transform: translate(60%, -60%)
+        }
+
+        .imgR {
+            transform: translate(-50%, -10%)
+        }
+
+
+        @media (max-width: 1459px) {
+            h1 {
+                margin-top: 10.5%;
+            }
+        }
+
+        @media (min-width: 768px) and (max-width: 1199px) {
+            h1 {
+                margin-top: 15.5%;
+                font-size: 3rem;
+            }
+        }
+
+        @media (max-width: 767px) {
+            height: 100%;
+            background-image: url(../images/symptom/text.png);
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+
+            h1 {
+                margin-top: 15.5%;
+                font-size: 2rem;
+            }
+
+            svg {
+                display: none;
+            }
+
+            img {
+                display: block;
+            }
+        }
+
+    }
+
+}
+
+#sympthomBottom {
+    background-color: aliceblue;
+    height: 100vh;
+
+    .s9_mainBottom {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &:hover>.s9_svg>svg {
+
+            #OOO {
+                opacity: 1;
+            }
+
+            #LINE {
+                opacity: 1;
+            }
+
+            #BIGT {
+                opacity: 1;
+                transform: translate(0, 0);
+            }
+
+            #TEXTT {
+                opacity: 1;
+                transform: translate(0, 0);
+            }
+        }
+
+        h1 {
+            color: rgba(120, 142, 171, 1);
+            font-size: 2.5vw;
+            margin-top: 3.5%;
+            font-weight: bold;
+        }
+
+        .s9_svg {
+            position: relative;
+            display: flex;
+            flex-grow: 2;
+            width: 100%;
+            justify-content: center;
+            overflow: hidden;
+
+
+            svg {
+                display: block;
+                cursor: pointer;
+                height: 100%;
+
+                .cls-1,
+                .cls-2,
+                .cls-4,
+                .cls-5,
+                .cls-6 {
+                    fill: none;
+                }
+
+                .cls-1 {
+                    stroke: #000;
+                    stroke-linecap: round;
+                }
+
+                .cls-1,
+                .cls-2,
+                .cls-3 {
+                    stroke-width: 3px;
+                }
+
+                .cls-2,
+                .cls-3,
+                .cls-4,
+                .cls-5,
+                .cls-6 {
+                    stroke: #253a56;
+                }
+
+                .cls-3 {
+                    fill: #919e99;
+                    fill-opacity: 0.25;
+                }
+
+                .cls-4 {
+                    stroke-width: 3px;
+                }
+
+                .cls-5 {
+                    stroke-width: 3px;
+                }
+
+                .cls-6 {
+                    stroke-width: 3px;
+                }
+
+                .cls-7 {
+                    fill: #253a56;
+                }
+
+                #OOO {
+                    opacity: 0;
+                    transition: all 1.5s linear;
+
+                    // .cls-3 {
+                    //     opacity: 0.4;
+
+                    //     &:hover {
+                    //         opacity: 1;
+                    //     }
+                    // }
+                }
+
+                #LINE {
+                    opacity: 0;
+                    transition: all 1.5s ease 0.8s;
+                }
+
+                #BIGT {
+                    opacity: 0;
+                    transform: translate(-3%, 0);
+                    transition: all 1.5s ease 0.8s;
+                }
+
+                #TEXTT {
+                    opacity: 0;
+                    transform: translate(0, 3%);
+                    transition: all 2s ease 2s;
+                }
+
+            }
+        }
+
+        @media (min-width: 768px) and (max-width: 1199px) {
+            h1 {
+
+                font-size: 4.5vw;
+                margin-top: 10.5%;
+
+            }
+        }
+
+        @media (max-width: 767px) {
+            h1 {
+
+                font-size: 4.5vw;
+                margin-top: 15.5%;
+
+            }
+        }
+
+        @media (max-width: 450px) {
+            h1 {
+
+                font-size: 4.5vw;
+                margin-top: 35.5%;
+
+            }
+        }
+
+    }
+}
