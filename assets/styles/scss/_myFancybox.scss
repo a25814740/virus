@@ -23,6 +23,9 @@
                     right: 10px;
                     top: 10px;
                 }
+                *:focus:not(.carousel__button.is-close){
+                    outline: 0;
+                }
             }
         }
     }

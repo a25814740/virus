@@ -56,6 +56,7 @@ const App = {
 
             this.post_pandemicSwiper();
             this.about_usSwiper();
+           
 
             this.s9_sceneSymptom();
 
@@ -138,13 +139,13 @@ const App = {
                     // }
                 },
                 afterLoad: function (origin, destination, direction, trigger) {
-                    console.log('afterLoad');
-                    console.log(destination);
-                    let sectionID = destination.item.id;
-                    let counter = document.querySelectorAll('#' + sectionID + ' .counter');
-                    if (counter) {
-                        _this.situationNumEffect();
-                    }
+                    // console.log('afterLoad');
+                    // console.log(destination);
+                    // let sectionID = destination.item.id;
+                    // let counter = document.querySelectorAll('#' + sectionID + ' .counter');
+                    // if (counter) {
+                    //     _this.situationNumEffect();
+                    // }
                 },
                 afterRender: function () {
                     console.log('afterRender');
@@ -462,6 +463,7 @@ const App = {
 
 
         },
+
     }
 }
 
