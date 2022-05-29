@@ -1,22 +1,21 @@
-
 const App = {
     data() {
         return {
-            banner: [
-                {
-                    title: 'Slide 1',
-                    description: '2019年末，始於中國武漢的第一起未知病毒感染檢測報告被曝光，而後被WHO命名為Covid-19的病毒席捲向全球人類社會......',
-                    imgUrl: 'https://picsum.photos/id/600/1920/1024',
-                }, {
-                    title: 'Slide 2',
-                    description: '面對疫情<br>最大的敵人不是病毒，<br>而是我們自己內心的恐懼',
-                    imgUrl: 'https://picsum.photos/id/650/1920/1024',
-                }, {
-                    title: 'Slide 3',
-                    description: '對於未知的事物<br>人類往往抱著恐懼的眼光看待<br>而我們想讓你知道你無需害怕',
-                    imgUrl: 'https://picsum.photos/id/700/1920/1024',
-                }
-            ],
+            banner: [{
+                videoUrl: './assets/styles/videos/banner/COVID-19.mp4'
+            }, {
+                title: 'Slide 1',
+                description: '2019年末，始於中國武漢的第一起未知病毒感染檢測報告被曝光，而後被WHO命名為Covid-19的病毒席捲向全球人類社會......',
+                imgUrl: './assets/styles/images/banner/virus1.jpg',
+            }, {
+                title: 'Slide 2',
+                description: '面對疫情<br>最大的敵人不是病毒，<br>而是我們自己內心的恐懼',
+                imgUrl: './assets/styles/images/banner/vaccine3.jpg',
+            }, {
+                title: 'Slide 3',
+                description: '對於未知的事物<br>人類往往抱著恐懼的眼光看待<br>而我們想讓你知道你無需害怕',
+                imgUrl: './assets/styles/images/banner/covid-life.jpg',
+            }],
             cursorOptions: {
                 "cursorOuter": "circle-basic",
                 "hoverEffect": "circle-move",
@@ -33,12 +32,11 @@ const App = {
             menuAnimationB_active: false,
         }
     },
-    beforeCreate() { },
+    beforeCreate() {},
     created() {
-        window.addEventListener("scroll", this.handleScroll);
-
+        // window.addEventListener("scroll", this.handleScroll);
     },
-    beforeMount() { },
+    beforeMount() {},
     mounted() {
         this.$nextTick(function () {
 
@@ -48,10 +46,12 @@ const App = {
             // 仅在整个视图都被渲染之后才会运行的代码
             this.myFullpage();
             this.bannerSwiper();
+
+
             this.situationChart();
             this.situationNumEffect();
             this.introScene();
-            this.introWheel();
+            // this.introWheel();
             this.vaccineScene();
 
             this.post_pandemicSwiper();
@@ -92,17 +92,7 @@ const App = {
                 // Navigation
                 menu: '#menu',
                 lockAnchors: true,
-                anchors: ['首頁', '全球確診情形', '台灣確診情形', '台灣疫苗施打情形', '病毒結構與病毒增值', '變異株起源', '感染症狀', '傳統疫苗與新型疫苗', '新冠疫苗開發歷程', '目前台灣施打新冠疫苗種類', '後疫情時代', '關於我們'],
-                // anchors: [
-                //     '首頁', 
-                //     '全球確診情形', 
-                //     '台灣確診情形',
-                //     '台灣疫苗施打情形',
-                //     '病毒結構與病毒增值',
-                //     '變異株起源',
-                //     '感染症狀',
-                //     '傳統疫苗與新型疫苗'
-                // ],
+                anchors: ['index', '全球確診情形', '台灣確診情形', '台灣疫苗施打情形', '病毒結構與病毒增值', '變異株起源', '感染症狀', '傳統疫苗', '新型疫苗', '新冠疫苗開發歷程', '目前台灣施打新冠疫苗種類', '後疫情時代', '關於我們'],
                 navigation: false,
                 navigationPosition: 'right',
                 navigationTooltips: ['slide 1', 'slide 2', 'slide 3', 'slide 4', 'slide 5', 'slide 6', 'slide 7', 'slide 8', 'slide 9', 'slide 10', 'slide 11'],
@@ -117,45 +107,32 @@ const App = {
                 // Custom selectors
                 sectionSelector: '.section',
                 // slideSelector: '.slide',
+                responsiveHeight: 900,
                 // Events
-                beforeLeave: function (origin, destination, direction, trigger) { },
+                beforeLeave: function (origin, destination, direction, trigger) {},
                 onLeave: function (origin, destination, direction, trigger) {
-                    console.log('onLeave');
-                    // let sectionID = origin.item.id;
-                    // let counter = document.querySelectorAll('#' + sectionID + ' .counter');
-                    // if (counter) {
-                    //     counter.forEach(function (item, index) {
-                    //         let orgNumElement = item.querySelectorAll('#' + sectionID + ' .counter');
-                    //         let originNum = item.querySelector('#' + sectionID + ' .counter .word');
-                    //         if (originNum) {
-                    //             item.innerHTML = originNum.getAttribute('data-word');
-                    //             // counter.classList.remove('words chars splitting');
-                    //             console.log('onLeave item: --------------');
-                    //             console.log(item.classList);
-                    //             item.classList.remove("chars","words", "splitting")
-                    //             console.log('--------------------------');
-                    //         }
-                    //     })
-                    // }
+                    // console.log('onLeave');
                 },
                 afterLoad: function (origin, destination, direction, trigger) {
                     // console.log('afterLoad');
                     // console.log(destination);
-                    // let sectionID = destination.item.id;
-                    // let counter = document.querySelectorAll('#' + sectionID + ' .counter');
-                    // if (counter) {
-                    //     _this.situationNumEffect();
-                    // }
+                    let sectionID = destination.item.id;
+                    if (sectionID) {
+                        let counter = document.querySelectorAll('#' + sectionID + ' .counter');
+                        if (counter) {
+                            _this.situationNumEffect();
+                        }
+                    }
                 },
                 afterRender: function () {
-                    console.log('afterRender');
+                    // console.log('afterRender');
                 },
-                afterResize: function (width, height) { },
-                afterReBuild: function () { },
-                afterResponsive: function (isResponsive) { },
-                afterSlideLoad: function (section, origin, destination, direction, trigger) { },
-                onSlideLeave: function (section, origin, destination, direction, trigger) { },
-                onScrollOverflow: function (section, slide, position, direction) { },
+                afterResize: function (width, height) {},
+                afterReBuild: function () {},
+                afterResponsive: function (isResponsive) {},
+                afterSlideLoad: function (section, origin, destination, direction, trigger) {},
+                onSlideLeave: function (section, origin, destination, direction, trigger) {},
+                onScrollOverflow: function (section, slide, position, direction) {},
             });
         },
         bannerSwiper() {
@@ -163,21 +140,77 @@ const App = {
                 loop: true,
                 effect: 'fade',
                 parallax: true,
-                // speed: 600,
                 autoplay: {
                     delay: 5000
                 },
                 fadeEffect: {
                     crossFade: true
                 },
-                navigation: {
-                    nextEl: '#banner .swiper-button-next',
-                    prevEl: '#banner .swiper-button-prev',
-                },
                 pagination: {
                     el: '#banner .swiper-pagination',
                     type: 'bullets',
+                    clickable: false
                 },
+                on: {
+                    init: function (swiper) {
+                        console.log('init');
+                        var activeIndex = this.activeIndex;
+                        var activeSlide = document.getElementsByClassName('swiper-slide')[activeIndex];
+                        var activeSlideVideo = activeSlide.getElementsByTagName('video')[0];
+                        if (activeSlideVideo) {
+                            console.log('init is Video');
+                            swiper.autoplay.stop();
+                        } else {
+                            console.log('init is Image');
+                            swiper.autoplay.start()
+                        }
+
+                    },
+
+                    transitionEnd: function (swiper) {
+                        console.log('transitionEnd');
+                        var activeIndex = this.activeIndex;
+                        var activeSlide = document.getElementsByClassName('swiper-slide')[activeIndex];
+                        var activeSlideVideo = activeSlide.getElementsByTagName('video')[0];
+
+
+                        if (activeSlideVideo) {
+                            console.log('is Video');
+
+                            // 確認是否第一次暫停
+                            var checkVideoTimes = document.querySelector('.video-pause');
+                            if (!checkVideoTimes) {
+                                // 第一次暫停
+                                swiper.autoplay.stop();
+                                activeSlideVideo.addEventListener("pause", function () {
+                                    console.log('第一次暫停，video新增 video-pause 的 Class，開啟Swiper自動播放');
+                                    activeSlideVideo.classList.add('video-pause');
+                                    swiper.autoplay.start();
+                                }, true);
+
+                            } else {
+                                // 不是第一次暫停
+                                console.log('已經增加video-pause，將Swiper自動播放暫停');
+                                swiper.autoplay.stop();
+                            }
+                        } else {
+                            console.log('is Image');
+                            swiper.autoplay.start()
+                        }
+                    },
+                    autoplayStart: function (swiper) {
+                        console.log('Swiper自動播放已開啟');
+                    },
+                    autoplayStop: function (swiper) {
+                        console.log('Swiper自動播放已暫停，影片播放');
+
+                        var videos = document.querySelectorAll('#banner video');
+
+                        Array.prototype.forEach.call(videos, function (video) {
+                            video.play();
+                        });
+                    }
+                }
             });
         },
         situationChart() {
@@ -195,7 +228,7 @@ const App = {
                         '#616161',
                         '#d6d6d6',
                     ],
-                    color: ['#FFF', '#FFF', '#FFF', '#FFF',]
+                    color: ['#FFF', '#FFF', '#FFF', '#FFF', ]
                 }]
             };
             // </block:setup>
@@ -229,7 +262,7 @@ const App = {
         },
         situationNumEffect() {
 
-            console.log('situationNumEffect');
+            // console.log('situationNumEffect');
             // Some settings to begin with
             const counterSelector = '.counter'
             const delay = 500
@@ -322,6 +355,9 @@ const App = {
             };
         },
         introScene() {
+            let scene0 = document.getElementById('scene0');
+            let parallax0 = new Parallax(scene0);
+
             let scene1 = document.getElementById('scene1');
             let parallax1 = new Parallax(scene1);
 
@@ -344,6 +380,7 @@ const App = {
             let p_top = [25, 100, 70, 85, 20];
             let n = 0;
             let counter = 0;
+
             function s3r_wheel(w) {
                 counter++;
                 console.log(555);
@@ -458,8 +495,7 @@ const App = {
                         about_usSwiper.init();
                     }
                 }
-            }
-            )
+            })
 
 
         },
@@ -489,12 +525,10 @@ var markersOnMap = [
         virusName: "Delta",
         virusLocation: "印度",
         virusContent: "Beijing Station W St, Dongcheng Qu, Beijing Shi, China, 100021",
-        LatLng: [
-            {
-                lat: 22.940158512491735,
-                lng: 79.70995021888635
-            }
-        ]
+        LatLng: [{
+            lat: 22.940158512491735,
+            lng: 79.70995021888635
+        }]
     },
     // 巴西
     {
@@ -502,12 +536,10 @@ var markersOnMap = [
         virusName: "Gamma",
         virusLocation: "巴西",
         virusContent: "3015 St Charles St Ste. B",
-        LatLng: [
-            {
-                lat: -8.510013450198832,
-                lng: -52.434523278800185
-            }
-        ]
+        LatLng: [{
+            lat: -8.510013450198832,
+            lng: -52.434523278800185
+        }]
     },
 ];
 
@@ -561,7 +593,7 @@ function addMarker() {
         google.maps.event.addListener(map, "click", function (event) {
             infowindow.close();
         });
-    }/* end marker loop */
+    } /* end marker loop */
 }
 
 function closeOtherInfo() {
@@ -594,44 +626,34 @@ function initMap() {
         // backgroundColor: '#212121',
         backgroundColor: '#000',
         // fullScreenControl: false,
-        styles: [
-            {
+        styles: [{
                 "elementType": "geometry",
-                "stylers": [
-                    {
-                        "color": "#212121"
-                    }
-                ]
+                "stylers": [{
+                    "color": "#212121"
+                }]
             },
             {
                 "elementType": "labels.icon",
-                "stylers": [
-                    {
-                        "visibility": "off"
-                    }
-                ]
+                "stylers": [{
+                    "visibility": "off"
+                }]
             },
             {
                 "elementType": "labels.text.fill",
-                "stylers": [
-                    {
-                        "color": "#757575"
-                    }
-                ]
+                "stylers": [{
+                    "color": "#757575"
+                }]
             },
             {
                 "elementType": "labels.text.stroke",
-                "stylers": [
-                    {
-                        "color": "#212121"
-                    }
-                ]
+                "stylers": [{
+                    "color": "#212121"
+                }]
             },
             {
                 "featureType": "administrative",
                 "elementType": "geometry",
-                "stylers": [
-                    {
+                "stylers": [{
                         "color": "#757575"
                     },
                     {
@@ -642,213 +664,165 @@ function initMap() {
             {
                 "featureType": "administrative.country",
                 "elementType": "labels.text.fill",
-                "stylers": [
-                    {
-                        "color": "#9e9e9e"
-                    }
-                ]
+                "stylers": [{
+                    "color": "#9e9e9e"
+                }]
             },
             {
                 "featureType": "administrative.land_parcel",
-                "stylers": [
-                    {
-                        "visibility": "off"
-                    }
-                ]
+                "stylers": [{
+                    "visibility": "off"
+                }]
             },
             {
                 "featureType": "administrative.locality",
                 "elementType": "labels.text.fill",
-                "stylers": [
-                    {
-                        "color": "#bdbdbd"
-                    }
-                ]
+                "stylers": [{
+                    "color": "#bdbdbd"
+                }]
             },
             {
                 "featureType": "administrative.neighborhood",
-                "stylers": [
-                    {
-                        "visibility": "off"
-                    }
-                ]
+                "stylers": [{
+                    "visibility": "off"
+                }]
             },
             {
                 "featureType": "poi",
-                "stylers": [
-                    {
-                        "visibility": "off"
-                    }
-                ]
+                "stylers": [{
+                    "visibility": "off"
+                }]
             },
             {
                 "featureType": "poi",
                 "elementType": "labels.text",
-                "stylers": [
-                    {
-                        "visibility": "off"
-                    }
-                ]
+                "stylers": [{
+                    "visibility": "off"
+                }]
             },
             {
                 "featureType": "poi",
                 "elementType": "labels.text.fill",
-                "stylers": [
-                    {
-                        "color": "#757575"
-                    }
-                ]
+                "stylers": [{
+                    "color": "#757575"
+                }]
             },
             {
                 "featureType": "poi.park",
                 "elementType": "geometry",
-                "stylers": [
-                    {
-                        "color": "#181818"
-                    }
-                ]
+                "stylers": [{
+                    "color": "#181818"
+                }]
             },
             {
                 "featureType": "poi.park",
                 "elementType": "labels.text.fill",
-                "stylers": [
-                    {
-                        "color": "#616161"
-                    }
-                ]
+                "stylers": [{
+                    "color": "#616161"
+                }]
             },
             {
                 "featureType": "poi.park",
                 "elementType": "labels.text.stroke",
-                "stylers": [
-                    {
-                        "color": "#1b1b1b"
-                    }
-                ]
+                "stylers": [{
+                    "color": "#1b1b1b"
+                }]
             },
             {
                 "featureType": "road",
-                "stylers": [
-                    {
-                        "visibility": "off"
-                    }
-                ]
+                "stylers": [{
+                    "visibility": "off"
+                }]
             },
             {
                 "featureType": "road",
                 "elementType": "geometry.fill",
-                "stylers": [
-                    {
-                        "color": "#2c2c2c"
-                    }
-                ]
+                "stylers": [{
+                    "color": "#2c2c2c"
+                }]
             },
             {
                 "featureType": "road",
                 "elementType": "labels",
-                "stylers": [
-                    {
-                        "visibility": "off"
-                    }
-                ]
+                "stylers": [{
+                    "visibility": "off"
+                }]
             },
             {
                 "featureType": "road",
                 "elementType": "labels.icon",
-                "stylers": [
-                    {
-                        "visibility": "off"
-                    }
-                ]
+                "stylers": [{
+                    "visibility": "off"
+                }]
             },
             {
                 "featureType": "road",
                 "elementType": "labels.text.fill",
-                "stylers": [
-                    {
-                        "color": "#8a8a8a"
-                    }
-                ]
+                "stylers": [{
+                    "color": "#8a8a8a"
+                }]
             },
             {
                 "featureType": "road.arterial",
                 "elementType": "geometry",
-                "stylers": [
-                    {
-                        "color": "#373737"
-                    }
-                ]
+                "stylers": [{
+                    "color": "#373737"
+                }]
             },
             {
                 "featureType": "road.highway",
                 "elementType": "geometry",
-                "stylers": [
-                    {
-                        "color": "#3c3c3c"
-                    }
-                ]
+                "stylers": [{
+                    "color": "#3c3c3c"
+                }]
             },
             {
                 "featureType": "road.highway.controlled_access",
                 "elementType": "geometry",
-                "stylers": [
-                    {
-                        "color": "#4e4e4e"
-                    }
-                ]
+                "stylers": [{
+                    "color": "#4e4e4e"
+                }]
             },
             {
                 "featureType": "road.local",
                 "elementType": "labels.text.fill",
-                "stylers": [
-                    {
-                        "color": "#616161"
-                    }
-                ]
+                "stylers": [{
+                    "color": "#616161"
+                }]
             },
             {
                 "featureType": "transit",
-                "stylers": [
-                    {
-                        "visibility": "off"
-                    }
-                ]
+                "stylers": [{
+                    "visibility": "off"
+                }]
             },
             {
                 "featureType": "transit",
                 "elementType": "labels.text.fill",
-                "stylers": [
-                    {
-                        "color": "#757575"
-                    }
-                ]
+                "stylers": [{
+                    "color": "#757575"
+                }]
             },
             {
                 "featureType": "water",
                 "elementType": "geometry",
-                "stylers": [
-                    {
-                        "color": "#000000"
-                    }
-                ]
+                "stylers": [{
+                    "color": "#000000"
+                }]
             },
             {
                 "featureType": "water",
                 "elementType": "labels.text",
-                "stylers": [
-                    {
-                        "visibility": "off"
-                    }
-                ]
+                "stylers": [{
+                    "visibility": "off"
+                }]
             },
             {
                 "featureType": "water",
                 "elementType": "labels.text.fill",
-                "stylers": [
-                    {
-                        "color": "#3d3d3d"
-                    }
-                ]
+                "stylers": [{
+                    "color": "#3d3d3d"
+                }]
             }
         ]
     });

@@ -1,7 +1,12 @@
 .section.active {
     $dur: 1.5s;
     $easing: "ease";
-    $delay: 0s;
+    $delay: .1s;
+
+    @for $i from 1 to 20 {
+        // .results div:nth-child(#{$i}) { animation-delay: $i * 1ms; }
+        .ani-delay-#{$i}00 { animation-delay: $i * 0.1s !important}
+      }
     .fade-in-top {
         animation: fade-in-top $dur #{$easing} $delay both;
     }
@@ -26,5 +31,9 @@
     }
     .slide-in-right {
         animation: slide-in-right $dur #{$easing} $delay both;
+    }
+
+    .rotate-in-2-fwd-cw {
+        animation: rotate-in-2-fwd-cw $dur #{$easing} $delay both;
     }
 }

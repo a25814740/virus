@@ -368,6 +368,36 @@ table {
   }
 }
 
+/**
+ * ----------------------------------------
+ * animation rotate-in-2-fwd-cw
+ * ----------------------------------------
+ */
+@-webkit-keyframes rotate-in-2-fwd-cw {
+  0% {
+    -webkit-transform: translateZ(-200px) rotate(-45deg);
+            transform: translateZ(-200px) rotate(-45deg);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateZ(0) rotate(0);
+            transform: translateZ(0) rotate(0);
+    opacity: 1;
+  }
+}
+@keyframes rotate-in-2-fwd-cw {
+  0% {
+    -webkit-transform: translateZ(-200px) rotate(-45deg);
+            transform: translateZ(-200px) rotate(-45deg);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateZ(0) rotate(0);
+            transform: translateZ(0) rotate(0);
+    opacity: 1;
+  }
+}
+
 html {
   color: #FFF;
   --bs-heading-color: #FFF !important;
@@ -530,6 +560,7 @@ html body {
 
 #fullpage .section {
   color: inherit;
+  overflow: hidden;
 }
 
 #fullpage [rel*="nofollow"] {
@@ -604,6 +635,7 @@ html body {
 }
 
 .fancybox__container .fancybox__carousel .fancybox__slide .fancybox__content > .carousel__button.is-close {
+  position: fixed;
   right: 10px;
   top: 10px;
 }
@@ -624,44 +656,144 @@ html body {
   width: 100%;
 }
 
+.section.active .ani-delay-100 {
+  -webkit-animation-delay: 0.1s !important;
+          animation-delay: 0.1s !important;
+}
+
+.section.active .ani-delay-200 {
+  -webkit-animation-delay: 0.2s !important;
+          animation-delay: 0.2s !important;
+}
+
+.section.active .ani-delay-300 {
+  -webkit-animation-delay: 0.3s !important;
+          animation-delay: 0.3s !important;
+}
+
+.section.active .ani-delay-400 {
+  -webkit-animation-delay: 0.4s !important;
+          animation-delay: 0.4s !important;
+}
+
+.section.active .ani-delay-500 {
+  -webkit-animation-delay: 0.5s !important;
+          animation-delay: 0.5s !important;
+}
+
+.section.active .ani-delay-600 {
+  -webkit-animation-delay: 0.6s !important;
+          animation-delay: 0.6s !important;
+}
+
+.section.active .ani-delay-700 {
+  -webkit-animation-delay: 0.7s !important;
+          animation-delay: 0.7s !important;
+}
+
+.section.active .ani-delay-800 {
+  -webkit-animation-delay: 0.8s !important;
+          animation-delay: 0.8s !important;
+}
+
+.section.active .ani-delay-900 {
+  -webkit-animation-delay: 0.9s !important;
+          animation-delay: 0.9s !important;
+}
+
+.section.active .ani-delay-1000 {
+  -webkit-animation-delay: 1s !important;
+          animation-delay: 1s !important;
+}
+
+.section.active .ani-delay-1100 {
+  -webkit-animation-delay: 1.1s !important;
+          animation-delay: 1.1s !important;
+}
+
+.section.active .ani-delay-1200 {
+  -webkit-animation-delay: 1.2s !important;
+          animation-delay: 1.2s !important;
+}
+
+.section.active .ani-delay-1300 {
+  -webkit-animation-delay: 1.3s !important;
+          animation-delay: 1.3s !important;
+}
+
+.section.active .ani-delay-1400 {
+  -webkit-animation-delay: 1.4s !important;
+          animation-delay: 1.4s !important;
+}
+
+.section.active .ani-delay-1500 {
+  -webkit-animation-delay: 1.5s !important;
+          animation-delay: 1.5s !important;
+}
+
+.section.active .ani-delay-1600 {
+  -webkit-animation-delay: 1.6s !important;
+          animation-delay: 1.6s !important;
+}
+
+.section.active .ani-delay-1700 {
+  -webkit-animation-delay: 1.7s !important;
+          animation-delay: 1.7s !important;
+}
+
+.section.active .ani-delay-1800 {
+  -webkit-animation-delay: 1.8s !important;
+          animation-delay: 1.8s !important;
+}
+
+.section.active .ani-delay-1900 {
+  -webkit-animation-delay: 1.9s !important;
+          animation-delay: 1.9s !important;
+}
+
 .section.active .fade-in-top {
-  -webkit-animation: fade-in-top 1.5s ease 0s both;
-          animation: fade-in-top 1.5s ease 0s both;
+  -webkit-animation: fade-in-top 1.5s ease 0.1s both;
+          animation: fade-in-top 1.5s ease 0.1s both;
 }
 
 .section.active .fade-in-bottom {
-  -webkit-animation: fade-in-bottom 1.5s ease 0s both;
-          animation: fade-in-bottom 1.5s ease 0s both;
+  -webkit-animation: fade-in-bottom 1.5s ease 0.1s both;
+          animation: fade-in-bottom 1.5s ease 0.1s both;
 }
 
 .section.active .fade-in-left {
-  -webkit-animation: fade-in-left 1.5s ease 0s both;
-          animation: fade-in-left 1.5s ease 0s both;
+  -webkit-animation: fade-in-left 1.5s ease 0.1s both;
+          animation: fade-in-left 1.5s ease 0.1s both;
 }
 
 .section.active .fade-in-right {
-  -webkit-animation: fade-in-right 1.5s ease 0s both;
-          animation: fade-in-right 1.5s ease 0s both;
+  -webkit-animation: fade-in-right 1.5s ease 0.1s both;
+          animation: fade-in-right 1.5s ease 0.1s both;
 }
 
 .section.active .slide-in-top {
-  -webkit-animation: slide-in-top 1.5s ease 0s both;
-          animation: slide-in-top 1.5s ease 0s both;
+  -webkit-animation: slide-in-top 1.5s ease 0.1s both;
+          animation: slide-in-top 1.5s ease 0.1s both;
 }
 
 .section.active .slide-in-bottom {
-  -webkit-animation: slide-in-bottom 1.5s ease 0s both;
-          animation: slide-in-bottom 1.5s ease 0s both;
+  -webkit-animation: slide-in-bottom 1.5s ease 0.1s both;
+          animation: slide-in-bottom 1.5s ease 0.1s both;
 }
 
 .section.active .slide-in-left {
-  -webkit-animation: slide-in-left 1.5s ease 0s both;
-          animation: slide-in-left 1.5s ease 0s both;
+  -webkit-animation: slide-in-left 1.5s ease 0.1s both;
+          animation: slide-in-left 1.5s ease 0.1s both;
 }
 
 .section.active .slide-in-right {
-  -webkit-animation: slide-in-right 1.5s ease 0s both;
-          animation: slide-in-right 1.5s ease 0s both;
+  -webkit-animation: slide-in-right 1.5s ease 0.1s both;
+          animation: slide-in-right 1.5s ease 0.1s both;
+}
+
+.section.active .rotate-in-2-fwd-cw {
+  -webkit-animation: rotate-in-2-fwd-cw 1.5s ease 0.1s both;
+          animation: rotate-in-2-fwd-cw 1.5s ease 0.1s both;
 }
 
 header {
@@ -1709,14 +1841,30 @@ header .HBG .cls-3 {
   height: 100vh;
 }
 
-#banner .swiper .swiper-wrapper .swiper-slide:nth-child(odd) .bg {
-  -webkit-animation: kenburns-bottom 5s ease-in infinite backwards;
-          animation: kenburns-bottom 5s ease-in infinite backwards;
+#banner .swiper .swiper-wrapper .swiper-slide.swiper-slide-active .bg {
+  -webkit-animation: kenburns-bottom 20s ease-in infinite both;
+          animation: kenburns-bottom 20s ease-in infinite both;
 }
 
-#banner .swiper .swiper-wrapper .swiper-slide:nth-child(even) .bg {
-  -webkit-animation: kenburns-bottom 5s ease-in infinite forwards;
-          animation: kenburns-bottom 5s ease-in infinite forwards;
+#banner .swiper .swiper-wrapper .swiper-slide[data-swiper-slide-index="0"] .bg, #banner .swiper .swiper-wrapper .swiper-slide[data-swiper-slide-index="2"] .bg, #banner .swiper .swiper-wrapper .swiper-slide[data-swiper-slide-index="4"] .bg, #banner .swiper .swiper-wrapper .swiper-slide[data-swiper-slide-index="6"] .bg {
+  -webkit-animation-timing-function: ease-out;
+          animation-timing-function: ease-out;
+  animation-direction: reverse;
+}
+
+#banner .swiper .swiper-wrapper .swiper-slide video {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+#banner .swiper .swiper-wrapper .swiper-slide #clickVideo {
+  position: absolute;
+  left: 0;
+  top: 0;
+  visibility: hidden;
+  pointer-events: none;
 }
 
 #banner .swiper .bg {
@@ -2708,7 +2856,6 @@ header .HBG .cls-3 {
   width: 100%;
   height: 35%;
   cursor: pointer;
-  background-color: white;
 }
 
 #vaccineTop .s7_topContainer .bottomBlock a {
@@ -3255,12 +3402,6 @@ header .HBG .cls-3 {
     -webkit-transform: translate(-50%, -50%) scaleY(1) scaleX(1);
             transform: translate(-50%, -50%) scaleY(1) scaleX(1);
   }
-}
-
-body {
-  color: #213546;
-  background: #ffffff;
-  font-family: Arial, Helvetica, sans-serif;
 }
 
 #timeline .timeline-title {

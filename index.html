@@ -258,23 +258,38 @@
             <div class="section fp-auto-height-responsive" id="banner">
                 <div class="swiper">
                     <div class="swiper-wrapper">
-
-                        <div class="swiper-slide" data-swiper-type="image" v-for="(item, index) in banner">
-                            <div class="bg position-absolute w-100 h-100"
-                                :style="'background: url( '+item.imgUrl+' ) 50% 50% / cover no-repeat;'"></div>
-                            <article>
-                                <div class="title" data-swiper-parallax="-100" data-swiper-parallax-duration="1000">
-                                    {{ item.title }}</div>
-                                <div class="subtitle" data-swiper-parallax="-200" data-swiper-parallax-duration="1000"
-                                    v-html="item.description"></div>
-                            </article>
+                        <div class="swiper-slide" v-for="(item, index) in banner">
+                            <!-- 圖片背景 -->
+                            <div class="w-100 h-100" data-swiper-type="image" v-if="item.imgUrl">
+                                <div class="bg position-absolute w-100 h-100"
+                                    :style="'background: url( '+item.imgUrl+' ) 50% 50% / cover no-repeat;'"></div>
+                                <article>
+                                    <div class="title" data-swiper-parallax="-100" data-swiper-parallax-duration="1000"
+                                        v-if="item.title">
+                                        {{ item.title }}</div>
+                                    <div class="subtitle" data-swiper-parallax="-200"
+                                        data-swiper-parallax-duration="1000" v-if="item.description"
+                                        v-html="item.description"></div>
+                                </article>
+                            </div>
+                            <!-- 影片背景 -->
+                            <div class="w-100 h-100" data-swiper-type="video" v-if="item.videoUrl">
+                                <video id="video1" muted="muted">
+                                    <source :src="item.videoUrl" type="video/mp4">
+                                </video>
+                                <article>
+                                    <div class="title" data-swiper-parallax="-100" data-swiper-parallax-duration="1000"
+                                        v-if="item.title">
+                                        {{ item.title }}</div>
+                                    <div class="subtitle" data-swiper-parallax="-200"
+                                        data-swiper-parallax-duration="1000" v-if="item.description"
+                                        v-html="item.description"></div>
+                                </article>
+                            </div>
                         </div>
                     </div>
 
                     <div class="swiper-pagination"></div>
-
-                    <!-- <div class="swiper-button-prev"></div>
-                    <div class="swiper-button-next"></div> -->
                 </div>
             </div>
 
@@ -286,7 +301,7 @@
                         <div class="row">
                             <div class="col-4">
                                 <div class="content text-center d-flex flex-column-reverse">
-                                    <h3 class="h3 mt-3 slide-in-bottom">確診人數</h3>
+                                    <h3 class="h3 mt-3 slide-in-bottom ani-delay-200">確診人數</h3>
                                     <div class="counter-container">
                                         <div class="counter h1">830,257</div>
                                     </div>
@@ -294,7 +309,7 @@
                             </div>
                             <div class="col-4">
                                 <div class="content text-center d-flex flex-column-reverse">
-                                    <h3 class="h3 mt-3 slide-in-bottom">死亡人數</h3>
+                                    <h3 class="h3 mt-3 slide-in-bottom ani-delay-200">死亡人數</h3>
                                     <div class="counter-container">
                                         <div class="counter h1">1,097</div>
                                     </div>
@@ -303,7 +318,7 @@
                             </div>
                             <div class="col-4">
                                 <div class="content text-center d-flex flex-column-reverse">
-                                    <h3 class="h3 mt-3 slide-in-bottom">死亡率</h3>
+                                    <h3 class="h3 mt-3 slide-in-bottom ani-delay-200">死亡率</h3>
                                     <div class="counter-container">
                                         <div class="counter h1">0.13%</div>
                                     </div>
@@ -321,7 +336,7 @@
                         <div class="row">
                             <div class="col-4">
                                 <div class="content text-center d-flex flex-column-reverse">
-                                    <h3 class="h3 mt-3 slide-in-bottom">確診人數</h3>
+                                    <h3 class="h3 mt-3 slide-in-bottom ani-delay-200">確診人數</h3>
                                     <div class="counter-container">
                                         <div class="counter h1">830,257</div>
                                     </div>
@@ -329,7 +344,7 @@
                             </div>
                             <div class="col-4">
                                 <div class="content text-center d-flex flex-column-reverse">
-                                    <h3 class="h3 mt-3 slide-in-bottom">死亡人數</h3>
+                                    <h3 class="h3 mt-3 slide-in-bottom ani-delay-200">死亡人數</h3>
                                     <div class="counter-container">
                                         <div class="counter h1">1,097</div>
                                     </div>
@@ -337,7 +352,7 @@
                             </div>
                             <div class="col-4">
                                 <div class="content text-center d-flex flex-column-reverse">
-                                    <h3 class="h3 mt-3 slide-in-bottom">死亡率</h3>
+                                    <h3 class="h3 mt-3 slide-in-bottom ani-delay-200">死亡率</h3>
                                     <div class="counter-container">
                                         <div class="counter h1">0.13%</div>
                                     </div>
@@ -354,14 +369,14 @@
                         <h3 class="h1 slide-in-bottom">台灣疫苗施打情形</h3>
                         <h4 class="h5 slide-in-bottom">人口涵蓋率</h4>
                     </div>
-                    <div class="col chart-area pt-0 pb-5 slide-in-bottom">
+                    <div class="col chart-area pt-0 pb-5 slide-in-bottom ani-delay-200">
                         <canvas id="situationChart"></canvas>
                     </div>
                     <div class="container">
                         <div class="row">
                             <div class="col-4">
                                 <div class="content text-center d-flex flex-column-reverse">
-                                    <h3 class="h3 slide-in-bottom">確診人數</h3>
+                                    <h3 class="h3 slide-in-bottom ani-delay-400">確診人數</h3>
                                     <div class="counter-container">
                                         <div class="counter h1">830,257</div>
                                     </div>
@@ -369,7 +384,7 @@
                             </div>
                             <div class="col-4">
                                 <div class="content text-center d-flex flex-column-reverse">
-                                    <h3 class="h3 slide-in-bottom">死亡人數</h3>
+                                    <h3 class="h3 slide-in-bottom ani-delay-400">死亡人數</h3>
                                     <div class="counter-container">
                                         <div class="counter h1">1,097</div>
                                     </div>
@@ -377,7 +392,7 @@
                             </div>
                             <div class="col-4">
                                 <div class="content text-center d-flex flex-column-reverse">
-                                    <h3 class="h3 slide-in-bottom">死亡率</h3>
+                                    <h3 class="h3 slide-in-bottom ani-delay-400">死亡率</h3>
                                     <div class="counter-container">
                                         <div class="counter h1">0.13%</div>
                                     </div>
@@ -393,14 +408,17 @@
                 <div class="s3_left " :class="{'s3l_active': s3_l_active == true}">
                     <div class="l_content container-fluid">
                         <div class="row row1">
-                            <div class="col-6 h1" @click="introClick('l')">
+                            <div class="col-6 h1 slide-in-bottom" @click="introClick('l')">
                                 <span class="magic-hover magic-hover__square">病毒結構</span>
                             </div>
                         </div>
                         <div class="row row2 gy-md-0 gy-4">
-                            <div class="col-md-6 col-12 image mx-auto">
-                                <img src="./assets/styles/images/virus_introduction/m4L_virus.png" alt=""
-                                    data-depth="-0.8" />
+                            <div class="col-md-6 col-12 image mx-auto" id="scene0">
+                                <div data-depth="-0.3">
+                                    <img class="slide-in-bottom ani-delay-200" 
+                                        src="./assets/styles/images/virus_introduction/m4L_virus.png" alt=""
+                                        data-depth="-0.8" />
+                                </div>
                             </div>
                             <div class="col-md-6 col-12 text">
                                 <article>
@@ -420,7 +438,7 @@
                     <div class="l_bg"></div>
                 </div>
                 <div class="s3_right" :class="{'s3r_active': s3_r_active == true}">
-                    <div class="r_content">
+                    <div class="r_content slide-in-bottom">
                         <div id="scene1">
                             <div data-depth="1.8">
                                 <img src="./assets/styles/images/virus_introduction/virus_1.png" alt="">
@@ -446,8 +464,8 @@
                                 <img src="./assets/styles/images/virus_introduction/virus_4.png" alt="">
                             </div>
                         </div>
-                        <div class="h1 " @click="introClick('r')">
-                            <span class="magic-hover magic-hover__square">病毒增殖</span>
+                        <div class="h1" @click="introClick('r')">
+                            <span class="magic-hover magic-hover__square slide-in-bottom ani-delay-200">病毒增殖</span>
                         </div>
                     </div>
                     <div class="s3r_outer row gap-md-5 gap-3 mx-auto" @mouseover="s3_wheel">
@@ -470,16 +488,16 @@
 
             <!-- Covid-19 變異株起源 -->
             <div class="section fp-auto-height-responsive" id="map-area">
-                <h2 class="h2 title text-center">COVID-19 變異株起源</h2>
+                <h2 class="h2 title text-center slide-in-bottom">COVID-19 變異株起源</h2>
                 <div id="map"></div>
             </div>
 
             <!-- 目前Covid-19感染症狀 -->
-            <div class="section fp-auto-height-responsive  " id="symptomTop">
+            <div class="section fp-auto-height-responsive" id="symptomTop">
                 <div class="s9_mainTop">
-                    <h1>目前Covid-19感染症狀</h1>
+                    <h1 class="slide-in-bottom">目前Covid-19感染症狀</h1>
                     <svg width="1815" height="732" viewBox="0 0 1815 732" fill="none" xmlns="http://www.w3.org/2000/svg"
-                        id='sceneSymptom'>
+                        id='sceneSymptom' class="slide-in-bottom ani-delay-200">
                         <g class="blue" data-depth="0.2">
                             <circle cx="486" cy="133" r="133" fill="#253A56" />
                             <circle cx="1292.5" cy="142.5" r="90.5" fill="#253A56" />
@@ -557,8 +575,8 @@
             </div>
             <div class="section fp-auto-height-responsive" id="sympthomBottom">
                 <div class="s9_mainBottom">
-                    <h1>目前Covid-19後遺症狀</h1>
-                    <div class="s9_svg">
+                    <h1 class="slide-in-bottom">目前Covid-19後遺症狀</h1>
+                    <div class="s9_svg slide-in-bottom ani-delay-200">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1013.26 791.5">
                             <defs>
                             </defs>
@@ -797,7 +815,6 @@
                             </g>
                         </svg>
                     </div>
-
                 </div>
             </div>
 
@@ -805,18 +822,18 @@
             <div class="section fp-auto-height-responsive" id="vaccineTop">
                 <div class="s7_topContainer">
                     <div class="textBlock">
-                        <h1>這次的疫苗 不同以往</h1>
-                        <p>疫苗的研發過程其實千難萬難，但為因應快速傳染的新冠病毒而有了新型疫苗-mRNA疫苗的出現 此處將分別介紹傳統與新型疫苗之差異性。</p>
+                        <h1 class="slide-in-bottom">這次的疫苗 不同以往</h1>
+                        <p class="slide-in-bottom ani-delay-200">疫苗的研發過程其實千難萬難，但為因應快速傳染的新冠病毒而有了新型疫苗-mRNA疫苗的出現 此處將分別介紹傳統與新型疫苗之差異性。</p>
                     </div>
                     <div class="bottomBlock">
                         <a data-fancybox data-src="#popup-vaccineL" href="javascript:;">
-                            <div class="s7_left">
-                                <h2>傳統疫苗</h2>
+                            <div class="s7_left slide-in-bottom ani-delay-400">
+                                <h2 class="">傳統疫苗</h2>
                             </div>
                         </a>
                         <a data-fancybox data-src="#popup-vaccineR" href="javascript:;">
-                            <div class="s7_right">
-                                <h2>新型疫苗</h2>
+                            <div class="s7_right slide-in-bottom ani-delay-400">
+                                <h2 class="">新型疫苗</h2>
                             </div>
                         </a>
                     </div>
@@ -827,9 +844,9 @@
                 <div class="s7_bottomContainer">
                     <img src="./assets/styles/images/vaccine/bV.png" alt="" class="bV">
                     <div class="s7_b_textBlock">
-                        <p>我們所知的傳統的疫苗起源於天花的牛痘疫苗<br>而後發展出多種類型的疫苗<br>其中包含：</p>
+                        <p class="slide-in-bottom">我們所知的傳統的疫苗起源於天花的牛痘疫苗<br>而後發展出多種類型的疫苗<br>其中包含：</p>
                     </div>
-                    <div class="s7_b_imgBlock">
+                    <div class="s7_b_imgBlock slide-in-bottom ani-delay-400">
                         <div id="s7_scene1">
                             <div class="imgBox" data-depth="1.8">
                                 <img class=" magic-hover magic-hover__square"
@@ -1074,7 +1091,7 @@
 
                     <div
                         class="position-relative container-fluid h-100 d-flex align-items-center justify-content-center">
-                        <a class="w-100 h-100 d-flex align-items-center justify-content-center"
+                        <a class="w-100 h-100 d-flex align-items-center justify-content-center slide-in-bottom"
                             data-fancybox="gallery-popup-Post-pandemic" data-src="#popup-Post-pandemic-content">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1276.48 930.82">
                                 <g id="social">
@@ -1528,7 +1545,7 @@
                 <div class="container-fluid">
                     <div class="text-light text-container">
                         <div class="top">
-                            <div class="d-flex justify-content-center">
+                            <div class="d-flex justify-content-center slide-in-bottom">
                                 <h1>關於</h1>
                                 <div class="d-flex flex-column justify-content-around">
                                     <p>我</p>
@@ -1536,7 +1553,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="bottom text-center">
+                        <div class="bottom text-center slide-in-bottom ani-delay-400">
                             <p>
                                 <span>我們是一群</span>
                                 學習網頁前端程式的學生，藉著這次機會希望將所學到的技術用在推廣這些平常不太接觸到<br>
@@ -1547,50 +1564,50 @@
 
                     <div class="img-container d-flex justify-content-around">
                         <div class="person1" data-fancybox="gallery-aboutUs1" data-src="#popup-aboutUs-content">
-                            <div class="rounded-circle">
+                            <div class="rounded-circle rotate-in-2-fwd-cw ani-delay-1200">
                                 <img src="./assets/styles/images/img-about_us/about_anime_01.GIF" alt="">
                             </div>
-                            <div class="text-light text-center img-title">
+                            <div class="text-light text-center img-title slide-in-bottom ani-delay-800">
                                 <span>CEO</span>
                                 <p class="pt-4">羅仕林</p>
                             </div>
                         </div>
 
                         <div class="person2" data-fancybox="gallery-aboutUs2" data-src="#popup-aboutUs-content">
-                            <div class="rounded-circle">
+                            <div class="rounded-circle rotate-in-2-fwd-cw ani-delay-1200">
                                 <img src="./assets/styles/images/img-about_us/about_anime_02.GIF" alt="">
                             </div>
-                            <div class="text-light text-center img-title">
+                            <div class="text-light text-center img-title slide-in-bottom ani-delay-800">
                                 <span>打雜</span>
                                 <p class="pt-4">蕭嘉毓</p>
                             </div>
                         </div>
 
                         <div class="person3" data-fancybox="gallery-aboutUs3" data-src="#popup-aboutUs-content">
-                            <div class="rounded-circle">
+                            <div class="rounded-circle rotate-in-2-fwd-cw ani-delay-1200">
                                 <img src="./assets/styles/images/img-about_us/about_anime_03.GIF" alt="">
                             </div>
-                            <div class="text-light text-center img-title">
+                            <div class="text-light text-center img-title slide-in-bottom ani-delay-800">
                                 <span>遞水仔</span>
                                 <p class="pt-4">張鴻檄</p>
                             </div>
                         </div>
 
                         <div class="person4" data-fancybox="gallery-aboutUs4" data-src="#popup-aboutUs-content">
-                            <div class="rounded-circle">
+                            <div class="rounded-circle rotate-in-2-fwd-cw ani-delay-1200">
                                 <img src="./assets/styles/images/img-about_us/about_anime_04.GIF" alt="">
                             </div>
-                            <div class="text-light text-center img-title">
+                            <div class="text-light text-center img-title slide-in-bottom ani-delay-800">
                                 <span>搖滾區</span>
                                 <p class="pt-4">蔡閔婷</p>
                             </div>
                         </div>
 
                         <div class="person5" data-fancybox="gallery-aboutUs5" data-src="#popup-aboutUs-content">
-                            <div class="rounded-circle">
+                            <div class="rounded-circle rotate-in-2-fwd-cw ani-delay-1200">
                                 <img src="./assets/styles/images/img-about_us/about_anime_05.GIF" alt="">
                             </div>
-                            <div class="text-light text-center img-title">
+                            <div class="text-light text-center img-title slide-in-bottom ani-delay-800">
                                 <span>軍師</span>
                                 <p class="pt-4">林廷一</p>
                             </div>

@@ -165,3 +165,20 @@
         opacity: 1;
     }
 }
+
+/**
+ * ----------------------------------------
+ * animation rotate-in-2-fwd-cw
+ * ----------------------------------------
+ */
+ @keyframes rotate-in-2-fwd-cw {
+    0% {
+      transform: translateZ(-200px) rotate(-45deg);
+      opacity: 0;
+    }
+    100% {
+      transform: translateZ(0) rotate(0);
+      opacity: 1;
+    }
+  }
+  
