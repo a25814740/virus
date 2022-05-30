@@ -10,15 +10,27 @@
         }
     }
 
+    &#situation_taiwan_chart {
+        .h1 {
+            margin-bottom: 3vh;
+        }
+        .h5 {
+            font-size: 1.5vw;
+        }
+    }
 
     h2 {
+        font-size: 4vw;
         margin-bottom: 10vh;
+    }
+    .h3 {
+        font-size: 1.75vw;
     }
 
     .counter-container {
         .counter {
             opacity: 0;
-            transition: opacity .5s ease;
+            transition: opacity 0.5s ease;
         }
     }
 
@@ -37,7 +49,6 @@
         /* LIST */
         list-style: none;
         background: #ccc;
-
 
         padding-bottom: 5vh;
         /* FORM */
