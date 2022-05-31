@@ -878,7 +878,7 @@ header .HBG .cls-3 {
 #menu .menuBox .menuFooter .footer_left span {
   opacity: 0.5;
   letter-spacing: 0.2vw;
-  font-size: 1vw;
+  font-size: 1.5vw;
   transition: all 0.35s ease 0.15s;
 }
 #menu .menuBox .menuFooter .footer_left span:hover {
@@ -1783,10 +1783,11 @@ header .HBG .cls-3 {
 #virus_introduction .s3_left .l_content .row2 .image > div {
   display: flex;
   justify-content: center;
+  width: 70%;
 }
 #virus_introduction .s3_left .l_content .row2 .image > div img {
   border-radius: 50%;
-  max-width: 90%;
+  max-width: 70%;
 }
 #virus_introduction .s3_left .l_content .row2 .text {
   display: flex;
