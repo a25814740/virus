@@ -10,18 +10,54 @@
         }
     }
 
-    .container-fluid {
-        width: 1600px;
-        max-width: 95%;
+    
+    & > .bV {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 0;
+        pointer-events: none;
+        animation: bV 100s linear infinite;
+     }
+     & > .bV ~ * {
+         position: relative;
+     }
+
+    &#situation0 {
+        .bV {
+            top: 0;
+            left: 100%;
+            width: 30vw;
+            animation-direction: reverse;
+        }
     }
 
+    &#situation1 {
+        .bV {
+            left: 0;
+            height: 95vh;
+        }
+    }
+
+    // 台灣疫苗施打狀況
     &#situation_taiwan_chart {
+        .bV {
+            left: 100%;
+            height: 75vh;
+            animation-direction: reverse;
+        }
         .h1 {
             margin-bottom: 3vh;
         }
         .h5 {
             font-size: 1.5vw;
         }
+    }
+
+    .container-fluid {
+        width: 1600px;
+        max-width: 95%;
     }
 
     h2 {

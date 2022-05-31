@@ -1,0 +1,74 @@
+{
+    "banner": [
+        {
+            "videoUrl": "./assets/styles/videos/banner/COVID-19.mp4"
+        },
+        {
+            "title": "Slide 1",
+            "description": "2019年末，始於中國武漢的第一起未知病毒感染檢測報告被曝光，而後被WHO命名為Covid-19的病毒席捲向全球人類社會......",
+            "imgUrl": "./assets/styles/images/banner/virus1.jpg"
+        },
+        {
+            "title": "Slide 2",
+            "description": "面對疫情<br>最大的敵人不是病毒，<br>而是我們自己內心的恐懼",
+            "imgUrl": "./assets/styles/images/banner/vaccine3.jpg"
+        },
+        {
+            "title": "Slide 3",
+            "description": "對於未知的事物<br>人類往往抱著恐懼的眼光看待<br>而我們想讓你知道你無需害怕",
+            "imgUrl": "./assets/styles/images/banner/covid-life.jpg"
+        }
+    ],
+    "situation": {
+        "diagnose": [
+            {
+                "title": "全球確診情形",
+                "diagnosed": {
+                    "name": "確診人數",
+                    "number": 528996258
+                },
+                "death": {
+                    "name": "死亡人數",
+                    "number": 6287786
+                },
+                "percent": {
+                    "name": "死亡率",
+                    "number": 0.01
+                }
+            },
+            {
+                "title": "台灣確診情形",
+                "diagnosed": {
+                    "name": "確診人數",
+                    "number": 1952355
+                },
+                "death": {
+                    "name": "死亡人數",
+                    "number": 2165
+                },
+                "percent": {
+                    "name": "死亡率",
+                    "number": 0.0011
+                }
+            }
+        ],
+        "vaccination": [
+            {
+                "title": "台灣疫苗施打情形",
+                "subTitle": "人口涵蓋率",
+                "total": {
+                    "name": "總人口數",
+                    "number": 23215015
+                },
+                "dose": {
+                    "name": "劑次人口比",
+                    "number": 2.3613
+                },
+                "inoculate": {
+                    "name": "累計接種人次",
+                    "number": 54817813
+                }
+            }
+        ]
+    }
+}

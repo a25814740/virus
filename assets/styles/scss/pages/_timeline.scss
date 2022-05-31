@@ -1,5 +1,38 @@
+#history {
+    position: relative;
+    &::before,
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        width: calc(100% / 2 - 100px);
+        max-width: 40vw;
+        height: 100%;
+        background-color: #000;
+        z-index: 0;
+    }
+    &::before {
+        left: 0;
+    }
+    &::after {
+        right: 0;
+    }
+}
+
 #timeline {
+    position: relative;
+    z-index: 1;
     $horizontal_line_width: 3px;
+    
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.3);
+        z-index: 0;
+    }
     .timeline-title {
         position: relative;
         margin-top: 30px;

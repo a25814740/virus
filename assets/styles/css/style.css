@@ -1957,9 +1957,38 @@ header .HBG .cls-3 {
   transition: opacity 1s ease 1.5s;
 }
 
-[id*="situation"] .container-fluid {
-  width: 1600px;
-  max-width: 95%;
+[id*="situation"] > .bV {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 0;
+  pointer-events: none;
+  -webkit-animation: bV 100s linear infinite;
+          animation: bV 100s linear infinite;
+}
+
+[id*="situation"] > .bV ~ * {
+  position: relative;
+}
+
+[id*="situation"]#situation0 .bV {
+  top: 0;
+  left: 100%;
+  width: 30vw;
+  animation-direction: reverse;
+}
+
+[id*="situation"]#situation1 .bV {
+  left: 0;
+  height: 95vh;
+}
+
+[id*="situation"]#situation_taiwan_chart .bV {
+  left: 100%;
+  height: 75vh;
+  animation-direction: reverse;
 }
 
 [id*="situation"]#situation_taiwan_chart .h1 {
@@ -1968,6 +1997,11 @@ header .HBG .cls-3 {
 
 [id*="situation"]#situation_taiwan_chart .h5 {
   font-size: 1.5vw;
+}
+
+[id*="situation"] .container-fluid {
+  width: 1600px;
+  max-width: 95%;
 }
 
 [id*="situation"] h2 {
@@ -3448,6 +3482,44 @@ header .HBG .cls-3 {
     -webkit-transform: translate(-50%, -50%) scaleY(1) scaleX(1);
             transform: translate(-50%, -50%) scaleY(1) scaleX(1);
   }
+}
+
+#history {
+  position: relative;
+}
+
+#history::before, #history::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: calc(100% / 2 - 100px);
+  max-width: 40vw;
+  height: 100%;
+  background-color: #000;
+  z-index: 0;
+}
+
+#history::before {
+  left: 0;
+}
+
+#history::after {
+  right: 0;
+}
+
+#timeline {
+  position: relative;
+  z-index: 1;
+}
+
+#timeline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 0;
 }
 
 #timeline .timeline-title {
