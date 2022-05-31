@@ -1,5 +1,5 @@
 const App = {
-    data() {
+    data(){ 
         return {
             banner: [{
                 videoUrl: './assets/styles/videos/banner/COVID-19.mp4'
