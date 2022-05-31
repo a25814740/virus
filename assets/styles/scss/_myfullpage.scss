@@ -2,17 +2,30 @@
     color: inherit;
     .section {
         color: inherit;
-        overflow: hidden;
-        
+        // overflow-x: hidden;
+        // overflow-y: visible;
+        // overflow: hidden;
+        .full-page-inner {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
     }
     [rel*="nofollow"] {
         display: none;
     }
 
-    @media (max-height: 900px) {
+    @media (min-width: 1200px) and (max-height: 900px) {
         .section {
-            height: auto;
-            height: 900px;
+            height: auto !important;
+            // overflow-x: hidden;
+            // overflow-y: visible;
+            // overflow: visible;
+            overflow: hidden;
+            .full-page-inner {
+                min-height: 0;
+            }
         }
     }
 }

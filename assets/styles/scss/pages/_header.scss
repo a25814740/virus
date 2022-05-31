@@ -134,6 +134,8 @@ $ani_durB: 2s;
                 filter: brightness(0.8);
                 transition: all 0.5s linear;
                 opacity: 0;
+                text-decoration: none;
+                color: inherit;
 
 
                 &:hover {
@@ -233,6 +235,7 @@ $ani_durB: 2s;
                 justify-content: space-between;
                 align-self: flex-end;
 
+                a:first-child,
                 span:first-child {
 
                     position: absolute;
@@ -240,6 +243,7 @@ $ani_durB: 2s;
                 }
 
 
+                a,
                 span {
                     opacity: 0.5;
                     letter-spacing: 0.2vw;
@@ -252,6 +256,11 @@ $ani_durB: 2s;
                         cursor: pointer;
                         transform: scale(1.2);
                     }
+                }
+
+                a {
+                    text-decoration: none;
+                    color: inherit;
                 }
 
                 .line {

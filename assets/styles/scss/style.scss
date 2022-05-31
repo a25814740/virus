@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&family=Noto+Sans+TC:wght@100;300;400;500;700;900&family=Noto+Serif+TC:wght@200;300;400;500;600;700;900&display=swap');
 
+$font-size: .83vw !default;
+
 @import 'reset';
 
 @import 'keyframes';
@@ -9,6 +11,7 @@
 @import 'myFancybox';
 @import 'page_in_animation';
 
+@import './pages/preload';
 @import './pages/header';
 @import './pages/banner';
 @import './pages/situation';

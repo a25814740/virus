@@ -5,6 +5,7 @@
  * w: http://animista.net, t: @cssanimista
  * ---------------------------------------------- */
 
+/* ============================= ENTRANCES ============================= */
 /**
  * ----------------------------------------
  * animation kenburns-top
@@ -15,6 +16,7 @@
         transform: scale(1) translateY(0);
         transform-origin: 50% 16%;
     }
+
     100% {
         transform: scale(1.25) translateY(-15px);
         transform-origin: top;
@@ -31,6 +33,7 @@
         transform: scale(1) translateY(0);
         transform-origin: 50% 84%;
     }
+
     100% {
         transform: scale(1.25) translateY(15px);
         transform-origin: bottom;
@@ -47,6 +50,7 @@
         transform: translateY(-5vh);
         opacity: 0;
     }
+
     100% {
         transform: translateY(0);
         opacity: 1;
@@ -63,6 +67,7 @@
         transform: translateY(5vh);
         opacity: 0;
     }
+
     100% {
         transform: translateY(0);
         opacity: 1;
@@ -79,6 +84,7 @@
         transform: translateX(-50px);
         opacity: 0;
     }
+
     100% {
         transform: translateX(0);
         opacity: 1;
@@ -95,11 +101,13 @@
         transform: translateX(50px);
         opacity: 0;
     }
+
     100% {
         transform: translateX(0);
         opacity: 1;
     }
 }
+
 /* ---------------------------------------------
 
 /**
@@ -112,6 +120,7 @@
         transform: translateY(-1000px);
         opacity: 0;
     }
+
     100% {
         transform: translateY(0);
         opacity: 1;
@@ -128,6 +137,7 @@
         transform: translateY(1000px);
         opacity: 0;
     }
+
     100% {
         transform: translateY(0);
         opacity: 1;
@@ -144,6 +154,7 @@
         transform: translateX(-1000px);
         opacity: 0;
     }
+
     100% {
         transform: translateX(0);
         opacity: 1;
@@ -160,6 +171,7 @@
         transform: translateX(1000px);
         opacity: 0;
     }
+
     100% {
         transform: translateX(0);
         opacity: 1;
@@ -171,14 +183,40 @@
  * animation rotate-in-2-fwd-cw
  * ----------------------------------------
  */
- @keyframes rotate-in-2-fwd-cw {
+@keyframes rotate-in-2-fwd-cw {
     0% {
-      transform: translateZ(-200px) rotate(-45deg);
-      opacity: 0;
+        transform: translateZ(-200px) rotate(-45deg);
+        opacity: 0;
     }
+
     100% {
-      transform: translateZ(0) rotate(0);
-      opacity: 1;
+        transform: translateZ(0) rotate(0);
+        opacity: 1;
     }
-  }
-  
+}
+
+
+
+
+
+
+
+
+
+
+
+/* ============================= EXITS ============================= */
+/**
+ * ----------------------------------------
+ * animation fade-out
+ * ----------------------------------------
+ */
+@keyframes fade-out {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}

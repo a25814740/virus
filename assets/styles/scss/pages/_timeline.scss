@@ -5,8 +5,8 @@
         content: "";
         position: absolute;
         top: 0;
-        width: calc(100% / 2 - 100px);
-        max-width: 40vw;
+        width: calc(100% / 2 - 200px);
+        min-width: 35vw;
         height: 100%;
         background-color: #000;
         z-index: 0;
@@ -22,7 +22,7 @@
 #timeline {
     position: relative;
     z-index: 1;
-    $horizontal_line_width: 3px;
+    $horizontal_line_width: 0.1875rem;
     
     &::before {
         content: "";
@@ -35,7 +35,7 @@
     }
     .timeline-title {
         position: relative;
-        margin-top: 30px;
+        margin-top: 1.875rem;
         width: 100%;
         text-align: center;
     }
@@ -43,10 +43,10 @@
     .timeline {
         position: relative;
         width: 100%;
-        padding: 30px 0;
+        padding: 1.875rem 0;
 
         .container-fluid {
-            width: 1100px;
+            width: 68.75rem;
             max-width: 100%;
         }
 
@@ -63,25 +63,26 @@
         }
 
         .timeline-start {
+            margin-top: 10rem;
             display: flex;
             align-items: center;
             justify-content: center;
 
             p {
                 &:first-child {
-                    font-size: 84px;
                     font-size: 4.5vw;
+                    font-size: 5.25rem;
                 }
 
                 &:last-child {
-                    font-size: 70px;
                     font-size: 4.2vw;
+                    font-size: 4.375rem;
                     line-height: 1;
-                    letter-spacing: 5px;
+                    letter-spacing: 0.3125rem;
 
                     span {
-                        font-size: 40px;
                         font-size: 2.4vw;
+                        font-size: 2.5rem;
                         line-height: 1;
                         letter-spacing: 0;
                     }
@@ -92,35 +93,35 @@
         .timeline-year {
             p {
                 display: inline-block;
-                width: 80px;
-                height: 80px;
+                width: 5rem;
+                height: 5rem;
                 margin: 0;
-                padding: 30px 0;
+                padding: 1.875rem 0;
                 text-align: center;
                 background: linear-gradient(#4f84c4, #00539c);
-                border-radius: 100px;
-                box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+                border-radius: 6.25rem;
+                box-shadow: 0 0 0.3125rem rgba(0, 0, 0, 0.4);
                 color: #ffffff;
-                font-size: 14px;
+                font-size: 0.875rem;
                 text-transform: uppercase;
             }
 
-            margin: 30px 0;
+            margin: 1.875rem 0;
         }
 
         .timeline-continue {
             position: relative;
             width: 100%;
-            padding-top: 150px;
+            padding-top: 14.375rem;
 
             &::before {
                 position: absolute;
                 content: "";
-                width: 3px;
-                height: 100px;
+                width: 0.1875rem;
+                height: 11.25rem;
                 top: 0%;
                 left: 50%;
-                margin-left: -3px;
+                margin-left: -0.1875rem;
                 background: #FFF;
             }
         }
@@ -129,7 +130,7 @@
 
             &.timeline-list:nth-child(even),
             &.timeline-list {
-                margin-bottom: 50px;
+                margin-bottom: 7.125rem;
             }
 
             &.timeline-list:nth-child(odd) {
@@ -150,12 +151,13 @@
                     content: '';
                     display: block;
                     position: absolute;
-                    margin-top: 55px;
+                    margin-top: 3.4375rem;
                     top: 0%;
                     left: 50%;
                     transform: translateX(-50%);
                     width: $horizontal_line_width;
-                    height: calc(100% - 60px);
+                    // height: calc(100% - 3.75rem);
+                    height: 100%;
                     background-color: #fff;
                 }
 
@@ -163,8 +165,8 @@
                     content: "";
                     display: block;
                     position: absolute;
-                    width: 90px;
-                    height: 90px;
+                    width: 5.625rem;
+                    height: 5.625rem;
                     top: 0%;
                     left: 50%;
                     transform: translate(-50%, -50%);
@@ -175,8 +177,8 @@
 
                 .timeline-image {
                     text-align: right;
-                    width: 240px;
-                    height: 240px;
+                    width: 15rem;
+                    height: 15rem;
                     display: flex;
                     align-items: center;
                     justify-content: center;
@@ -197,12 +199,12 @@
 
                 .timeline-image-wrapper {
                     flex-direction: row-reverse;
-                    padding-right: 50px;
+                    padding-right: 3.125rem;
                 }
 
                 .timeline-box {
                     .timeline-text {
-                        margin-left: 50px;
+                        margin-left: 3.125rem;
 
                         .h2 {
                             left: 0;
@@ -215,7 +217,7 @@
             &.timeline-list:nth-child(even) {
                 .timeline-image-wrapper {
                     flex-direction: row;
-                    padding-left: 50px;
+                    padding-left: 3.125rem;
                 }
 
                 .timeline-image {
@@ -228,7 +230,7 @@
                     justify-content: flex-end;
 
                     .timeline-text {
-                        margin-right: 50px;
+                        margin-right: 3.125rem;
 
                         .h2 {
                             right: 0;
@@ -246,7 +248,7 @@
             .timeline-image-line {
                 flex: 1 1 auto;
                 height: $horizontal_line_width;
-                background: url(../images/history/history-dot-line.png) 0% 0% / #{$horizontal_line_width} , #fff;
+                background: url(../images/history/history-dot-line.png) 0% 0% / contain;
                 background-repeat: repeat-x;
             }
 
@@ -257,7 +259,7 @@
 
         .timeline-image {
             position: relative;
-            font-size: 14px;
+            font-size: 0.875rem;
             font-weight: 600;
         }
 
@@ -272,8 +274,8 @@
             display: inline-block;
             background: #ffffff;
             width: 100%;
-            margin: 30px 0;
-            padding: 20px 0 0 0;
+            margin: 1.875rem 0;
+            padding: 1.25rem 0 0 0;
             border: none;
             text-align: center;
             background: transparent;
@@ -294,7 +296,7 @@
                         position: absolute;
                         left: 50%;
                         transform: translateX(-50%);
-                        width: 275px;
+                        width: 17.1875rem;
                         height: $horizontal_line_width;
                         background-color: #fff;
                     }
@@ -308,17 +310,19 @@
             position: relative;
             width: 100%;
             float: left;
+            line-height: 1.5;
         }
 
         .timeline-text {
-            padding-top: 25px;
+            padding-top: 1.5625rem;
 
             .h2 {
                 position: absolute;
                 top: -50%;
                 transform: translateY(-50%);
-                font-size: 96px;
-                font-family: 'K2D';
+                font-size: 6rem;
+                font-family: 'Dosis';
+                font-weight: 600;
                 margin: 0;
                 line-height: 1;
             }
@@ -334,24 +338,24 @@
             }
 
             .h3 {
-                font-size: 48px;
+                font-size: 3rem;
                 font-weight: 600;
                 line-height: 1;
-                margin-bottom: 15px;
+                margin-bottom: 0.9375rem;
             }
 
             p {
-                font-size: 32px;
+                font-size: 1.5rem;
                 font-weight: 300;
                 margin-bottom: 0;
             }
         }
     }
 
-    // @media (max-width: 768px) {
+    // @media (max-width: 48rem) {
     //     .timeline {
     //         .timeline-continue::after {
-    //             left: 40px;
+    //             left: 2.5rem;
     //         }
 
     //         .timeline-year {
@@ -383,18 +387,18 @@
     //         .row {
     //             &.timeline-list:nth-child(even) .timeline-image::after,
     //             &.timeline-list .timeline-image::after {
-    //                 left: 47px;
+    //                 left: 2.9375rem;
     //             }
     //         }
 
     //         .timeline-box {
-    //             margin-left: 55px;
+    //             margin-left: 3.4375rem;
     //         }
 
     //         .row {
     //             &.timeline-list .timeline-image,
     //             &.timeline-list:nth-child(even) .timeline-image {
-    //                 margin-left: 55px;
+    //                 margin-left: 3.4375rem;
     //             }
     //         }
 
@@ -404,12 +408,12 @@
 
     //         .row.timeline-list:nth-child(even) .timeline-box {
     //             &::after {
-    //                 left: -20px;
+    //                 left: -1.25rem;
     //                 border-color: transparent #ffffff transparent transparent;
     //             }
 
     //             &::before {
-    //                 left: -22px;
+    //                 left: -1.375rem;
     //                 border-color: transparent #dddddd transparent transparent;
     //             }
     //         }
@@ -417,7 +421,7 @@
     //         .timeline-launch .timeline-box {
     //             &::after,
     //             &::before {
-    //                 left: 30px;
+    //                 left: 1.875rem;
     //                 margin-left: 0;
     //             }
     //         }
