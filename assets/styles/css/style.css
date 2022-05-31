@@ -2042,7 +2042,7 @@ header .HBG .cls-3 {
     text-align: center;
   }
   #virus_introduction .s3_left .l_content .row2 .text article {
-    font-size: 1.5rem;
+    font-size: 1rem;
     line-height: 1.5rem;
   }
   #virus_introduction .s3_left .l_bg {
@@ -2081,7 +2081,7 @@ header .HBG .cls-3 {
   }
   #virus_introduction .s3_right .r_content .h1 {
     position: absolute;
-    bottom: 5%;
+    bottom: 15%;
   }
   #virus_introduction .s3_right .r_bg {
     z-index: -1;
@@ -2092,10 +2092,11 @@ header .HBG .cls-3 {
     width: 100%;
     top: 5%;
     transform: translate(0, 0);
+    margin-top: 0;
   }
   #virus_introduction .s3_right .s3r_outer article {
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 1rem;
     line-height: 1.5rem;
     margin-bottom: 5%;
   }
@@ -2214,7 +2215,6 @@ header .HBG .cls-3 {
   }
 }
 #vaccineTop .s7_topContainer {
-  height: 100vh !important;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -2244,6 +2244,7 @@ header .HBG .cls-3 {
   text-align: center;
 }
 #vaccineTop .s7_topContainer .bottomBlock {
+  display: block;
   position: relative;
   width: 100%;
   height: 35%;
@@ -2309,6 +2310,64 @@ header .HBG .cls-3 {
 }
 #vaccineTop .s7_topContainer .bottomBlock .s7_right:hover h2 {
   transform: scale(1.1);
+}
+#vaccineTop .s7_topContainer .bImg1 {
+  display: none;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+#vaccineTop .s7_topContainer .bImg1 h2 {
+  text-align: center;
+  color: rgb(171, 204, 250);
+  font-size: 2rem;
+}
+#vaccineTop .s7_topContainer .bImg1 img {
+  width: 90%;
+  margin: auto;
+  margin-top: 10%;
+}
+@media (min-width: 769px) and (max-width: 1199px) {
+  #vaccineTop .s7_topContainer {
+    height: 100vh;
+  }
+  #vaccineTop .s7_topContainer .textBlock {
+    width: 80%;
+  }
+  #vaccineTop .s7_topContainer .textBlock h1 {
+    font-size: 3rem;
+  }
+  #vaccineTop .s7_topContainer .textBlock p {
+    margin-top: 5%;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    letter-spacing: 1rem;
+  }
+}
+@media (max-width: 769px) {
+  #vaccineTop .s7_topContainer .textBlock {
+    margin-top: 0%;
+    width: 100%;
+    padding: 10% 15%;
+    background-color: #131519;
+    justify-content: flex-start;
+  }
+  #vaccineTop .s7_topContainer .textBlock h1 {
+    font-size: 2rem;
+  }
+  #vaccineTop .s7_topContainer .textBlock p {
+    margin-top: 5%;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    letter-spacing: 0.5rem;
+  }
+  #vaccineTop .s7_topContainer .bottomBlock {
+    display: none;
+  }
+  #vaccineTop .s7_topContainer .bImg1 {
+    display: flex;
+  }
 }
 
 #vaccineBottom .s7_bottomContainer {
@@ -2392,9 +2451,34 @@ header .HBG .cls-3 {
 #vaccineBottom .s7_bottomContainer .s7_b_imgBlock #s7_scene3 {
   margin-top: 25%;
 }
+#vaccineBottom .bImg2 {
+  display: none;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+#vaccineBottom .bImg2 h2 {
+  text-align: center;
+  color: rgb(171, 204, 250);
+  font-size: 2rem;
+}
+#vaccineBottom .bImg2 img {
+  width: 90%;
+  margin: auto;
+  margin-top: 10%;
+}
 @media screen and (max-width: 62.5rem) {
   #vaccineBottom .s7_bottomContainer {
     justify-content: center;
+  }
+}
+@media (max-width: 769px) {
+  #vaccineBottom {
+    margin-top: 5%;
+  }
+  #vaccineBottom .bImg2 {
+    display: flex;
   }
 }
 
