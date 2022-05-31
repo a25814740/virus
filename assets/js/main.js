@@ -16,6 +16,60 @@ const App = {
                 description: '對於未知的事物<br>人類往往抱著恐懼的眼光看待<br>而我們想讓你知道你無需害怕',
                 imgUrl: './assets/styles/images/banner/covid-life.jpg',
             }],
+
+            situation: {
+                diagnose: [
+                        {
+                        title: '全球確診情形',
+                        diagnosed: {
+                            name: '確診人數',
+                            number: 528996258
+                        },
+                        death: {
+                            name: '死亡人數',
+                            number: 6287786
+                        },
+                        percent: {
+                            name: '死亡率',
+                            number: 0.01
+                        }
+                    }, {
+                        title: '台灣確診情形',
+                        diagnosed: {
+                            name: '確診人數',
+                            number: 1952355
+                        },
+                        death: {
+                            name: '死亡人數',
+                            number: 2165
+                        },
+                        percent: {
+                            name: '死亡率',
+                            number: 0.0011
+                        }
+                    },
+                ],
+                vaccination: [
+                    {
+                        title: '台灣疫苗施打情形',
+                        subTitle: '人口涵蓋率',
+                        total: {
+                            name: '總人口數',
+                            number: 23215015
+                        },
+                        dose: {
+                            name: '劑次人口比',
+                            number: 2.3613
+                        },
+                        inoculate: {
+                            name: '累計接種人次',
+                            number: 54817813
+                        }
+                    }
+                ]
+            },
+
+
             cursorOptions: {
                 "cursorOuter": "circle-basic",
                 "hoverEffect": "circle-move",
@@ -30,6 +84,13 @@ const App = {
             isMenuActive: false,
             menuAnimation_active: false,
             menuAnimationB_active: false,
+        }
+    },
+    filters: {
+        //轉為千分號
+        currency(val) {
+            // console.log(val.toString().toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,'));
+            return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
         }
     },
     beforeCreate() {},
@@ -49,21 +110,20 @@ const App = {
 
 
             this.situationChart();
-            this.situationNumEffect();
             this.introScene();
             // this.introWheel();
             this.vaccineScene();
 
             this.post_pandemicSwiper();
             this.about_usSwiper();
-           
+
 
             this.s9_sceneSymptom();
 
         })
     },
     beforeUpdate() {
-
+        // this.situationNumEffect();
     },
     updated() {
 
@@ -214,12 +274,12 @@ const App = {
             });
         },
         situationChart() {
-            const labels = ['第一劑', '第二劑', '第三劑', '第四劑'];
+            const labels = ['第一劑', '第二劑', '第三劑', '追加劑'];
             const data = {
                 labels: labels,
                 datasets: [{
                     axis: 'y',
-                    data: [65, 59, 80, 81],
+                    data: [86.5, 84, 80.2, 65],
                     barPercentage: 0.5,
 
                     backgroundColor: [
@@ -461,6 +521,14 @@ const App = {
                 on: {
                     ready: (fancybox) => {
                         post_pandemicSwiper.init();
+                    },
+                    done: (fancybox) => {
+                        console.log('done');
+                        fullpage_api.setAllowScrolling(false);
+                    },
+                    closing: (fancybox) => {
+                        console.log('closing');
+                        fullpage_api.setAllowScrolling(true);
                     }
                 }
             })
@@ -504,10 +572,11 @@ const App = {
 }
 
 
+// Vue.filter('currency',function(value){
+//     return value.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')
+// });
+
 Vue.createApp(App).mount('#app');
-
-
-
 
 var map;
 var InforObj = [];

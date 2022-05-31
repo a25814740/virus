@@ -295,33 +295,33 @@
             </div>
 
             <!-- 確診情形 / 疫苗施打情形 -->
-            <div class="section fp-auto-height-responsive" id="situation_world">
+            <div class="section fp-auto-height-responsive" id="situation_world" v-for="(item, index) in situation.diagnose">
                 <div class="d-flex flex-column justify-content-center align-items-center h-100">
-                    <h2 class="h1 pb-5 slide-in-bottom">全球確診情形</h2>
-                    <div class="accslide container pt-5">
+                    <h2 class="h1 pb-5 slide-in-bottom">{{ item.title }}</h2>
+                    <div class="accslide container-fluid pt-5">
                         <div class="row">
                             <div class="col-4">
                                 <div class="content text-center d-flex flex-column-reverse">
-                                    <h3 class="h3 mt-3 slide-in-bottom ani-delay-200">確診人數</h3>
+                                    <h3 class="h3 mt-3 slide-in-bottom ani-delay-200">{{ item.diagnosed.name }}</h3>
                                     <div class="counter-container">
-                                        <div class="counter h1">830,257</div>
+                                        <div class="counter h1" v-html="$options.filters.currency(item.diagnosed.number)"></div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-4">
                                 <div class="content text-center d-flex flex-column-reverse">
-                                    <h3 class="h3 mt-3 slide-in-bottom ani-delay-200">死亡人數</h3>
+                                    <h3 class="h3 mt-3 slide-in-bottom ani-delay-200">{{ item.percent.name }}</h3>
                                     <div class="counter-container">
-                                        <div class="counter h1">1,097</div>
+                                        <div class="counter h1">{{ item.percent.number * 100  }}&#37;</div>
                                     </div>
 
                                 </div>
                             </div>
                             <div class="col-4">
                                 <div class="content text-center d-flex flex-column-reverse">
-                                    <h3 class="h3 mt-3 slide-in-bottom ani-delay-200">死亡率</h3>
+                                    <h3 class="h3 mt-3 slide-in-bottom ani-delay-200">{{ item.death.name }}</h3>
                                     <div class="counter-container">
-                                        <div class="counter h1">0.13%</div>
+                                        <div class="counter h1" v-html="$options.filters.currency(item.death.number)"></div>
                                     </div>
 
                                 </div>
@@ -330,72 +330,40 @@
                     </div>
                 </div>
             </div>
-            <div class="section fp-auto-height-responsive" id="situation_taiwan">
-                <div class="d-flex flex-column justify-content-center align-items-center h-100">
-                    <h2 class="h1 slide-in-bottom pb-5">台灣確診情形</h2>
-                    <div class="accslide container pt-5">
-                        <div class="row">
-                            <div class="col-4">
-                                <div class="content text-center d-flex flex-column-reverse">
-                                    <h3 class="h3 mt-3 slide-in-bottom ani-delay-200">確診人數</h3>
-                                    <div class="counter-container">
-                                        <div class="counter h1">830,257</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-4">
-                                <div class="content text-center d-flex flex-column-reverse">
-                                    <h3 class="h3 mt-3 slide-in-bottom ani-delay-200">死亡人數</h3>
-                                    <div class="counter-container">
-                                        <div class="counter h1">1,097</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-4">
-                                <div class="content text-center d-flex flex-column-reverse">
-                                    <h3 class="h3 mt-3 slide-in-bottom ani-delay-200">死亡率</h3>
-                                    <div class="counter-container">
-                                        <div class="counter h1">0.13%</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="section fp-auto-height-responsive" id="situation_taiwan_chart">
+            
+            <div class="section fp-auto-height-responsive" id="situation_taiwan_chart" v-for="(item, index) in situation.vaccination">
                 <div class="d-flex flex-column justify-content-center align-items-center">
 
                     <div class="col-auto title text-center">
-                        <h3 class="h1 slide-in-bottom">台灣疫苗施打情形</h3>
-                        <h4 class="h5 slide-in-bottom">人口涵蓋率</h4>
+                        <h3 class="h1 slide-in-bottom">{{ item.title }}</h3>
+                        <h4 class="h5 slide-in-bottom">{{ item.subTitle }}</h4>
                     </div>
                     <div class="col chart-area pt-0 pb-5 slide-in-bottom ani-delay-200">
                         <canvas id="situationChart"></canvas>
                     </div>
-                    <div class="container">
+                    <div class="container-fluid">
                         <div class="row">
                             <div class="col-4">
                                 <div class="content text-center d-flex flex-column-reverse">
-                                    <h3 class="h3 slide-in-bottom ani-delay-400">確診人數</h3>
+                                    <h3 class="h3 slide-in-bottom ani-delay-400">{{ item.total.name }}</h3>
                                     <div class="counter-container">
-                                        <div class="counter h1">830,257</div>
+                                        <div class="counter h1" v-html="$options.filters.currency(item.total.number)"></div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-4">
                                 <div class="content text-center d-flex flex-column-reverse">
-                                    <h3 class="h3 slide-in-bottom ani-delay-400">死亡人數</h3>
+                                    <h3 class="h3 slide-in-bottom ani-delay-400">{{ item.dose.name }}</h3>
                                     <div class="counter-container">
-                                        <div class="counter h1">1,097</div>
+                                        <div class="counter h1">{{ item.dose.number * 100 }}&#37;</div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-4">
                                 <div class="content text-center d-flex flex-column-reverse">
-                                    <h3 class="h3 slide-in-bottom ani-delay-400">死亡率</h3>
+                                    <h3 class="h3 slide-in-bottom ani-delay-400">{{ item.inoculate.name }}</h3>
                                     <div class="counter-container">
-                                        <div class="counter h1">0.13%</div>
+                                        <div class="counter h1" v-html="$options.filters.currency(item.inoculate.number)"></div>
                                     </div>
                                 </div>
                             </div>

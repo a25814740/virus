@@ -448,7 +448,10 @@ html .counter {
 }
 
 .counter {
-  font: bold 1 "Source Sans Pro", Helvetica, Arial, sans-serif;
+  font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+  font-size: 2.5vw;
+  line-height: 2.5vw;
+  font-weight: bold;
   display: inline-block;
   overflow: hidden;
 }
@@ -469,8 +472,8 @@ html .counter {
   width: auto;
   color: #FFF;
   cursor: alias;
-  font-size: 3.5vw;
-  line-height: 3.5vw;
+  font-size: 2.5vw;
+  line-height: 2.5vw;
   opacity: 0;
   text-align: center;
   -webkit-text-orientation: upright;
@@ -1952,6 +1955,11 @@ header .HBG .cls-3 {
   opacity: 1;
   -webkit-transition: opacity 1s ease 1.5s;
   transition: opacity 1s ease 1.5s;
+}
+
+[id*="situation"] .container-fluid {
+  width: 1600px;
+  max-width: 95%;
 }
 
 [id*="situation"]#situation_taiwan_chart .h1 {
