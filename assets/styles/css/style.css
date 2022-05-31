@@ -2477,6 +2477,11 @@ header .HBG .cls-3 {
   #vaccineBottom {
     margin-top: 5%;
   }
+  #vaccineBottom .s7_bottomContainer .s7_b_textBlock {
+    width: unset;
+    font-size: 1.5rem;
+    letter-spacing: normal;
+  }
   #vaccineBottom .bImg2 {
     display: flex;
   }
@@ -3150,22 +3155,18 @@ header .HBG .cls-3 {
   transform: translate(0, 3%);
   transition: all 2s ease 2s;
 }
-@media (min-width: 768px) and (max-width: 1199px) {
-  #sympthomBottom .s9_mainBottom h1 {
-    font-size: 4.5vw;
-    margin-top: 10.5%;
+@media (max-width: 1199px) {
+  #sympthomBottom .s9_mainBottom {
+    margin-bottom: 10%;
   }
-}
-@media (max-width: 767px) {
   #sympthomBottom .s9_mainBottom h1 {
     font-size: 4.5vw;
-    margin-top: 15.5%;
   }
 }
 @media (max-width: 450px) {
   #sympthomBottom .s9_mainBottom h1 {
     font-size: 4.5vw;
-    margin-top: 35.5%;
+    margin-top: 0;
   }
 }
 

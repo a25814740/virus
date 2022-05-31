@@ -311,9 +311,14 @@
 
     @media (max-width: 769px) {
         margin-top: 5%;
-        // .s7_bottomContainer {
-          
-        // }
+
+        .s7_bottomContainer {
+            .s7_b_textBlock {
+                width: unset;
+                font-size: 1.5rem;
+                letter-spacing: normal;
+            }
+        }
 
         .bImg2 {
             display: flex;

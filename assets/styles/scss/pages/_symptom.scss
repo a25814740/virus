@@ -215,21 +215,12 @@
             }
         }
 
-        @media (min-width: 768px) and (max-width: 1199px) {
+        @media (max-width: 1199px) {
+            margin-bottom: 10%;
+
             h1 {
 
                 font-size: 4.5vw;
-                margin-top: 10.5%;
-
-            }
-        }
-
-        @media (max-width: 767px) {
-            h1 {
-
-                font-size: 4.5vw;
-                margin-top: 15.5%;
-
             }
         }
 
@@ -237,10 +228,11 @@
             h1 {
 
                 font-size: 4.5vw;
-                margin-top: 35.5%;
+                margin-top: 0;
 
             }
         }
 
     }
+   
 }
