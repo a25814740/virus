@@ -50,8 +50,9 @@ const App = {
 
             this.situationChart();
             this.situationNumEffect();
+            this.v_intro();
             this.introScene();
-            // this.introWheel();
+            this.introWheel();
             this.vaccineScene();
 
             this.post_pandemicSwiper();
@@ -383,7 +384,7 @@ const App = {
 
             function s3r_wheel(w) {
                 counter++;
-                console.log(555);
+                console.log(123);
                 if (counter == 2) {
                     if (w.wheelDelta < 0) {
                         if (n < 5) {
@@ -400,20 +401,9 @@ const App = {
                     }
                     picture.style.backgroundPosition = `${p_left[n]}% ${p_top[n]}%`;
                     counter = 0;
+                    console.log(321);
                 }
             }
-            // function debounce(w, delay=1000) {
-            //     let timer = null;
-            //    console.log(44);
-            //     return () => {
-            //       let context = this;
-            //       let args = arguments;
-            //       clearTimeout(timer);
-            //       timer = setTimeout(() => {
-            //         s3r_wheel.apply(context, args);
-            //       }, delay)
-            //     }
-            //   }
 
             outer.addEventListener('mousewheel', s3r_wheel);
         },
@@ -436,13 +426,22 @@ const App = {
         },
         v_intro() {
             let scene0 = document.querySelector('#scene0');
-            let img = document.querySelector('.image');
+            let img = document.querySelector('.image div');
             let x = null;
             let y = null;
+            // let rightSceneChild = document.querySelector('.r_content');
 
-            scene0.addEventListener( 'mouseover', m => {
-                x = (m.pageX - (window.innerWidth - 700) / 2 ) / 7;
-                img.style.transform = `translate( ${x}, ${y});`;
+            // scene0.addEventListener('mouseover', () => {
+            //     rightSceneChild.forEach(e => {
+            //         e.removeAttribute('data-depth');
+            //     });
+            //     rightSceneChild.style.pointerevents = 'none';
+            // })
+
+            scene0.addEventListener( 'mousemove', m => {
+                x = ((m.pageX / (scene0.offsetWidth / 100)) -50) * 2 ;
+                y =((m.pageY / (scene0.offsetHeight / 100)) - 50) * 2;
+                img.style.transform = `translate( ${-x / 10}%, ${-y / 15}%)`;
             })
 
         },  
