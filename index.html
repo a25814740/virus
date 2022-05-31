@@ -30,7 +30,7 @@
 
     <script type="text/javascript"
         src="https://res.cloudinary.com/veseylab/raw/upload/v1636192990/magicmouse/magic_mouse-1.2.1.cdn.min.js">
-    </script>
+        </script>
 
 </head>
 
@@ -294,16 +294,16 @@
 
             <!-- 病毒結構 / 病毒增值 -->
             <div class="section fp-auto-height-responsive" id="virus_introduction">
-                <div class="s3_left " :class="{'s3l_active': s3_l_active == true}">
+                <div class="s3_left "  id="scene0" :class="{'s3l_active': s3_l_active == true}">
                     <div class="l_content container-fluid">
                         <div class="row row1">
-                            <div class="col-6 h1 slide-in-bottom" @click="introClick('l')">
+                            <div class="col-md-6 col-12 h1 slide-in-bottom" @click="introClick('l')">
                                 <span class="magic-hover magic-hover__square">病毒結構</span>
                             </div>
                         </div>
                         <div class="row row2 gy-md-0 gy-4">
-                            <div class="col-md-6 col-12 image mx-auto" id="scene0">
-                                <div data-depth="-0.3">
+                            <div class="col-md-6 col-12 image mx-auto">
+                                <di>
                                     <img class="slide-in-bottom ani-delay-200"
                                         src="./assets/styles/images/virus_introduction/m4L_virus.png" alt=""
                                         data-depth="-0.8" />
@@ -358,7 +358,7 @@
                         </div>
                     </div>
                     <div class="s3r_outer row gap-md-5 gap-3 mx-auto" @mouseover="s3_wheel">
-                        <article class=" col-12 ms-auto">
+                        <article class=" col-12 col-md-6 ms-auto">
                             <p>
                                 病毒經包吞作用進入細胞後，首先會移除外殼蛋白，將病毒RNA釋放到細胞質中(2)，
                                 而後病毒RNA被轉錄為一段信使RNA(mRNA)，以此轉譯出複製病毒RNA所需要的合成酶蛋白質半成品(3)，
@@ -491,6 +491,10 @@
                             </div>
                         </a>
                     </div>
+                    <div class="bImg1">
+                        <h2>傳統疫苗介紹</h2>
+                        <img src="./assets/styles/images/vaccine/popup_LT.png" alt="">
+                    </div>
 
                 </div>
             </div>
@@ -535,6 +539,10 @@
                             </div>
                         </div>
                     </div>
+                </div>
+                <div class="bImg2">
+                    <h2>新型疫苗介紹</h2>
+                    <img src="./assets/styles/images/vaccine/popup_RT.png" alt="">
                 </div>
 
                 <!-- ///////S7彈窗/////// -->
@@ -1001,10 +1009,10 @@
                                                 data-swiper-parallax-duration="400">
                                                 </p> 因為防疫亦或是隔離，各地學校開始了遠距教學模式，與此同時為大家打開了線上學習的新型態。
                                                 <p>
-                                                    <p class="pt-xl-4">
-                                                        藉著次疫情遠距學習的機會，人們也開始反思......
-                                                        開放式的線上學習系統是否有可以取代傳統的學校教育的機會，當然這又是另外一個話題了。
-                                                    </p>
+                                                <p class="pt-xl-4">
+                                                    藉著次疫情遠距學習的機會，人們也開始反思......
+                                                    開放式的線上學習系統是否有可以取代傳統的學校教育的機會，當然這又是另外一個話題了。
+                                                </p>
                                             </div>
                                         </div>
                                         <div class="col-12 col-xl-4 img-container d-flex 

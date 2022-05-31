@@ -35,6 +35,7 @@
         }
 
         .bottomBlock {
+            display: block;
             position: relative;
             width: 100%;
             height: 35%;
@@ -108,6 +109,73 @@
                     }
                 }
 
+            }
+        }
+
+        .bImg1 {
+            display: none;
+            justify-content: center;
+            flex-direction: column;
+            margin-top: 5%;
+            margin-bottom: 5%;
+
+            h2 {
+                text-align: center;
+                color: rgba(171, 204, 250, 1);
+                font-size: 2rem;
+            }
+
+            img {
+                width: 90%;
+                margin: auto;
+                margin-top: 10%;
+            }
+        }
+
+
+        @media (min-width: 769px) and (max-width: 1199px) {
+            height: 100vh;
+            .textBlock {
+                width: 80%;
+                h1 {
+                    font-size: 3rem;
+                }
+
+                p {
+                    margin-top: 5%;
+                    font-size: 1.5rem;
+                    line-height: 2rem;
+                    letter-spacing: 1rem;
+                }
+            }
+        }
+
+        @media (max-width: 769px) {
+            .textBlock {
+                margin-top: 0%;
+                width: 100%;
+                padding: 10% 15%;
+                background-color: #131519;
+                justify-content: flex-start;
+
+                h1 {
+                    font-size: 2rem;
+                }
+
+                p {
+                    margin-top: 5%;
+                    font-size: 1rem;
+                    line-height: 1.5rem;
+                    letter-spacing: 0.5rem;
+                }
+            }
+
+            .bottomBlock {
+                display: none;
+            }
+
+            .bImg1 {
+                display: flex;
             }
         }
     }
@@ -187,7 +255,7 @@
             }
 
             [id*=s7_scene]:nth-child(2) .imgBox {
-                  img {
+                img {
                     animation: s7_b_virus_rotate_B 20s linear infinite;
                 }
             }
@@ -214,9 +282,46 @@
         }
     }
 
+    .bImg2 {
+        display: none;
+        justify-content: center;
+        flex-direction: column;
+        margin-top: 5%;
+        margin-bottom: 5%;
+
+        h2 {
+            text-align: center;
+            color: rgba(171, 204, 250, 1);
+            font-size: 2rem;
+        }
+
+        img {
+            width: 90%;
+            margin: auto;
+            margin-top: 10%;
+        }
+    }
+
+
     @media screen and (max-width: 62.5rem) {
         .s7_bottomContainer {
             justify-content: center;
+        }
+    }
+
+    @media (max-width: 769px) {
+        margin-top: 5%;
+
+        .s7_bottomContainer {
+            .s7_b_textBlock {
+                width: unset;
+                font-size: 1.5rem;
+                letter-spacing: normal;
+            }
+        }
+
+        .bImg2 {
+            display: flex;
         }
     }
 }
@@ -264,11 +369,11 @@
 
 .popup-content {
     background-size: cover;
-    
+
     img {
         max-width: 100%;
     }
-}   
+}
 
 #popup-vaccineL {
     background-image: url(../images/vaccine/popup_LB.png);
