@@ -3003,7 +3003,7 @@ header .HBG .cls-3 {
 #symptomTop .s9_mainTop h1 {
   color: rgb(120, 142, 171);
   font-size: 4rem;
-  margin-top: 5.5%;
+  margin: 2.5% 0;
   font-weight: bold;
 }
 #symptomTop .s9_mainTop svg {
@@ -3024,11 +3024,6 @@ header .HBG .cls-3 {
 }
 #symptomTop .s9_mainTop .imgR {
   transform: translate(-50%, -10%);
-}
-@media (max-width: 1459px) {
-  #symptomTop .s9_mainTop h1 {
-    margin-top: 10.5%;
-  }
 }
 @media (min-width: 768px) and (max-width: 1199px) {
   #symptomTop .s9_mainTop h1 {
@@ -3082,7 +3077,7 @@ header .HBG .cls-3 {
 #sympthomBottom .s9_mainBottom h1 {
   color: rgb(120, 142, 171);
   font-size: 2.5vw;
-  margin-top: 3.5%;
+  margin: 2.5% 0;
   font-weight: bold;
 }
 #sympthomBottom .s9_mainBottom .s9_svg {
