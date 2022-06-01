@@ -28,6 +28,12 @@
             }
         }
     }
+
+    @media (max-width: 991px) {
+        .sectopm {
+            overflow: hidden;
+        }
+    }
 }
 #fp-nav {
     padding: 0 10px;
