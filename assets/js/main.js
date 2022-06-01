@@ -377,8 +377,8 @@ let app = Vue.createApp({
             };
         },
         introScene() {
-            let scene0 = document.getElementById('scene0');
-            let parallax0 = new Parallax(scene0);
+            // let scene0 = document.getElementById('scene0');
+            // let parallax0 = new Parallax(scene0);
 
             let scene1 = document.getElementById('scene1');
             let parallax1 = new Parallax(scene1);
@@ -456,6 +456,23 @@ let app = Vue.createApp({
             let sceneSymptom = document.getElementById('sceneSymptom');
             let parallax_9 = new Parallax(sceneSymptom);
         },
+        v_intro() {
+            let scene0 = document.querySelector('#scene0');
+            let img = document.querySelector('.image');
+            let x = null;
+            let y = null;
+
+            scene0.addEventListener( 'mouseover', m => {
+                x = (m.pageX - (window.innerWidth - 700) / 2 ) / 7;
+                img.style.transform = `translate( ${x}, ${y});`;
+            })
+
+        },  
+
+
+
+
+
         post_pandemicSwiper() {
             const post_pandemicSwiper = new Swiper('#Post-pandemic .swiper', {
                 loop: true,
