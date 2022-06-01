@@ -648,7 +648,7 @@ html .counter {
 }
 
 @media (max-width: 991px) {
-  #fullpage .sectopm {
+  #fullpage .section {
     overflow: hidden;
   }
 }
