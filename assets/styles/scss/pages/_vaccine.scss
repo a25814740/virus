@@ -206,8 +206,10 @@
 }
 
 #fullpage #vaccineBottom {
-    @media (max-width: 991px) {
+    @media (max-width: 767px) {
+        background: transparent;
         .full-page-inner {
+            flex-direction: column;
             align-items: flex-start;
             min-height: 0;
             .s7_topContainer {
@@ -352,10 +354,11 @@
         }
     }
 
-    @media (max-width: 769px) {
+    @media (max-width: 767px) {
         margin-top: 5%;
 
         .s7_bottomContainer {
+            background-color: #000;
             .s7_b_textBlock {
                 width: unset;
                 font-size: 1.5rem;
