@@ -38,11 +38,13 @@ let app = Vue.createApp({
             // 僅在整個視圖都被渲染之後才會運行的代碼
 
             setTimeout(() => {
+                this.bannerSwiper(); // 給banner swiper大約600ms的預載時間
+            }, 3400)
+            setTimeout(() => {
                 this.preload(); // loading 頁面
             }, 4000)
 
             this.myFullpage();
-            this.bannerSwiper();
             this.situationChart();
             this.situationNumEffect();
             this.v_intro();
@@ -60,7 +62,8 @@ let app = Vue.createApp({
     methods: {
         preload() {
             let _this = this;
-            _this.isLoading = false
+            _this.isLoading = false;
+
         },
         getPageData: function () {
             let _this = this;

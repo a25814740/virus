@@ -758,6 +758,8 @@ html .counter {
 }
 
 #loading svg {
+  position: relative;
+  top: 10%;
   max-width: 100%;
   -webkit-animation: fade-out 1s linear 2s both;
           animation: fade-out 1s linear 2s both;
