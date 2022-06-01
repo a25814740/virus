@@ -47,7 +47,7 @@ let app = Vue.createApp({
             this.situationNumEffect();
             this.v_intro();
             this.introScene();
-            this.introWheel();
+            this.introSwipper();
             this.vaccineScene();
             this.post_pandemicSwiper();
             this.about_usSwiper();
@@ -397,38 +397,25 @@ let app = Vue.createApp({
             let scene5 = document.getElementById('scene5');
             let parallax5 = new Parallax(scene5);
         },
-        introWheel() {
-            let outer = document.querySelector('.s3r_outer');
-            let picture = document.querySelector('.bg');
-            let p_left = [0, 0, 35, 70, 100];
-            let p_top = [25, 100, 70, 85, 20];
-            let n = 0;
-            let counter = 0;
-
-            function s3r_wheel(w) {
-                counter++;
-                console.log(123);
-                if (counter == 2) {
-                    if (w.wheelDelta < 0) {
-                        if (n < 5) {
-                            n++;
-                        }
-                        console.log(n);
-                        console.log(w.wheelDelta);
-                    } else if (w.wheelDelta > 0) {
-                        if (n > 0) {
-                            n--;
-                        }
-                        console.log(w.wheelDelta);
-                        console.log(n);
-                    }
-                    picture.style.backgroundPosition = `${p_left[n]}% ${p_top[n]}%`;
-                    counter = 0;
-                    console.log(321);
-                }
-            }
-
-            outer.addEventListener('mousewheel', s3r_wheel);
+        introSwipper() {
+           let mySwiper1 = new Swiper(".mySwiper", {
+                loop: false,
+                spaceBetween: 10,
+                slidesPerView: 1,
+                freeMode: true,
+                watchSlidesProgress: true,
+              });
+             let mySwiper2 = new Swiper(".bigSwiper", {
+                loop: true,
+                spaceBetween: 10,
+                navigation: {
+                  nextEl: ".swiper-button-next",
+                  prevEl: ".swiper-button-prev",
+                },
+                thumbs: {
+                  swiper: mySwiper1,
+                },
+              });
         },
         vaccineScene() {
             let s7_scene1 = document.getElementById('s7_scene1');

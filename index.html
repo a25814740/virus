@@ -319,6 +319,7 @@
                                     <div>
                                         <img class="slide-in-bottom ani-delay-200"
                                             src="./assets/styles/images/virus_introduction/m4L_virus.png" alt="" />
+                                            <img class="inside" src="./assets/styles/images/virus_introduction/m4L_virus_inside.PNG" alt="">
                                     </div>
                                 </div>
                                 <div class="col-md-6 col-12 text">
@@ -333,7 +334,7 @@
                                             (N)，這些蛋白共同組成病毒顆粒結構。
                                         </p>
                                     </article>
-                                </div>  
+                                </div>
                             </div>
                         </div>
                         <div class="l_bg"></div>
@@ -369,17 +370,60 @@
                                 <span class="magic-hover magic-hover__square slide-in-bottom ani-delay-200">病毒增殖</span>
                             </div>
                         </div>
-                        <div class="s3r_outer row gap-md-5 gap-3 mx-auto" @mouseover="s3_wheel">
+                        <div class="s3r_outer row gap-md-5 gap-3 mx-auto">
                             <article class="col-12 col-md-6 ms-auto">
-                                <p>
-                                    病毒經包吞作用進入細胞後，首先會移除外殼蛋白，將病毒RNA釋放到細胞質中(2)，
-                                    而後病毒RNA被轉錄為一段信使RNA(mRNA)，以此轉譯出複製病毒RNA所需要的合成酶蛋白質半成品(3)，
-                                    蛋白質半成品經過水解、修飾後成為RNA合成酶(4)。
-                                </p>
+                                <div thumbsSlider="" class="swiper mySwiper">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+                                            <p>
+                                                若受到感染，病毒進到人體內後，病毒表面棘蛋白會與人體細胞表面受器結合，藉由胞吞作用或由膜融合進入人體細胞中(1)
+                                            </p>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <p>
+                                                病毒經包吞作用進入細胞後，首先會移除外殼蛋白，將病毒RNA釋放到細胞質中(2)，
+                                                而後病毒RNA被轉錄為一段信使RNA(mRNA)，以此轉譯出複製病毒RNA所需要的合成酶蛋白質半成品(3)，
+                                                蛋白質半成品經過水解、修飾後成為RNA合成酶(4)
+                                            </p>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <p>
+                                                另外，病毒RNA利用製造出來的RNA合成酶進行轉錄(5)，
+                                                轉錄時會發生模板跳轉而產生許多長度不一的次基因組RNA，再由這些次基因組RNA轉譯製造病毒所需的結構蛋白(6)
+                                            </p>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <p>
+                                                原料製造完成後開始進行病毒組裝(7)，組裝完成後的病毒顆粒再經由細胞的包吐作用釋出，或者在細胞凋亡之後釋出(8)，釋出的成熟病毒粒子一部分經人體呼吸時呼出在染感其他個體(9)
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
                             </article>
                             <div class="p col-md-5 col-12 me-auto">
                                 <div class="bg-wrapper">
-                                    <div class="bg"></div>
+                                    
+                                    <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff"
+                                        class="swiper mySwiper2 bigSwiper">
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide">
+                                                <div class="img"></div>
+                                            </div>
+                                            <div class="swiper-slide">
+                                               <div class="img"></div>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <div class="img"></div>
+                                            </div>
+                                            <div class="swiper-slide">
+                                                <div class="img"></div>
+                                            </div>
+                                        </div>
+
+                                        <div class="swiper-button-next"></div>
+                                        <div class="swiper-button-prev"></div>
+                                    </div>
+
                                 </div>
                             </div>
                         </div>
@@ -1555,6 +1599,7 @@
         <!-- Vue 3.0 -->
         <script src="https://unpkg.com/vue@next"></script>
         <script src="https://unpkg.com/vue-router@4"></script>
+        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
         <script src="./assets/plugins/bootstrap-5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
         <script src="./assets/plugins/fullPage.js-master/dist/fullpage.js"></script>
