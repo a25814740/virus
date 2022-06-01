@@ -95,6 +95,7 @@ let app = Vue.createApp({
         clickMenuBtnToCloseMenu() {
             this.menuAni();
             this.menuAniB();
+            this.isMenuActive = false;
         },
         switchFullPage(val) {
             fullpage_api.setMouseWheelScrolling(val);

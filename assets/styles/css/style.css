@@ -1269,6 +1269,13 @@ header .HBG .cls-3 {
           animation: menuAni 2s forwards;
 }
 
+#menu .menuAnimation .bTextBlock,
+#menu .menuAnimation .menuBlock,
+#menu .menuAnimation .menuFooter {
+  -webkit-animation: fade-in-right 1s ease-in forwards;
+          animation: fade-in-right 1s ease-in forwards;
+}
+
 #menu .menuAnimation::before {
   width: calc(100% - 3vw);
 }
@@ -1276,6 +1283,13 @@ header .HBG .cls-3 {
 #menu .menuAnimationBack {
   -webkit-animation: menuAniB 2s forwards;
           animation: menuAniB 2s forwards;
+}
+
+#menu .menuAnimationBack .bTextBlock,
+#menu .menuAnimationBack .menuBlock,
+#menu .menuAnimationBack .menuFooter {
+  -webkit-animation: fade-out 1s ease-out forwards;
+          animation: fade-out 1s ease-out forwards;
 }
 
 .menuClose {
@@ -1324,13 +1338,15 @@ header .HBG .cls-3 {
   0% {
     -webkit-transform: translate(0);
             transform: translate(0);
+    background-color: #2d3341f8;
   }
   1% {
+    background-color: #2d3341f8;
   }
   50% {
     -webkit-transform: translate(0, -94%);
             transform: translate(0, -94%);
-    background-color: transparent;
+    background-color: #2d3341f8;
   }
   100% {
     -webkit-transform: translate(120%, -94%);
@@ -1343,13 +1359,15 @@ header .HBG .cls-3 {
   0% {
     -webkit-transform: translate(0);
             transform: translate(0);
+    background-color: #2d3341f8;
   }
   1% {
+    background-color: #2d3341f8;
   }
   50% {
     -webkit-transform: translate(0, -94%);
             transform: translate(0, -94%);
-    background-color: transparent;
+    background-color: #2d3341f8;
   }
   100% {
     -webkit-transform: translate(120%, -94%);
@@ -1504,6 +1522,7 @@ header .HBG .cls-3 {
   text-transform: none;
   color: inherit;
   font: inherit;
+  text-shadow: 1px 1px 1px #000;
   background-color: transparent;
   border-style: none;
 }

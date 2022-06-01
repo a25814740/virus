@@ -312,6 +312,11 @@ $ani_durB: 2s;
 
     .menuAnimation {
         animation: menuAni $ani_durB forwards;
+        .bTextBlock,
+        .menuBlock,
+        .menuFooter {
+            animation: fade-in-right 1s ease-in forwards;
+        }
 
         &::before {
             width: calc(100% - 3vw);
@@ -320,6 +325,11 @@ $ani_durB: 2s;
 
     .menuAnimationBack {
         animation: menuAniB $ani_durB forwards;
+        .bTextBlock,
+        .menuBlock,
+        .menuFooter {
+            animation: fade-out 1s ease-out forwards;
+        }
     }
 }
 
@@ -353,15 +363,17 @@ $ani_durB: 2s;
 
     0% {
         transform: translate(0);
+        background-color: #2d3341f8;
     }
 
     1% {
         // border-bottom: 0.2rem solid white;
+        background-color: #2d3341f8;
     }
 
     50% {
         transform: translate(0, -94%);
-        background-color: transparent;
+        background-color: #2d3341f8;
         // border-bottom: 0.1rem solid white;
     }
 
@@ -469,6 +481,7 @@ $ani_durB: 2s;
         text-transform: none;
         color: inherit;
         font: inherit;
+        text-shadow: 1px 1px 1px #000;
         background-color: transparent;
         border-style: none
     }
@@ -496,7 +509,8 @@ $ani_durB: 2s;
         border: 1px solid currentColor;
         border-radius: 53% 47% 64% 36%/55% 59% 41% 45%;
         clip-path: polygon(50% 50%, 0 100%, 0 100%, 0 100%, 0 100%, 0 100%);
-        pointer-events: none
+        pointer-events: none;
+        // box-shadow: inset -1px -1px 0px #000;
     }
 
     .c-btn.no-event {
