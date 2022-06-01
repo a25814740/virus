@@ -741,7 +741,7 @@ html .counter {
   top: 0;
   width: 100%;
   height: 100vh;
-  background-color: #63ab97;
+  background-color: #000;
   color: white;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -753,8 +753,134 @@ html .counter {
       -ms-flex-pack: center;
           justify-content: center;
   z-index: 999;
-  -webkit-animation: fade-out 1s linear 3s both;
-          animation: fade-out 1s linear 3s both;
+  -webkit-animation: fade-out 1s ease-out 3s both;
+          animation: fade-out 1s ease-out 3s both;
+}
+
+#loading svg {
+  max-width: 100%;
+  -webkit-animation: fade-out 1s linear 2s both;
+          animation: fade-out 1s linear 2s both;
+}
+
+@-webkit-keyframes mov_loding {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+    top: 5%;
+    left: 20%;
+  }
+  25% {
+    top: 10%;
+    left: 50%;
+  }
+  50% {
+    -webkit-transform: rotate(0.5turn);
+            transform: rotate(0.5turn);
+    top: -15%;
+    left: 60%;
+  }
+  75% {
+    top: 50%;
+    left: 30%;
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+    top: 5%;
+    left: 20%;
+  }
+}
+
+@keyframes mov_loding {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+    top: 5%;
+    left: 20%;
+  }
+  25% {
+    top: 10%;
+    left: 50%;
+  }
+  50% {
+    -webkit-transform: rotate(0.5turn);
+            transform: rotate(0.5turn);
+    top: -15%;
+    left: 60%;
+  }
+  75% {
+    top: 50%;
+    left: 30%;
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+    top: 5%;
+    left: 20%;
+  }
+}
+
+#loading svg .COVD {
+  width: 30vw;
+  height: 30vw;
+  -webkit-animation: infinite linear mov_loding 2.8s;
+          animation: infinite linear mov_loding 2.8s;
+  position: absolute;
+  left: 20%;
+  top: 0%;
+}
+
+#loading svg .COLC_1 {
+  fill: red;
+  opacity: 0.3;
+}
+
+#loading svg .cls-2,
+#loading svg .cls-3 {
+  fill: #fff;
+  stroke: #fff;
+  stroke-miterlimit: 10;
+}
+
+#loading svg .cls-2 {
+  stroke-width: 5px;
+}
+
+#loading svg .cls-3 {
+  stroke-width: 20px;
+}
+
+#loading svg #path {
+  fill: #0000;
+  z-index: 10;
+  stroke: #fff;
+  -webkit-animation: move 2.8s linear infinite;
+          animation: move 2.8s linear infinite;
+}
+
+@-webkit-keyframes move {
+  0% {
+    stroke-dasharray: 0, 511px;
+  }
+  50% {
+    stroke-dasharray: 511px, 0;
+  }
+  100% {
+    stroke-dasharray: 0, 511px;
+  }
+}
+
+@keyframes move {
+  0% {
+    stroke-dasharray: 0, 511px;
+  }
+  50% {
+    stroke-dasharray: 511px, 0;
+  }
+  100% {
+    stroke-dasharray: 0, 511px;
+  }
 }
 
 header {
