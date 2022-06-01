@@ -16,8 +16,9 @@
     h1 {
         color: rgba(120, 142, 171, 1);
         font-size: 2.5vw;
-        margin-top: 3.5%;
-        margin-bottom: 1.5%;
+        font-size: 3rem;
+        margin-top: 2.5rem;
+        margin-bottom: 1.5rem;
         font-weight: bold;
     }
 
@@ -41,7 +42,7 @@
     }
 
     &#symptomTop {
-
+        overflow: hidden;
         .s9_mainTop {
             cursor: pointer;
 
@@ -96,10 +97,12 @@
                 svg {
                     display: block;
                     cursor: pointer;
-                    width: auto;
-                    height: auto;
-                    max-width: 100%;
-                    max-height: 100%;
+                    // width: auto;
+                    // height: auto;
+                    // max-width: 100%;
+                    // max-height: 100%;
+                    margin-top: 30px;
+                    height: 100%;
 
                     .cls-1,
                     .cls-2,
@@ -203,25 +206,19 @@
 
 
     @media (max-width: 1459px) {
-        h1 {
-            margin-top: 10.5%;
-        }
+        // h1 {
+        //     margin-top: 10.5%;
+        // }
     }
 
-    @media (min-width: 768px) and (max-width: 1199px) {
+    @media (max-width: 1199px) {
         h1 {
-            margin-top: 15.5%;
             font-size: 3rem;
         }
     }
 
     @media (max-width: 767px) {
         height: auto;
-
-        h1 {
-            margin-top: 15.5%;
-            font-size: 2rem;
-        }
     }
 
 

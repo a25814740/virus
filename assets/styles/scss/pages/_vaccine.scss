@@ -2,6 +2,7 @@
     @media (max-width: 991px) {
         .full-page-inner {
             align-items: stretch;
+
             .s7_topContainer {
                 height: auto;
             }
@@ -70,11 +71,13 @@
                 height: 100%;
                 background-repeat: no-repeat;
                 transition: all .3s ease;
+
                 h2 {
                     font-size: 4rem;
                     font-size: 3.5vw;
                     transition: all .3s ease;
                 }
+
                 &:hover {
                     transform: scale(1.01);
                     background-size: 50%;
@@ -102,6 +105,7 @@
                     z-index: 2;
                     background-color: #afcbbf;
                     clip-path: polygon(0 0, 60.5% 0, 40.5% 100%, 0% 100%);
+
                     h2 {
                         text-shadow: 0.4rem 0.6rem 0.4rem rgba(0, 0, 0, 0.5);
                     }
@@ -128,6 +132,7 @@
                 &:hover {
                     background-color: #2e435f;
                     clip-path: polygon(59.5% 0, 100% 0, 100% 100%, 39.5% 100%);
+
                     h2 {
                         text-shadow: 0.4rem 0.6rem 0.4rem #959b98bd;
                     }
@@ -157,10 +162,12 @@
         }
 
 
-        @media (min-width: 769px) and (max-width: 1199px) {
+        @media (min-width: 768px) and (max-width: 1199px) {
             height: 100vh;
+
             .textBlock {
                 width: 80%;
+
                 h1 {
                     font-size: 3rem;
                 }
@@ -174,12 +181,13 @@
             }
         }
 
-        @media (max-width: 769px) {
+        @media (max-width: 767px) {
             .textBlock {
                 margin-top: 0%;
                 width: 100%;
-                padding: 10% 15%;
-                background-color: #131519;
+                padding: 4rem 20px 0;
+                height: auto;
+                // background-color: #131519;
                 justify-content: flex-start;
 
                 h1 {
@@ -189,7 +197,7 @@
                 p {
                     margin-top: 5%;
                     font-size: 1rem;
-                    line-height: 1.5rem;
+                    line-height: 1.5;
                     letter-spacing: 0.5rem;
                 }
             }
@@ -208,10 +216,12 @@
 #fullpage #vaccineBottom {
     @media (max-width: 767px) {
         background: transparent;
+
         .full-page-inner {
             flex-direction: column;
             align-items: flex-start;
             min-height: 0;
+
             .s7_topContainer {
                 height: auto;
             }
@@ -221,21 +231,13 @@
 
 #vaccineBottom {
     background-color: rgba(0, 0, 0, 1);
-    z-index: 1;
 
-    .bV {
-        position: absolute;
-        top: 100%;
-        left: 110%;
-        transform: translate(-50%, -50%);
-        width: 100vw;
-        animation: bV 100s linear infinite;
-        z-index: 1;
-    }
+    // z-index: 1;
     .full-page-inner {
         position: relative;
         z-index: 1;
     }
+
     .s7_bottomContainer {
         position: relative;
         display: flex;
@@ -359,6 +361,7 @@
 
         .s7_bottomContainer {
             background-color: #000;
+
             .s7_b_textBlock {
                 width: unset;
                 font-size: 1.5rem;
@@ -419,7 +422,27 @@
     img {
         max-width: 100%;
     }
+
+    &[id*="popup-vaccine"] {
+        .carousel__button.is-close {
+            svg {
+                width: 80px;
+                height: 80px;
+            }
+        }
+    }
+
+    &#popup-vaccineL {
+        .carousel__button.is-close {
+            color: #000;
+        }
+    }
 }
+.fancybox__container .fancybox__carousel .fancybox__slide [id*="popup-vaccine"] > .carousel__button.is-close {
+    right: 2rem;
+    top: 1rem;
+}
+
 
 #popup-vaccineL {
     background-image: url(../images/vaccine/popup_LB.png);

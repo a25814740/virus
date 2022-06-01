@@ -17,6 +17,86 @@ let app = Vue.createApp({
             isMenuActive: false,
             menuAnimation_active: false,
             menuAnimationB_active: false,
+
+            map: [],
+            InforObj: [],
+            centerCords: {
+                // lat: -25.344,
+                lat: 40.940158512491735,
+                lng: 131.036
+            },
+            markersOnMap: [
+                // 英國
+                {
+                    virusNum: "B.1.1.7//",
+                    virusName: "Alpha",
+                    virusLocation: "英國",
+                    virusContent: `
+                    大流行時間：2020年9月偵測，12月大流行<br>
+                    主要流行區域：擴及180國家／地區，英國、美國、德國、瑞典、丹麥<br>
+                    傳播性與致死率：傳播率增加約60%、住院率上升、致死率上升<br>
+                    臨床症狀：跟原始病毒株相似，發燒、咳嗽、喉嚨痛、呼吸困難
+
+                    `,
+                    LatLng: [{
+                        lat: 54.2317179,
+                        lng: -13.4259364
+                    }]
+                },
+                // 南非
+                {
+                    virusNum: "B.1.351 //  與  B.1.1.529 //",
+                    virusName: "Beta    /    Omicron",
+                    virusLocation: "南非",
+                    virusContent: `
+                    Beta<br>
+                    大流行時間：2020年10月偵測，2021年2月大流行<br>
+                    主要流行區域：擴及117個國家／地區，南非、美國、法國、菲律賓、留尼旺（法國海外省）<br>
+                    傳播性與致死率：傳播率增加約50%、致死率未有定論<br>
+                    臨床症狀：與初始病毒沒有特別差異<br><br>
+                    Omicron<br>
+                    大流行時間：2021年11月偵測，2021年11月開始大流行至今<br>
+                    主要流行區域：擴及181個國家／地區，英國、美國、德國、丹麥、法國<br>
+                    傳播性與致死率：傳播率高，致死率未定 <br>
+                    臨床症狀：發燒、咳嗽、呼吸急促、症狀輕<br>
+                    `,
+                    LatLng: [{
+                        lat: -34.2794902,
+                        lng: 18.2580469
+                    }]
+                },
+                // 印度
+                {
+                    virusNum: "B.617.2//",
+                    virusName: "Delta",
+                    virusLocation: "印度",
+                    virusContent: `大流行時間：2020年10月偵測，2021年3月大流行，7月成為強勢病毒株<br>
+                    主要流行區域：擴及203個國家／地區，美國、英國、德國、丹麥、法國<br>
+                    臨床症狀：發燒、咳嗽、喉嚨痛、流鼻水、呼吸困難、幾乎沒有嗅味覺喪失
+                    `,
+                    LatLng: [{
+                        lat: 22.940158512491735,
+                        lng: 79.70995021888635
+                    }]
+                },
+                // 巴西
+                {
+                    virusNum: "P.1//",
+                    virusName: "Gamma",
+                    virusLocation: "巴西",
+                    virusContent: `
+                    大流行時間：2021年1月起<br>
+                    主要流行區域：擴及91個國家／地區，巴西、美國、加拿大、智利、墨西哥<br>
+                    傳播性與致死率：傳播率增加40%～120%、致死率未有定論，但可能會造成二次感染<br>
+                    臨床症狀：與初始病毒類似，主要為發燒、咳嗽、嗅味覺喪失
+
+                    `,
+                    LatLng: [{
+                        lat: -8.510013450198832,
+                        lng: -52.434523278800185
+                    }]
+                },
+            ]
         }
     },
     filters: {
@@ -39,6 +119,7 @@ let app = Vue.createApp({
 
             setTimeout(() => {
                 this.bannerSwiper(); // 給banner swiper大約600ms的預載時間
+                this.initMap(); // Google Map api大約600ms的預載時間
             }, 3400)
             setTimeout(() => {
                 this.preload(); // loading 頁面
@@ -51,6 +132,7 @@ let app = Vue.createApp({
             this.introScene();
             this.introWheel();
             this.vaccineScene();
+            this.historySwiper();
             this.post_pandemicSwiper();
             this.about_usSwiper();
             this.s9_sceneSymptom();
@@ -110,20 +192,15 @@ let app = Vue.createApp({
                 lockAnchors: true,
                 anchors: ['index', '全球確診情形', '台灣確診情形', '台灣疫苗施打情形', '病毒結構與病毒增值', '變異株起源', '感染症狀', '後遺症', '新冠疫苗', '傳統疫苗', '新冠疫苗開發歷程', '目前台灣施打新冠疫苗種類', '後疫情時代', '關於我們'],
                 navigation: false,
-                // navigationPosition: 'right',
-                // navigationTooltips: ['slide 1', 'slide 2', 'slide 3', 'slide 4', 'slide 5', 'slide 6', 'slide 7', 'slide 8', 'slide 9', 'slide 10', 'slide 11'],
-                // showActiveTooltip: false,
-                // slidesNavigation: false,
-                // slidesNavPosition: 'bottom',
 
                 /* ===== Options ===== */
                 autoScrolling: true,
                 // autoScrolling: false,
-                scrollHorizontally: false,
-                scrollOverflow: false,
-                // scrollOverflow: true,
+                // scrollHorizontally: false,
+                // scrollOverflow: false,
+                scrollOverflow: true,
                 // sectionsColor: ['#f2f2f2', '#4BBFC3', '#7BAABE', 'whitesmoke', '#000'],
-                // normalScrollElements: '#timeline',
+                // normalScrollElements: '.scrollable-content',
 
                 /* ===== Custom Accessibility ===== */
                 keyboardScrolling: true,
@@ -134,13 +211,11 @@ let app = Vue.createApp({
                 sectionSelector: '.section',
                 // slideSelector: '.slide',
                 responsiveWidth: 991,
-                responsiveHeight: 900,
+                responsiveHeight: 767,
 
                 // Events
                 beforeLeave: function (origin, destination, direction, trigger) {},
-                onLeave: function (origin, destination, direction, trigger) {
-                    // console.log('onLeave');
-                },
+                onLeave: function (origin, destination, direction, trigger) {},
                 afterLoad: function (origin, destination, direction, trigger) {
                     // console.log('afterLoad');
                     // console.log(destination);
@@ -152,9 +227,7 @@ let app = Vue.createApp({
                         }
                     }
                 },
-                afterRender: function () {
-                    // console.log('afterRender');
-                },
+                afterRender: function () {},
                 afterResize: function (width, height) {},
                 afterReBuild: function () {},
                 afterResponsive: function (isResponsive) {},
@@ -465,18 +538,40 @@ let app = Vue.createApp({
             //     rightSceneChild.style.pointerevents = 'none';
             // })
 
-            scene0.addEventListener( 'mousemove', m => {
-                x = ((m.pageX / (scene0.offsetWidth / 100)) -50) * 2 ;
-                y =((m.pageY / (scene0.offsetHeight / 100)) - 50) * 2;
+            scene0.addEventListener('mousemove', m => {
+                x = ((m.pageX / (scene0.offsetWidth / 100)) - 50) * 2;
+                y = ((m.pageY / (scene0.offsetHeight / 100)) - 50) * 2;
                 img.style.transform = `translate( ${-x / 10}%, ${-y / 15}%)`;
             })
 
-        },  
-
-
-
-
-
+        },
+        historySwiper() {
+            var timelinesContent = new Swiper("#horizonTimelines .timelines-content", {
+                slidesPerView: 'auto',
+                // slidesPerGroup: 1,
+                // slidesOffsetBefore: 100,
+                // slidesOffsetAfter: 100,
+                centerInsufficientSlides: true,
+                loop: false,
+                speed: 1000,
+                // centeredSlides: true,
+                grabCursor: true,
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev"
+                },
+                breakpoints: {
+                    320: {
+                        slidesPerView: 1,
+                        centeredSlides: true,
+                    },
+                    992: {
+                        slidesPerView: 'auto',
+                        centeredSlides: false,
+                    }
+                }
+            });
+        },
         post_pandemicSwiper() {
             const post_pandemicSwiper = new Swiper('#Post-pandemic .swiper', {
                 loop: true,
@@ -544,6 +639,7 @@ let app = Vue.createApp({
 
 
         },
+
         fancyBoxState() {
             let _this = this;
             Fancybox.bind('[data-fancybox]', {
@@ -557,50 +653,326 @@ let app = Vue.createApp({
                     },
                 }
             });
+        },
+
+        /* ================== Google Map Api Start */
+        addMarker() {
+            let _this = this;
+            /* Create markers loop */
+            for (var i = 0; i < _this.markersOnMap.length; i++) {
+                /* A. Create html data for the markers */
+                var contentString =
+                    '<div id="content">' +
+                    '<label>' + _this.markersOnMap[i].virusNum + '</label>' +
+                    '<h2>' + _this.markersOnMap[i].virusName + '</h2>' +
+                    '<p>' + _this.markersOnMap[i].virusContent + '</p>' +
+                    '</div>';
+
+                /* B. generate markers position and label */
+                const marker = new google.maps.Marker({
+                    position: _this.markersOnMap[i].LatLng[0],
+                    map: _this.map,
+                    label: {
+                        text: _this.markersOnMap[i].virusLocation,
+                        color: "white",
+                        fontSize: "17px"
+                    },
+                    icon: 'none'
+                });
+
+                const infowindow = new google.maps.InfoWindow({
+                    content: contentString
+                });
+
+                marker.addListener("click", function () {
+                    _this.closeOtherInfo();
+                    infowindow.open(marker.get("map"), marker);
+                    _this.InforObj[0] = infowindow;
+                });
+
+                google.maps.event.addListener(map, "click", function (event) {
+                    infowindow.close();
+                });
+            } /* end marker loop */
+        },
+        closeOtherInfo() {
+            let _this = this;
+            if (_this.InforObj.length > 0) {
+                /* detach the info-window from the marker ... undocumented in the API docs */
+                _this.InforObj[0].set("marker", null);
+                /* and close it */
+                _this.InforObj[0].close();
+                /* blank the array */
+                _this.InforObj.length = 0;
+            }
+        },
+        initMap() {
+            let _this = this;
+            _this.map = new google.maps.Map(document.getElementById("map"), {
+                restriction: {
+                    latLngBounds: {
+                        north: 85,
+                        south: -85,
+                        west: -180,
+                        east: 180
+                    }
+                },
+                zoom: 2.5,
+                maxZoom: 4,
+                minZoom: 2.5,
+                disableDefaultUI: true, // a way to quickly hide all controls
+                center: _this.centerCords,
+                // backgroundColor: 'hsla(0, 0%, 0%, 0)',
+                // backgroundColor: '#212121',
+                backgroundColor: '#000',
+                // fullScreenControl: false,
+                styles: [{
+                        "elementType": "geometry",
+                        "stylers": [{
+                            "color": "#212121"
+                        }]
+                    },
+                    {
+                        "elementType": "labels.icon",
+                        "stylers": [{
+                            "visibility": "off"
+                        }]
+                    },
+                    {
+                        "elementType": "labels.text.fill",
+                        "stylers": [{
+                            "color": "#757575"
+                        }]
+                    },
+                    {
+                        "elementType": "labels.text.stroke",
+                        "stylers": [{
+                            "color": "#212121"
+                        }]
+                    },
+                    {
+                        "featureType": "administrative",
+                        "elementType": "geometry",
+                        "stylers": [{
+                                "color": "#757575"
+                            },
+                            {
+                                "visibility": "off"
+                            }
+                        ]
+                    },
+                    {
+                        "featureType": "administrative.country",
+                        "elementType": "labels.text.fill",
+                        "stylers": [{
+                            "color": "#9e9e9e"
+                        }]
+                    },
+                    {
+                        "featureType": "administrative.land_parcel",
+                        "stylers": [{
+                            "visibility": "off"
+                        }]
+                    },
+                    {
+                        "featureType": "administrative.locality",
+                        "elementType": "labels.text.fill",
+                        "stylers": [{
+                            "color": "#bdbdbd"
+                        }]
+                    },
+                    {
+                        "featureType": "administrative.neighborhood",
+                        "stylers": [{
+                            "visibility": "off"
+                        }]
+                    },
+                    {
+                        "featureType": "poi",
+                        "stylers": [{
+                            "visibility": "off"
+                        }]
+                    },
+                    {
+                        "featureType": "poi",
+                        "elementType": "labels.text",
+                        "stylers": [{
+                            "visibility": "off"
+                        }]
+                    },
+                    {
+                        "featureType": "poi",
+                        "elementType": "labels.text.fill",
+                        "stylers": [{
+                            "color": "#757575"
+                        }]
+                    },
+                    {
+                        "featureType": "poi.park",
+                        "elementType": "geometry",
+                        "stylers": [{
+                            "color": "#181818"
+                        }]
+                    },
+                    {
+                        "featureType": "poi.park",
+                        "elementType": "labels.text.fill",
+                        "stylers": [{
+                            "color": "#616161"
+                        }]
+                    },
+                    {
+                        "featureType": "poi.park",
+                        "elementType": "labels.text.stroke",
+                        "stylers": [{
+                            "color": "#1b1b1b"
+                        }]
+                    },
+                    {
+                        "featureType": "road",
+                        "stylers": [{
+                            "visibility": "off"
+                        }]
+                    },
+                    {
+                        "featureType": "road",
+                        "elementType": "geometry.fill",
+                        "stylers": [{
+                            "color": "#2c2c2c"
+                        }]
+                    },
+                    {
+                        "featureType": "road",
+                        "elementType": "labels",
+                        "stylers": [{
+                            "visibility": "off"
+                        }]
+                    },
+                    {
+                        "featureType": "road",
+                        "elementType": "labels.icon",
+                        "stylers": [{
+                            "visibility": "off"
+                        }]
+                    },
+                    {
+                        "featureType": "road",
+                        "elementType": "labels.text.fill",
+                        "stylers": [{
+                            "color": "#8a8a8a"
+                        }]
+                    },
+                    {
+                        "featureType": "road.arterial",
+                        "elementType": "geometry",
+                        "stylers": [{
+                            "color": "#373737"
+                        }]
+                    },
+                    {
+                        "featureType": "road.highway",
+                        "elementType": "geometry",
+                        "stylers": [{
+                            "color": "#3c3c3c"
+                        }]
+                    },
+                    {
+                        "featureType": "road.highway.controlled_access",
+                        "elementType": "geometry",
+                        "stylers": [{
+                            "color": "#4e4e4e"
+                        }]
+                    },
+                    {
+                        "featureType": "road.local",
+                        "elementType": "labels.text.fill",
+                        "stylers": [{
+                            "color": "#616161"
+                        }]
+                    },
+                    {
+                        "featureType": "transit",
+                        "stylers": [{
+                            "visibility": "off"
+                        }]
+                    },
+                    {
+                        "featureType": "transit",
+                        "elementType": "labels.text.fill",
+                        "stylers": [{
+                            "color": "#757575"
+                        }]
+                    },
+                    {
+                        "featureType": "water",
+                        "elementType": "geometry",
+                        "stylers": [{
+                            "color": "#000000"
+                        }]
+                    },
+                    {
+                        "featureType": "water",
+                        "elementType": "labels.text",
+                        "stylers": [{
+                            "visibility": "off"
+                        }]
+                    },
+                    {
+                        "featureType": "water",
+                        "elementType": "labels.text.fill",
+                        "stylers": [{
+                            "color": "#3d3d3d"
+                        }]
+                    }
+                ]
+            });
+
+            _this.addMarker();
         }
+        /* Google Map Api End ================== */
     }
 })
 
 app.component('loading-screen', {
     template: `
-      <div id="loading">
-      <svg id="CTO" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" style="fill:red;">
-      <path class="COLC_1">
-          <animate attributeName="d" dur="4s" repeatCount="indefinite" values="
-      M1029,125c-61.73-9.21-129.12,59.32-186,85-48.48,21.89-160.62,94.29-196,134-50.61,56.8-28.79,220,1,290,35.43,83.25,230.81,135.9,321,143,108.47,8.54,266.27-132.89,345-208,43.93-41.91,45.82-132.59,21-188-20.06-44.8-80.34-100.35-117-133C1176.94,211.44,1083.38,133.12,1029,125Z;
-      
-      M1029,125c-61.73-9.21-105.12-26.68-162-1-48.48,21.89-149.62,77.29-185,117-50.61,56.8-39.79,293-10,363,35.43,83.25,221.81,109.9,312,117,108.47,8.54,214.27,17.11,293-58,43.93-41.91,26.82-222.59,2-278-20.06-44.8-21.34-142.35-58-175C1179.94,173.44,1083.38,133.12,1029,125Z;
+    <div id="loading">
+    <svg id="CTO" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" style="fill:red;">
+    <path class="COLC_1">
+        <animate attributeName="d" dur="4s" repeatCount="indefinite" values="
+    M1029,125c-61.73-9.21-129.12,59.32-186,85-48.48,21.89-160.62,94.29-196,134-50.61,56.8-28.79,220,1,290,35.43,83.25,230.81,135.9,321,143,108.47,8.54,266.27-132.89,345-208,43.93-41.91,45.82-132.59,21-188-20.06-44.8-80.34-100.35-117-133C1176.94,211.44,1083.38,133.12,1029,125Z;
+    
+    M1029,125c-61.73-9.21-105.12-26.68-162-1-48.48,21.89-149.62,77.29-185,117-50.61,56.8-39.79,293-10,363,35.43,83.25,221.81,109.9,312,117,108.47,8.54,214.27,17.11,293-58,43.93-41.91,26.82-222.59,2-278-20.06-44.8-21.34-142.35-58-175C1179.94,173.44,1083.38,133.12,1029,125Z;
 
-      M1101,109c-61.73-9.21-143.12-35.68-200-10-48.48,21.89-187.62,126.29-223,166-50.61,56.8-88.79,263-59,333,35.43,83.25,208.81,116.9,299,124,108.47,8.54,234.27-31.89,313-107,43.93-41.91-10.18-123.59-35-179-20.06-44.8,25.66-158.35-11-191C1143.94,208.44,1155.38,117.12,1101,109Z;
-      
-      M1029,125c-61.73-9.21-129.12,59.32-186,85-48.48,21.89-160.62,94.29-196,134-50.61,56.8-28.79,220,1,290,35.43,83.25,230.81,135.9,321,143,108.47,8.54,266.27-132.89,345-208,43.93-41.91,45.82-132.59,21-188-20.06-44.8-80.34-100.35-117-133C1176.94,211.44,1083.38,133.12,1029,125Z;
-      "></animate>
-      </path>
-      <path id="path" id="path"
-          d="M806,370.69c3.15-4.78-11.55-27.47-31-29.76-20.75-2.45-40.53,19-46.11,39.4-7.55,27.57,8,63.53,31.85,67.49,22.35,3.7,47.8-21.34,44.86-30.19-1.6-4.79-12.07-6.48-19.71-5.44-16.27,2.2-20.44,16.87-28.92,15.51-11-1.77-22.37-29.45-12.15-45.28,8.7-13.47,30.08-13.74,36.88-13.83C796.57,368.4,804.05,373.58,806,370.69Z"
-          style="fill:none;stroke:#ffffff;stroke-miterlimit:10;stroke-width:5px" />
-      <path id="path"
-          d="M825.25,397.51c-6.79,2.7-9.79,13.85-7.55,22.22C820.45,430,832,439.64,844.11,436.5c11-2.88,16.56-14.91,15.51-24.31-1.78-15.88-22.45-25.95-29.76-21.38-7,4.38-6.08,25,2.09,28.5,6.57,2.84,18.47-5,18-10.9-.36-4.68-8.57-7.73-12.58-9.22C832.8,397.48,829,396.05,825.25,397.51Z"
-          style="fill:none;stroke:#ffffff;stroke-miterlimit:10;stroke-width:5px" />
-      <path id="path"
-          d="M868.42,392.9c-1.71.51-.38,19.36,11.32,35.63,3.48,4.84,7.34,10.06,12.57,10.06,7.46,0,12.79-10.54,15.51-15.93,10.12-20,8.64-42.33,5.87-42.75-3.93-.6-10.27,43.12-21,42.75-1.44,0-2.48-.88-4.19-2.51C874.74,407,870,392.45,868.42,392.9Z"
-          style="fill:none;stroke:#ffffff;stroke-miterlimit:10;stroke-width:5px" />
-      <path id="path"
-          d="M927.94,404.22c-5.93,9.33-10.34,23.65-5.44,28.09,2.23,2,6.39,2,9.22.42,7.56-4.17,8.54-20.69,3.35-32.7-4.42-10.25-11.41-12.78-10.06-18,1.64-6.35,13.79-10.21,16.77-7.13,2.41,2.49-1.09,9.63-3.36,14.25C934.63,396.86,931.83,398.11,927.94,404.22Z"
-          style="fill:none;stroke:#ffffff;stroke-miterlimit:10;stroke-width:5px" />
-      <path id="path"
-          d="M980.76,387.87c-5.16-5.16-10.25-10.24-16.35-10.06-10.66.32-21.81,16.64-19.7,31.44,2.42,17,21.88,28.69,31.44,25.15,5.87-2.17,9.15-10.51,10.9-9.64s-1.11,7.78,1.26,9.22c1.44.88,4-.81,4.61-1.25,10.75-7.25,29.3-100.76,14.67-104.38-5-1.23-12.06,8.41-15.09,15.09-5.16,11.34-.71,18.57-1.26,33.12-.81,21.45-11.9,43.31-18.44,42.75-5.16-.44-9.89-15-5.87-18.86,4.79-4.61,20.67,7.37,23.47,3.77C992.47,401.56,985.6,392.71,980.76,387.87Z"
-          style="fill:none;stroke:#ffffff;stroke-miterlimit:10;stroke-width:5px" />
-      <path id="path"
-          d="M1052,392.07c-8.6-1.83-27.38-3.95-30.6,3.35-1.94,4.39,2.23,11.14,6.71,14.67,14.45,11.38,43.77-1.67,43.59-8.8C1071.59,396.23,1056.6,393,1052,392.07Z"
-          style="fill:none;stroke:#ffffff;stroke-miterlimit:10;stroke-width:5px" />
-      <path id="path"
-          d="M1101.81,345c-4.7,17.78-19.71,76-16.33,89.27.57,2.24,2.13,8.39,5.08,8.71,1.66.18,3.12-1.57,3.63-2.18,9.93-11.93,13-82.25,21.77-98,.65-1.17,3.35-5.67,1.81-9.79-.94-2.54-3.49-5-5.8-4.72-1.16.13-2.35.95-6.17,8.34C1104.05,340.08,1102.72,343,1101.81,345Z"
-          style="fill:none;stroke:#ffffff;stroke-miterlimit:10;stroke-width:5px" />
-      <path id="path"
-          d="M1171.12,340c-9.36-6.85-30.08-4.57-39.56,9.07-6.65,9.58-7.93,25-.72,31.57,10.3,9.41,30.34-6.2,37.37,1.82,9.47,10.78-12.07,55.81-17.42,62.05-.38.44-1.88,2.1-1.45,3.63.6,2.07,4.46,2.89,6.9,2.9,6.47,0,11.4-5.69,13.06-7.62,12.12-14.05,38.42-91.78,15.61-103.42-14.37-7.33-44.24,13.57-42.46,22.86,1,5.48,13.68,10.07,22.86,5.81s13.33-16.48,9.8-23.95A12.64,12.64,0,0,0,1171.12,340Z"
-          style="fill:none;stroke:#ffffff;stroke-miterlimit:10;stroke-width:5px" />
-  </svg>
+    M1101,109c-61.73-9.21-143.12-35.68-200-10-48.48,21.89-187.62,126.29-223,166-50.61,56.8-88.79,263-59,333,35.43,83.25,208.81,116.9,299,124,108.47,8.54,234.27-31.89,313-107,43.93-41.91-10.18-123.59-35-179-20.06-44.8,25.66-158.35-11-191C1143.94,208.44,1155.38,117.12,1101,109Z;
+    
+    M1029,125c-61.73-9.21-129.12,59.32-186,85-48.48,21.89-160.62,94.29-196,134-50.61,56.8-28.79,220,1,290,35.43,83.25,230.81,135.9,321,143,108.47,8.54,266.27-132.89,345-208,43.93-41.91,45.82-132.59,21-188-20.06-44.8-80.34-100.35-117-133C1176.94,211.44,1083.38,133.12,1029,125Z;
+    "></animate>
+    </path>
+    <path class="path"
+        d="M806,370.69c3.15-4.78-11.55-27.47-31-29.76-20.75-2.45-40.53,19-46.11,39.4-7.55,27.57,8,63.53,31.85,67.49,22.35,3.7,47.8-21.34,44.86-30.19-1.6-4.79-12.07-6.48-19.71-5.44-16.27,2.2-20.44,16.87-28.92,15.51-11-1.77-22.37-29.45-12.15-45.28,8.7-13.47,30.08-13.74,36.88-13.83C796.57,368.4,804.05,373.58,806,370.69Z"
+        style="fill:none;stroke:#ffffff;stroke-miterlimit:10;stroke-width:5px" />
+    <path class="path"
+        d="M825.25,397.51c-6.79,2.7-9.79,13.85-7.55,22.22C820.45,430,832,439.64,844.11,436.5c11-2.88,16.56-14.91,15.51-24.31-1.78-15.88-22.45-25.95-29.76-21.38-7,4.38-6.08,25,2.09,28.5,6.57,2.84,18.47-5,18-10.9-.36-4.68-8.57-7.73-12.58-9.22C832.8,397.48,829,396.05,825.25,397.51Z"
+        style="fill:none;stroke:#ffffff;stroke-miterlimit:10;stroke-width:5px" />
+    <path class="path"
+        d="M868.42,392.9c-1.71.51-.38,19.36,11.32,35.63,3.48,4.84,7.34,10.06,12.57,10.06,7.46,0,12.79-10.54,15.51-15.93,10.12-20,8.64-42.33,5.87-42.75-3.93-.6-10.27,43.12-21,42.75-1.44,0-2.48-.88-4.19-2.51C874.74,407,870,392.45,868.42,392.9Z"
+        style="fill:none;stroke:#ffffff;stroke-miterlimit:10;stroke-width:5px" />
+    <path class="path"
+        d="M927.94,404.22c-5.93,9.33-10.34,23.65-5.44,28.09,2.23,2,6.39,2,9.22.42,7.56-4.17,8.54-20.69,3.35-32.7-4.42-10.25-11.41-12.78-10.06-18,1.64-6.35,13.79-10.21,16.77-7.13,2.41,2.49-1.09,9.63-3.36,14.25C934.63,396.86,931.83,398.11,927.94,404.22Z"
+        style="fill:none;stroke:#ffffff;stroke-miterlimit:10;stroke-width:5px" />
+    <path class="path"
+        d="M980.76,387.87c-5.16-5.16-10.25-10.24-16.35-10.06-10.66.32-21.81,16.64-19.7,31.44,2.42,17,21.88,28.69,31.44,25.15,5.87-2.17,9.15-10.51,10.9-9.64s-1.11,7.78,1.26,9.22c1.44.88,4-.81,4.61-1.25,10.75-7.25,29.3-100.76,14.67-104.38-5-1.23-12.06,8.41-15.09,15.09-5.16,11.34-.71,18.57-1.26,33.12-.81,21.45-11.9,43.31-18.44,42.75-5.16-.44-9.89-15-5.87-18.86,4.79-4.61,20.67,7.37,23.47,3.77C992.47,401.56,985.6,392.71,980.76,387.87Z"
+        style="fill:none;stroke:#ffffff;stroke-miterlimit:10;stroke-width:5px" />
+    <path class="path"
+        d="M1052,392.07c-8.6-1.83-27.38-3.95-30.6,3.35-1.94,4.39,2.23,11.14,6.71,14.67,14.45,11.38,43.77-1.67,43.59-8.8C1071.59,396.23,1056.6,393,1052,392.07Z"
+        style="fill:none;stroke:#ffffff;stroke-miterlimit:10;stroke-width:5px" />
+    <path class="path"
+        d="M1101.81,345c-4.7,17.78-19.71,76-16.33,89.27.57,2.24,2.13,8.39,5.08,8.71,1.66.18,3.12-1.57,3.63-2.18,9.93-11.93,13-82.25,21.77-98,.65-1.17,3.35-5.67,1.81-9.79-.94-2.54-3.49-5-5.8-4.72-1.16.13-2.35.95-6.17,8.34C1104.05,340.08,1102.72,343,1101.81,345Z"
+        style="fill:none;stroke:#ffffff;stroke-miterlimit:10;stroke-width:5px" />
+    <path class="path"
+        d="M1171.12,340c-9.36-6.85-30.08-4.57-39.56,9.07-6.65,9.58-7.93,25-.72,31.57,10.3,9.41,30.34-6.2,37.37,1.82,9.47,10.78-12.07,55.81-17.42,62.05-.38.44-1.88,2.1-1.45,3.63.6,2.07,4.46,2.89,6.9,2.9,6.47,0,11.4-5.69,13.06-7.62,12.12-14.05,38.42-91.78,15.61-103.42-14.37-7.33-44.24,13.57-42.46,22.86,1,5.48,13.68,10.07,22.86,5.81s13.33-16.48,9.8-23.95A12.64,12.64,0,0,0,1171.12,340Z"
+        style="fill:none;stroke:#ffffff;stroke-miterlimit:10;stroke-width:5px" />
+</svg></div>
   `
 });
 

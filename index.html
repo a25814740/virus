@@ -101,7 +101,7 @@
         <div id="menu" :class="{'menuClose': menuAnimation_active == false}">
             <div class="menuBox"
                 :class="{'menuAnimation': menuAnimation_active == true, 'menuAnimationBack': menuAnimationB_active == true}">
-                <div class="bTextBlock">
+                <div class="bTextBlock d-sm-flex d-none">
                     <div class="letter" :class="{'letter_Ani': menuAnimation_active == true}">M</div>
                     <div class="letter" :class="{'letter_Ani': menuAnimation_active == true}">E</div>
                     <div class="letter" :class="{'letter_Ani': menuAnimation_active == true}">N</div>
@@ -147,7 +147,7 @@
                 <div class="menuFooter">
                     <div class="footer_left">
                         <span data-fancybox="gallery-popup-refer" data-src="#popup-refer-content">REFERENCES</span>
-                        <a href="#關於我們" onclick="setTimeout(function(){fullpage_api.moveTo(14)}, 1000)" @click="clickMenuBtnToCloseMenu();">
+                        <a href="#關於我們" onclick="setTimeout(function(){fullpage_api.moveTo(13)}, 1000)" @click="clickMenuBtnToCloseMenu();">
                             ABOUT&nbsp;&nbsp;US
                         </a>
                     </div>
@@ -182,9 +182,13 @@
                                     <div class="bg position-absolute w-100 h-100"
                                         :style="'background: url( '+item.imgUrl+' ) 50% 50% / cover no-repeat;'"></div>
                                     <article>
-                                        <div class="title" data-swiper-parallax="-100"
+                                        <!-- <div class="title" data-swiper-parallax="-100"
                                             data-swiper-parallax-duration="1000" v-if="item.title">
-                                            {{ item.title }}</div>
+                                            {{ item.title }}</div> -->
+                                        <div class="bannerLogo" data-swiper-parallax="-100"
+                                            data-swiper-parallax-duration="1000" v-if="item.title">
+                                            <img :src="item.logoUrl" alt="">    
+                                        </div>
                                         <div class="subtitle" data-swiper-parallax="-200"
                                             data-swiper-parallax-duration="1000" v-if="item.description"
                                             v-html="item.description"></div>
@@ -369,7 +373,7 @@
                                 <span class="magic-hover magic-hover__square slide-in-bottom ani-delay-200">病毒增殖</span>
                             </div>
                         </div>
-                        <div class="s3r_outer row gap-md-5 gap-3 mx-auto" @mouseover="s3_wheel">
+                        <div class="s3r_outer row gap-md-5 gap-3 mx-auto">
                             <article class="col-12 col-md-6 ms-auto">
                                 <p>
                                     病毒經包吞作用進入細胞後，首先會移除外殼蛋白，將病毒RNA釋放到細胞質中(2)，
@@ -404,7 +408,7 @@
                             <h1 class="slide-in-bottom mb-3">目前Covid-19感染症狀</h1>
                             <div class="s9_svg slide-in-bottom ani-delay-200">
                                 <sequelae-top-svg></sequelae-top-svg>
-                                <img class="d-md-none d-block mt-3" src="./assets/styles/images/symptom/text.png"
+                                <img class="d-md-none d-block mt-5 mb-5" src="./assets/styles/images/symptom/text.png"
                                     alt="">
                             </div>
                         </div>
@@ -417,7 +421,7 @@
                 <div class="full-page-inner w-100 h-100">
                     <div class="s9_mainBottom w-100 h-100 justify-content-between">
                         <h1 class="slide-in-bottom mb-3">目前Covid-19後遺症狀</h1>
-                        <div class="s9_svg align-items-end slide-in-bottom ani-delay-200">
+                        <div class="s9_svg align-items-end slide-in-bottom ani-delay-200 mt-sm-0 mt-5">
                             <sequelae-bottom-svg></sequelae-bottom-svg>
                         </div>
                     </div>
@@ -453,7 +457,6 @@
                 </div>
             </div>
             <div class="section fp-auto-height-responsive" id="vaccineBottom">
-                <img src="./assets/styles/images/vaccine/bV.png" alt="" class="bV">
                 <div class="full-page-inner w-100 h-100">
                     <div class="s7_bottomContainer w-100 h-100">
                         <div class="s7_b_textBlock">
@@ -515,122 +518,79 @@
                 </div>
             </div>
             <!-- 新冠疫苗開發歷程 -->
-            <div class="section fp-auto-height" id="history">
-                <div id="timeline">
-                    <div class="timeline">
+            <div class="section fp-auto-height-responsive" id="history">
+                <img src="./assets/styles/images/vaccine/bV.png" alt="" class="bV">
+                <div id="timeline" class="full-page-inner w-100 h-100">
+                    <div class="timeline w-100 h-100">
                         <div class="container-fluid">
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="timeline-container">
-                                        <div class="timeline-start">
+                                        <div class="timeline-start slide-in-bottom">
                                             <p>
                                                 新<br>冠
                                             </p>
                                             <p>疫苗<br><span>開發歷程</span></p>
                                         </div>
-                                        <div class="timeline-continue">
+                                        <div class="timeline-continue" v-if="false">
 
-                                            <div class="row timeline-list g-0">
+                                            <div class="row timeline-list g-0" v-for="(item, index) in pageDatas.history.lists" >
                                                 <div class="col-md-6 timeline-image-wrapper">
                                                     <div class="timeline-image-line"></div>
-                                                    <div class="timeline-image">
-                                                        <img src="./assets/styles/images/history/history01.PNG" alt="">
+                                                    <div class="timeline-image" v-if="item.imgUrl">
+                                                        <img :src="item.imgUrl" alt="">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="timeline-box">
                                                         <div class="timeline-text">
-                                                            <h2 class="h2">2020</h2>
-                                                            <h3 class="h3">March</h3>
-                                                            <p>各國疫苗團隊陸續投入疫苗研發</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="row timeline-list g-0">
-                                                <div class="col-md-6 timeline-image-wrapper">
-                                                    <div class="timeline-image-line"></div>
-                                                    <div class="timeline-image">
-                                                        <img src="./assets/styles/images/history/history02.PNG" alt="">
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="timeline-box">
-                                                        <div class="timeline-text">
-                                                            <h2 class="h2">2020</h2>
-                                                            <h3 class="h3">December</h3>
-                                                            <p>輝瑞 BNT 疫苗獲批准緊急許可，首個新冠疫苗問世</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="row timeline-list g-0">
-                                                <div class="col-md-6 timeline-image-wrapper">
-                                                    <div class="timeline-image-line"></div>
-                                                    <div class="timeline-image">
-                                                        <img src="./assets/styles/images/history/history03.PNG" alt="">
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="timeline-box">
-                                                        <div class="timeline-text">
-                                                            <h2 class="h2">2021</h2>
-                                                            <h3 class="h3">February</h3>
-                                                            <p>開發中的 COVID-19 疫苗共 250 種，有 69
-                                                                種疫苗已進入人體臨床試驗階段，其中21支疫苗正執行第三期臨床試驗。</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="row timeline-list g-0">
-                                                <div class="col-md-6 timeline-image-wrapper">
-                                                    <div class="timeline-image-line"></div>
-                                                    <div class="timeline-image">
-                                                        <img src="./assets/styles/images/history/history04.PNG" alt="">
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="timeline-box">
-                                                        <div class="timeline-text">
-                                                            <h2 class="h2">2021</h2>
-                                                            <h3 class="h3">February</h3>
-                                                            <p>AZ疫苗通過緊急許可</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="row timeline-list g-0">
-                                                <div class="col-md-6 timeline-image-wrapper">
-                                                    <div class="timeline-image-line"></div>
-                                                    <div class="timeline-image">
-                                                        <img src="./assets/styles/images/history/history05.PNG" alt="">
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="timeline-box">
-                                                        <div class="timeline-text">
-                                                            <h2 class="h2">2021</h2>
-                                                            <h3 class="h3">March</h3>
-                                                            <p>嬌生疫苗通過緊急許可</p>
+                                                            <h2 class="h2">{{ item.year }}</h2>
+                                                            <h3 class="h3">{{ item.month }}</h3>
+                                                            <p>{{ item.description }}</p>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="timeline-launch">
+                                        <div class="timeline-launch" v-if="false">
                                             <div class="timeline-box">
                                                 <div class="timeline-text">
-                                                    <h2 class="h2">2021</h2>
-                                                    <h3 class="h3">December</h3>
-                                                    <p>世界衛生組織把10款疫苗列入緊急使用清單：輝瑞-BioNTech疫苗、牛津-阿斯利康疫苗(AZ疫苗)及該疫苗的印度版（COVISHIELD）、嬌生疫苗、莫德納疫苗、眾愛可維（國藥北京生物）、科興生物（CoronaVac）、科瓦克辛（Covaxin）、諾瓦瓦克斯疫苗及該疫苗的印度版科沃瓦克斯（Covovax）
-                                                    </p>
+                                                    <h2 class="h2">{{ pageDatas.history.lastest[0].year }}</h2>
+                                                    <h3 class="h3">{{ pageDatas.history.lastest[0].month }}</h3>
+                                                    <p>{{ pageDatas.history.lastest[0].description }}</p>
                                                 </div>
                                             </div>
                                         </div>
+
+                                        <div id="horizonTimelines" v-if="true">
+                                            <div class="swiper-container timelines-content">
+                                                <div class="swiper-wrapper timeline">
+                                                    <div class="swiper-slide slide-in-bottom" data-year="1976" v-for="(item, index) in pageDatas.history.lists" >
+                                                        <div class="timestamp"> <span class="date">{{ item.year }}<span> </div>
+                                                        <div class="timeline_icn"></div>
+                                                        <div class="status">
+                                                            <h5>{{ item.month }}</h5>
+                                                            <p>{{ item.description }}</p>
+                                                            <div class="timeline-image" v-if="item.imgUrl">
+                                                                <img :src="item.imgUrl" alt="">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="swiper-slide swiper-slide-last">
+                                                        <div class="timestamp"> <span class="date"><span> </div>
+                                                        <div class="status"></div>
+                                                    </div>
+                                                </div>
+                                        
+                                                <div class="swiper-button-prev"></div>
+                                                <div class="swiper-button-next"></div>
+                                            </div>
+                                        </div>
+
+
+
+
+
                                     </div>
                                 </div>
                             </div>
@@ -638,11 +598,6 @@
                     </div>
                 </div>
             </div>
-
-
-            <!-- 目前台灣施打新冠疫苗種類 -->
-            <div class="section fp-auto-height-responsive fp-auto-height"></div>
-
 
             <!-- 後疫情 -->
             <div class="section fp-auto-height-responsive" id="Post-pandemic">
@@ -1554,7 +1509,6 @@
 
         <!-- Vue 3.0 -->
         <script src="https://unpkg.com/vue@next"></script>
-        <script src="https://unpkg.com/vue-router@4"></script>
 
         <script src="./assets/plugins/bootstrap-5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
         <script src="./assets/plugins/fullPage.js-master/dist/fullpage.js"></script>
@@ -1567,13 +1521,10 @@
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
 
-        <script
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAP6b9E3f8iGdD5Cg8IywcndXHuMH5mT38&callback=initMap"
-            async defer></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAP6b9E3f8iGdD5Cg8IywcndXHuMH5mT38" async defer></script>
         <!-- self -->
-        <!-- <script src="./assets/js/pageData.js"></script> -->
+        <!-- <script src="./assets/js/googleMapCustomer.js"></script> -->
         <script src="./assets/js/main.js"></script>
-        <script src="./assets/js/googleMapCustomer.js"></script>
 
 
 </body>

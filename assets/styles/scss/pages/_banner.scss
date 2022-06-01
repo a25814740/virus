@@ -30,6 +30,7 @@
                     height: 100%;
                     object-fit: cover;
                 }
+
                 #clickVideo {
                     position: absolute;
                     left: 0;
@@ -45,7 +46,7 @@
             width: 15px;
             height: 15px;
             border: solid 1px #FFF;
-            background-color: rgba(255, 255 ,255, 0.3);
+            background-color: rgba(255, 255, 255, 0.3);
         }
 
         .bg {
@@ -77,10 +78,19 @@
                 font-size: 64px;
             }
 
+            .bannerLogo {
+                width: 270px;
+
+                img {
+                    max-width: 100%;
+                }
+            }
+
             .subtitle {
                 font-size: 24px;
                 line-height: 1.5;
                 letter-spacing: 2px;
+                padding: 20px;
             }
 
             .title+.subtitle {
@@ -100,12 +110,30 @@
 
         .swiper-slide-active {
             article {
-
                 .title,
                 .subtitle {
                     opacity: 1;
                 }
             }
+        }
+    }
+
+    @media (max-width: 767px) {
+        .swiper {
+            article {
+                left: 0;
+                .bannerLogo {
+                    width: 16rem;
+                    margin: auto;
+                }
+                
+                .title,
+                .subtitle {
+                    text-align: center;
+                }
+            }
+
+
         }
     }
 }

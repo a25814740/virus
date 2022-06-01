@@ -37,8 +37,6 @@ var markersOnMap = [
 
 function addMarker() {
     var image = {
-        /* marker url */
-        url: "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png",
         // This marker is 20 pixels wide by 32 pixels high.
         size: new google.maps.Size(20, 32),
         // The origin for this image is (0, 0).

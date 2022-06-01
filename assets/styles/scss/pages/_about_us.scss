@@ -1,15 +1,17 @@
 #about-us {
     background-color: black;
     height: 100vh;
+    padding: 20px;
 
     @media screen and (max-width: 991px) {
         background: white;
+        padding: 0;
     }
 
     .container-fluid {
         height: 100%;
         width: 80%;
-        padding-top: 110px;
+        padding-top: 6rem;
 
         @media screen and (max-width: 991px) {
             padding: 0;
@@ -39,11 +41,13 @@
 
                 @media screen and (max-width: 991px) {
                     background: white;
-                    height: 28vh;
+                    height: auto;
+                    padding-bottom: 50px;
                     padding-top: 0;
                 }
+
                 @media screen and (max-width: 767px) {
-                    height: 36vh;
+                    padding-bottom: 20px;
                 }
 
                 .p-more {
@@ -72,18 +76,21 @@
                         padding-top: 8vh;
                         width: 71vw;
                     }
+
                     @media screen and (max-width: 767px) {
                         font-size: 16px;
                         line-height: 30px;
                         padding-top: 6vh;
                     }
-                    .span-we{
+
+                    .span-we {
                         @media screen and (max-width: 991px) {
                             color: black;
                             font-size: 30px;
                             line-height: 36px;
                             padding-top: 4vh;
                         }
+
                         @media screen and (max-width: 767px) {
                             font-size: 36px;
                             line-height: 45px;
@@ -96,6 +103,7 @@
                             font-size: 24px;
                             line-height: 35px;
                         }
+
                         @media screen and (max-width: 767px) {
                             font-size: 20px;
                             line-height: 30px;
@@ -115,6 +123,7 @@
                 height: 72vh;
                 flex-direction: column;
             }
+
             @media screen and (max-width: 767px) {
                 padding-top: 0;
                 height: 64vh;
@@ -126,6 +135,7 @@
                     height: calc(72vh / 5);
                     width: 100%;
                 }
+
                 @media screen and (max-width: 767px) {
                     height: calc(64vh / 5);
                     width: 100%;
@@ -166,6 +176,7 @@
                         line-height: calc(71vh / 5);
                         font-size: 40px;
                     }
+
                     @media screen and (max-width: 767px) {
                         line-height: calc(64vh / 5);
                         font-size: 24px;
@@ -186,7 +197,7 @@
             .person5 {
                 @media screen and (max-width: 991px) {
                     background: #253A56;
-                    background-size: 310px 310px;
+                    background-size: 40vw;
                     background-position: right 0% bottom 50%;
                     ;
                     background-repeat: no-repeat;
@@ -197,13 +208,14 @@
             .person4 {
                 @media screen and (max-width: 991px) {
                     background: #B8C9C2;
-                    background-size: 310px 310px;
+                    background-size: 40vw;
                     background-position: left 0% bottom 50%;
                     ;
                     background-repeat: no-repeat;
                 }
-                .text-light{
-                    span{
+
+                .text-light {
+                    span {
                         @media screen and (max-width: 991px) {
                             color: #253A56;
                         }
@@ -221,7 +233,8 @@
                 @media screen and (max-width: 991px) {
                     background-image: url(../images/img-about_us/about_02.PNG);
                 }
-                .span{
+
+                .span {
                     @media screen and (max-width: 991px) {
                         color: #253A56;
                     }
@@ -253,13 +266,13 @@
 
 #popup-aboutUs-content {
     flex-direction: column;
+    justify-content: space-between;
+    // min-height: 800px;
+    height: 100%;
 
     .bigSwiper {
-        height: 80vh;
+        flex: 1 1 auto;
 
-        @media screen and (max-width: 991px) {
-            height: 100vh;
-        }
 
         .swiper-slide {
             background-color: black;
@@ -283,7 +296,8 @@
                     background-repeat: no-repeat;
                     background-attachment: fixed;
                     background-position: bottom right;
-                    background-size: 560px, 675px;
+                    // background-size: 560px, 675px;
+                    background-size: 50vh;
 
                 }
 
@@ -334,6 +348,12 @@
 
             .text-container {
 
+                @media screen and (max-width: 991px) {
+                    padding-top: 60px;
+                    padding-bottom: 60px;
+                    height: 100%;
+                }
+
                 p {
                     @media screen and (max-width: 991px) {
                         color: #0C192C;
@@ -346,7 +366,6 @@
                     @media screen and (max-width: 991px) {
                         display: flex;
                         justify-content: center;
-                        padding-top: 12vh;
 
 
                     }
@@ -423,9 +442,10 @@
 
                     @media screen and (max-width: 991px) {
                         width: 500px;
+                        max-width: 100%;
                         margin: 0 auto;
                         color: #0C192C;
-                        padding: 55px 0 110px;
+                        padding: 55px 0 0;
                         position: relative;
 
                         &::after {
@@ -498,6 +518,9 @@
                     font-size: 40px;
                     line-height: 55px;
                     color: rgba(0, 0, 0, 0.2);
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
                 }
 
                 @media screen and (max-width: 767px) {
@@ -509,8 +532,20 @@
         }
     }
 
+    @media (max-width: 991px) {
+
+        .swiper-button-prev,
+        .swiper-button-next {
+            color: #000;
+        }
+    }
+
     .textSwiper {
+        flex: 0 0 auto;
         height: 20vh;
+        // min-height: 80px;
+        min-height: 9rem;
+
         background-color: #0C192C;
 
         @media screen and (max-width: 991px) {
@@ -529,7 +564,12 @@
 
                 p {
                     font-size: 40px;
+                    font-size: 2.5rem;
                     line-height: 20vh;
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
                     filter: brightness(.5);
                 }
             }
@@ -537,24 +577,30 @@
     }
 }
 
-.fancybox__container {
-    .fancybox__backdrop {
-        background-color: transparent;
-        background-color: rgba(0, 0, 0, 0.85);
-    }
-
-    .fancybox__carousel {
-        .fancybox__slide {
-            padding: 0;
-
-            .fancybox__content {
-                background-color: transparent;
-                color: #FFF;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                padding: 0;
-            }
-        }
+@media (max-width: 991px) {
+    .fancybox__container .fancybox__carousel .fancybox__slide #popup-aboutUs-content>.carousel__button.is-close {
+        color: #000;
     }
 }
+
+// .fancybox__container {
+//     .fancybox__backdrop {
+//         background-color: transparent;
+//         background-color: rgba(0, 0, 0, 0.85);
+//     }
+
+//     .fancybox__carousel {
+//         .fancybox__slide {
+//             padding: 0;
+
+//             .fancybox__content {
+//                 background-color: transparent;
+//                 color: #FFF;
+//                 display: flex;
+//                 align-items: center;
+//                 justify-content: center;
+//                 padding: 0;
+//             }
+//         }
+//     }
+// }

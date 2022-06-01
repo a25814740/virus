@@ -5,8 +5,9 @@
 }
 
 #virus_introduction {
-    // overflow: hidden;
-    height: 100vh !important;
+    overflow: hidden !important;
+    width: 100vw;
+    height: 100vh;
 
     .row1 {
         pointer-events: auto;
@@ -306,7 +307,7 @@
 
             #scene1 {
                 position: absolute;
-                left: 60%;
+                left: 45%;
                 top: 15%;
 
                 img {
@@ -536,7 +537,7 @@
                 width: 100%;
                 height: auto;
                 position: relative;
-                padding:30px 0;
+                padding:30px 20px;
 
                 .row2 {
                     .image {
@@ -555,7 +556,7 @@
 
                         article {
                             font-size: 1.5rem;
-                            line-height: 1.5rem;
+                            line-height: 1.5;
                         }
                     }
                 }
@@ -588,7 +589,7 @@
                 width: 100%;
                 height: auto;
                 order: 1;
-                padding-top: 30px;
+                padding:30px 20px;
 
                 div[id] {
                     opacity: 0.5;
@@ -636,13 +637,17 @@
                 .p {
                     .bg-wrapper {
                         position: relative;
+                        .bg {
+                            background-size: cover;
+                            background-attachment: inherit;
+                        }
                     }
                 }
 
                 article {
                     text-align: center;
                     font-size: 1.5rem;
-                    line-height: 1.5rem;
+                    line-height: 1.5;
                     margin-bottom: 5%;
                 }
             }

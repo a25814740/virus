@@ -1,6 +1,7 @@
 #Post-pandemic {
     position: relative;
     height: 100vh;
+    padding: 20px;
 
     .post-pandemic-section {
 
@@ -18,8 +19,9 @@
         }
 
         svg {
-            max-width: 100%;
-            max-height: 80%;
+            // max-width: 100%;
+            // max-height: 80%;
+            height: 80vh;
         }
 
         .cls-1 {
@@ -35,20 +37,30 @@
 
 
 #popup-Post-pandemic-content {
+    min-height: 800px;
+    height: 100%;
+    flex-direction: column;
     .swiper {
-        width: 100%;
-        height: 100vh;
-        overflow: hidden;
+        // width: 100%;
+        // height: 100vh;
+        // overflow: hidden;
+        flex: 1 1 auto;
     }
 
     .swiper-slide {
         // background-image: url('../images/img-post_pandemic/Post-pandemic.jpg');
         width: 100%;
-        height: 100vh;
+        // height: 100vh;
+        @media (max-width: 575px) {
+            .container {
+                padding: 0 40px;
+            }
+        }
     }
 
     ul {
         margin-top: 103px;
+        margin-top: 10.3vh;
         width: 846px;
         @media screen and (max-width: 1199px) {
             margin-top: 70px;
@@ -106,6 +118,7 @@
 
     .bottom-content {
         margin-top: 142px;
+        margin-top: 14.2vh;
         @media screen and (max-width: 1199px){
             margin-top: 50px;
         }
@@ -113,9 +126,6 @@
 
     .swiper-button-prev ,.swiper-button-next {
         color: white;
-        @media screen and (max-width: 767px) {
-            
-        }
     }
 
     .swiper-pagination-bullet{

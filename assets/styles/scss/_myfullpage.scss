@@ -2,14 +2,18 @@
     color: inherit;
     .section {
         color: inherit;
-        // overflow-x: hidden;
-        // overflow-y: visible;
+        overflow-x: clip;
+        overflow-y: visible;
         // overflow: hidden;
         .full-page-inner {
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
+        }
+        .scrollable-content {
+            overflow-x: hidden;
+            overflow-y: auto;
         }
     }
     [rel*="nofollow"] {
