@@ -228,7 +228,7 @@ $ani_durB: 2s;
 
             .chapterAni7 {
                 transform: translate(40%, 0);
-                animation: chapter_Ani 3.5s forwards 4s;
+                animation: chapter_Ani 2s forwards 2.4s;
             }
 
             @media (max-width: 767px) {
@@ -356,6 +356,21 @@ $ani_durB: 2s;
             @media (max-width: 575px) {
                 .footer_middle {
                     display: none;
+                }
+            }
+        }
+
+        @media (max-width: 769px) {
+            .menuFooter {
+                .footer_middle {
+                    span {
+                        transform: scale(0.65);
+                    }
+
+                    p {
+                        font-size: 0.1vw;
+                        transform: scale(0.4);
+                    }
                 }
             }
         }

@@ -22,6 +22,7 @@
 
     .s3l_active,
     .s3r_active {
+
         .l_content,
         .row2 {
             pointer-events: auto;
@@ -76,7 +77,8 @@
                         max-width: 90%;
                         margin: auto;
                     }
-                    & > div {
+
+                    &>div {
                         display: flex;
                         justify-content: center;
                         width: 50%;
@@ -227,7 +229,7 @@
                 justify-content: center;
                 align-items: center;
 
-                & > div {
+                &>div {
                     display: flex;
                     justify-content: center;
                     width: 50%;
@@ -393,10 +395,13 @@
             z-index: 2;
             position: absolute;
             left: 0;
-            margin-top: 15%;
+            margin-top: 5%;
             width: 180%;
             transform: translate(-200%, 0);
             transition: all 1.5s ease-in-out;
+            height: 60%;
+            display: flex;
+            align-items: center;
 
             article {
                 font-size: 1.875rem;
@@ -408,26 +413,57 @@
 
             .p {
                 position: relative;
+                height: 100%;
 
                 .bg-wrapper {
                     position: absolute;
                     left: 0;
                     top: 0;
                     width: 100%;
-                    height: 0;
-                    padding-bottom: 56.25%;
+                    height: 100%;
+                    // padding-bottom: 56.25%;
 
-                    .bg {
-                        position: absolute;
-                        left: 0;
-                        top: 0;
-                        width: 100%;
+                    .swiper {
                         height: 100%;
-                        background-image: url(../images/virus_introduction/lifeCycle.png);
-                        background-attachment: fixed;
-                        background-size: 200% 200%;
-                        background-position: 0% 25%;
-                        transition: all 2s ease-in-out;
+
+                        .swiper-wrapper {
+                            height: 100%;
+
+                            &>div {
+                                height: 100%;
+
+                                .img {
+                                    // width: 100%;
+                                    height: 100%;
+                                    background-image: url(../images/virus_introduction/lifeCycle.png);
+                                    background-size: cover;
+                                    background-repeat: no-repeat;
+                                }
+                            }
+
+
+                            &>div:nth-child(3) .img {
+                                background-position: 0 70%;
+                            }
+
+                            &>div:nth-child(4) .img {
+                                background-position: 60% 90%;
+                            }
+
+                            &>div:nth-child(5) .img {
+                                background-position: 95% 30%;
+                            }
+                        }
+                    }
+
+
+
+                    .swiper-button-next,
+                    .swiper-button-prev {
+                        &::after {
+                            color: rgb(0, 0, 0);
+                            opacity: 0.8;
+                        }
                     }
                 }
             }
@@ -494,13 +530,13 @@
         }
     }
 
-    @media (min-width: 1200px) and (max-width: 1459px) {
-        .s3_right {
-            .s3r_outer {
-                top: 15% !important;
-            }
-        }
-    }
+    // @media (min-width: 1200px) and (max-width: 1459px) {
+    //     .s3_right {
+    //         .s3r_outer {
+    //             top: 15% !important;
+    //         }
+    //     }
+    // }
 
     @media (min-width: 768px) and (max-width: 1199px) {
         .s3_left {
@@ -532,6 +568,7 @@
         .s3_left {
             width: 100%;
             height: auto;
+            pointer-events: none;
 
             .l_content {
                 width: 100%;
@@ -542,9 +579,16 @@
                 .row2 {
                     .image {
                         max-width: 70%;
+                        position: relative;
 
                         img {
                             max-width: 70%;
+                        }
+
+                        .inside {
+                            position: absolute;
+                            top: 0;
+                            display: none;
                         }
                     }
 
@@ -580,14 +624,14 @@
         .s3_right {
             position: relative;
             width: 100%;
-            height: auto;
+            height: 100vh;
             display: flex;
             flex-direction: column;
 
             .r_content {
-                position: relative;
+                position: absolute;
                 width: 100%;
-                height: auto;
+                height: 100%;
                 order: 1;
                 padding:30px 20px;
 
@@ -633,7 +677,8 @@
                 transform: translate(0, 0);
                 position: relative;
                 order: 2;
-                margin-top: 20px;
+                margin-top: 25%;
+
                 .p {
                     .bg-wrapper {
                         position: relative;
@@ -664,17 +709,17 @@
         .full-page-inner {
             flex-direction: column;
         }
+
         // [data-depth] {
         //     transform: none !important;
         // }
     }
 
-    
+
 }
 
 @keyframes s3r1 {
-    0% {
-    }
+    0% {}
 
     50% {
         animation-timing-function: steps(1000);

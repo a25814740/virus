@@ -92,7 +92,7 @@
                 clip-path: polygon(0 0, 60.1% 0, 40.1% 100%, 0% 100%);
                 background-color: #B8C9C2;
                 background-image: url(../images/vaccine/virus_L.png);
-                background-size: 45%;
+                background-size: 40%;
 
                 h2 {
                     color: #253A56;
@@ -179,6 +179,16 @@
                     letter-spacing: 1rem;
                 }
             }
+
+            .bottomBlock {
+                .s7_left {
+                    background-size: auto;
+                }
+
+                .s7_right {
+                    background-size: auto;
+                }
+            }
         }
 
         @media (max-width: 767px) {
@@ -208,6 +218,12 @@
 
             .bImg1 {
                 display: flex;
+            }
+        }
+
+        @media (max-width: 450px) {
+            .textBlock {
+                justify-content: space-around;
             }
         }
     }
