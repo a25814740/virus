@@ -149,11 +149,12 @@ let app = Vue.createApp({
         },
         getPageData: function () {
             let _this = this;
-            console.log('getPageData');
+            // console.log('getPageData');
 
-            fetch("/assets/js/pageData.json")
+            fetch("./assets/js/pageData.json")
                 .then(r => r.json())
                 .then(json => {
+                    // console.log(json);
                     _this.pageDatas = json;
                 });
         },
