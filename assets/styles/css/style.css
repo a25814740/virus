@@ -717,7 +717,7 @@ html.touchevents [id*="scene"] [data-depth] {
 
 @media (min-width: 1200px) and (max-height: 900px) {
   #fullpage .section {
-    height: 100vh !important;
+    height: auto !important;
     min-height: 798px;
     overflow: hidden;
   }
@@ -5444,14 +5444,25 @@ header .HBG .cls-3 {
 
 #about-us .container-fluid {
   height: 100%;
-  width: 80%;
-  padding-top: 6rem;
+  width: 1536px;
+  max-width: 90%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
 }
 
 @media screen and (max-width: 991px) {
   #about-us .container-fluid {
     padding: 0;
     width: 100%;
+    max-width: 100%;
   }
 }
 
@@ -5661,7 +5672,7 @@ header .HBG .cls-3 {
   #about-us .container-fluid .img-container .person1,
   #about-us .container-fluid .img-container .person3,
   #about-us .container-fluid .img-container .person5 {
-    background: #253A56;
+    background: #253a56;
     background-size: 40vw;
     background-position: right 0% bottom 50%;
     background-repeat: no-repeat;
@@ -5671,7 +5682,7 @@ header .HBG .cls-3 {
 @media screen and (max-width: 991px) {
   #about-us .container-fluid .img-container .person2,
   #about-us .container-fluid .img-container .person4 {
-    background: #B8C9C2;
+    background: #b8c9c2;
     background-size: 40vw;
     background-position: left 0% bottom 50%;
     background-repeat: no-repeat;
@@ -5681,7 +5692,7 @@ header .HBG .cls-3 {
 @media screen and (max-width: 991px) {
   #about-us .container-fluid .img-container .person2 .text-light span,
   #about-us .container-fluid .img-container .person4 .text-light span {
-    color: #253A56;
+    color: #253a56;
   }
 }
 
@@ -5699,7 +5710,7 @@ header .HBG .cls-3 {
 
 @media screen and (max-width: 991px) {
   #about-us .container-fluid .img-container .person2 .span {
-    color: #253A56;
+    color: #253a56;
   }
 }
 
@@ -5812,7 +5823,7 @@ header .HBG .cls-3 {
 @media screen and (max-width: 991px) {
   #popup-aboutUs-content .bigSwiper .swiper-slide .swiper-button-prev,
   #popup-aboutUs-content .bigSwiper .swiper-slide .swiper-button-next {
-    color: #0C192C;
+    color: #0c192c;
   }
 }
 
@@ -5826,7 +5837,7 @@ header .HBG .cls-3 {
 
 @media screen and (max-width: 991px) {
   #popup-aboutUs-content .bigSwiper .swiper-slide .text-container p {
-    color: #0C192C;
+    color: #0c192c;
   }
 }
 
@@ -5866,7 +5877,7 @@ header .HBG .cls-3 {
 
 #popup-aboutUs-content .bigSwiper .swiper-slide .text-container .text-top span {
   font-size: 48px;
-  color: #87BCCD;
+  color: #87bccd;
   line-height: 72px;
   letter-spacing: 36px;
   font-weight: 300;
@@ -5880,7 +5891,7 @@ header .HBG .cls-3 {
 
 @media screen and (max-width: 991px) {
   #popup-aboutUs-content .bigSwiper .swiper-slide .text-container .text-top span {
-    color: #0C192C;
+    color: #0c192c;
     font-weight: 400;
   }
 }
@@ -5931,12 +5942,12 @@ header .HBG .cls-3 {
     width: 500px;
     max-width: 100%;
     margin: 0 auto;
-    color: #0C192C;
+    color: #0c192c;
     padding: 55px 0 0;
     position: relative;
   }
   #popup-aboutUs-content .bigSwiper .swiper-slide .text-container .text-bottom::after {
-    content: '';
+    content: "";
     position: absolute;
     left: 50%;
     top: 20px;
@@ -6040,7 +6051,7 @@ header .HBG .cls-3 {
           flex: 0 0 auto;
   height: 20vh;
   min-height: 9rem;
-  background-color: #0C192C;
+  background-color: #0c192c;
 }
 
 @media screen and (max-width: 991px) {
