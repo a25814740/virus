@@ -46,8 +46,26 @@
         .s9_mainTop {
             cursor: pointer;
 
+            &>div {
+                
+            }
+
+            h1 {
+                flex: 0 0 auto;
+            }
+
+            .s9_svg {
+                flex: 1 1 auto;
+                align-items: center;
+                justify-content: center;
+            }
+
+
             svg {
-                width: 100%;
+                width: auto;
+                height: auto;
+                max-width: 97.5%;
+                max-height: 97.5%;
                 overflow: visible;
 
                 .green {

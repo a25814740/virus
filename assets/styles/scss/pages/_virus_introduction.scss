@@ -22,7 +22,6 @@
 
     .s3l_active,
     .s3r_active {
-
         .l_content,
         .row2 {
             pointer-events: auto;
@@ -76,9 +75,20 @@
                         border-radius: 50%;
                         max-width: 90%;
                         margin: auto;
+                        transition: 0.3s opacity ease-in-out;
+                        &.outside {
+                            opacity: 1;
+                        }
+                        &.inside {
+                            opacity: 0;
+                            position: absolute;
+                            left: 0;
+                            right: 0;
+                        }
                     }
 
-                    &>div {
+                    & > div {
+                        position: relative;
                         display: flex;
                         justify-content: center;
                         width: 50%;
@@ -123,6 +133,18 @@
             }
 
             .l_content {
+                .row2 {
+                    .image {
+                        img {
+                            &.outside {
+                                opacity: 0;
+                            }
+                            &.inside {
+                                opacity: 1;
+                            }
+                        }
+                    }
+                }
                 .text {
                     margin-left: 0;
                     transform: translateX(-15%);
@@ -229,7 +251,7 @@
                 justify-content: center;
                 align-items: center;
 
-                &>div {
+                & > div {
                     display: flex;
                     justify-content: center;
                     width: 50%;
@@ -429,7 +451,7 @@
                         .swiper-wrapper {
                             height: 100%;
 
-                            &>div {
+                            & > div {
                                 height: 100%;
 
                                 .img {
@@ -441,22 +463,27 @@
                                 }
                             }
 
-
-                            &>div:nth-child(3) .img {
-                                background-position: 0 70%;
+                            [data-swiper-slide-index="0"] .img {
+                                background-size: 250%;
+                                background-position: 0 0;
                             }
 
-                            &>div:nth-child(4) .img {
+                            [data-swiper-slide-index="1"] .img {
+                                background-size: 250%;
+                                background-position: 0 100%;
+                            }
+
+                            [data-swiper-slide-index="2"] .img {
                                 background-position: 60% 90%;
+                                background-size: 200%;
                             }
 
-                            &>div:nth-child(5) .img {
+                            [data-swiper-slide-index="3"] .img {
                                 background-position: 95% 30%;
+                                background-size: 200%;
                             }
                         }
                     }
-
-
 
                     .swiper-button-next,
                     .swiper-button-prev {
@@ -540,11 +567,9 @@
 
     @media (min-width: 768px) and (max-width: 1199px) {
         .s3_left {
-
             // 打開的畫面
             &.s3l_active {
                 .l_content {
-
                     .text {
                         transform: translateX(0%);
                     }
@@ -554,7 +579,6 @@
 
         .s3_right {
             .s3r_outer {
-
                 .p .bg-wrapper {
                     height: 100%;
                 }
@@ -574,12 +598,16 @@
                 width: 100%;
                 height: auto;
                 position: relative;
-                padding:30px 20px;
+                padding: 30px 20px;
 
                 .row2 {
                     .image {
                         max-width: 70%;
                         position: relative;
+
+                        & > div {
+                            transform: none !important;
+                        }
 
                         img {
                             max-width: 70%;
@@ -593,7 +621,6 @@
                     }
 
                     .text {
-
                         opacity: 1;
                         transform: translateX(0);
                         text-align: center;
@@ -613,7 +640,6 @@
             // 打開的畫面
             &.s3l_active {
                 .l_content {
-
                     .text {
                         transform: translateX(0%);
                     }
@@ -633,7 +659,7 @@
                 width: 100%;
                 height: 100%;
                 order: 1;
-                padding:30px 20px;
+                padding: 30px 20px;
 
                 div[id] {
                     opacity: 0.5;
@@ -714,12 +740,11 @@
         //     transform: none !important;
         // }
     }
-
-
 }
 
 @keyframes s3r1 {
-    0% {}
+    0% {
+    }
 
     50% {
         animation-timing-function: steps(1000);

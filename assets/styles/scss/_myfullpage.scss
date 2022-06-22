@@ -22,7 +22,8 @@
 
     @media (min-width: 1200px) and (max-height: 900px) {
         .section {
-            height: auto !important;
+            height: 100vh !important;
+            min-height: 798px;
             // overflow-x: hidden;
             // overflow-y: visible;
             // overflow: visible;
